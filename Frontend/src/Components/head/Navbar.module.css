@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+  background-color: rgba(17, 17, 17, 0.9);
+}
+
+/* Logo */
+.left {
+  flex: 1;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Hamburger (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  height: 3rem; 
+  width: 3rem;
+}
+
+
+/* Center Menu */
+.center {
+  flex: 2;
+}
+
+.mainMenuUl {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.menu {
+  cursor: pointer;
+  color: white;
+}
+
+/* Right buttons */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.headerBtn {
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Responsive changes */
+@media screen and (max-width: 868px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .center {
+    display: none;
+    width: 40%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.6);
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+     animation: slideFromLeft 1s ease-in-out;
+  }
+
+  .center.showMenu {
+    display: block;
+  }
+
+  .mainMenuUl {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    height: auto;
+   
+  }
+  @keyframes slideFromLeft {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0%)
+    }
+  }
+
+  .right {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+.mapSection {
+  flex: 1;
+  min-width: 300px;
+  height: 500px;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.formSection {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formSection h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.formSection form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formSection input,
+.formSection textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formSection button {
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formSection button:hover {
+  background-color: #0056b3;
+}

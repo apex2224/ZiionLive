@@ -1,0 +1,722 @@
+.aiChatbotHeroSection {
+ position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: white;
+  
+}
+
+.aiChatbotBgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* object-fit: contain; */
+  z-index: 0;
+}
+
+.aiChatbotOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100vh; */
+  z-index: 3;
+}
+
+.aiChatbotContent {
+  z-index: 2;
+  width: 80%;
+  margin: auto;
+}
+
+.aiChatbotTitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+}
+
+@keyframes aiChatbotFall {
+  0% {
+    transform: translateY(-1000%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.aiChatbotTitle span {
+  font-weight: 500;
+  animation: aiChatbotFalldown 0.7s ease-in-out;
+}
+
+@keyframes aiChatbotFalldown {
+  0% {
+    transform: translateY(-1000%);
+  }
+  50% {
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+  }
+}
+
+.gradientText {
+  background: linear-gradient(to right, #3b82f6, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.aiChatbotSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.aiChatbotHerobutton {
+  background: #8b5cf6;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.aiChatbotHerobutton:hover,
+.aiChatbotHerobutton:active {
+  cursor: pointer;
+  background: #7c3aed;
+}
+@media(max-width: 1200px){
+  .aiChatbotContent{
+    margin-top: 13rem;
+  }
+}
+
+@media(max-width: 1024px){
+  .aiChatbotContent{
+    margin-top: 12rem;
+  }
+}
+@media(max-width: 843px){
+  .aiChatbotContent{
+    margin-top: 12rem;
+  }
+}
+@media(max-width: 768px){
+  .aiChatbotSubtitle{
+    font-size: 1rem;
+  }
+  .aiChatbotContent{
+    margin-top: 14rem;
+  }
+}
+@media(max-width: 520px){
+  .aiChatbotContent{
+    margin-top: 11rem;
+  }
+}
+@media(max-width: 470px){
+  .aiChatbotContent{
+    font-size: 1.8rem;
+  }
+}
+@media(max-width: 380px){
+  .aiChatbotContent{
+    margin-top: 10rem;
+  }
+}
+
+
+/* ai chatbot next section */
+.aiChatbotContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 10rem auto;
+  height: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+  border-radius: 20px;
+}
+
+.aiChatbotLeftPanel {
+  flex: 1;
+  width: 400px;
+}
+
+.aiChatbotHeading {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.aiChatbotList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aiChatbotItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.aiChatbotItem:hover {
+  background-color: #f0f4f8;
+}
+
+.active {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.expanded {
+  background-color: #e6f0ff;
+}
+
+.aiChatbotHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aiChatbotIcon {
+  font-size: 1.8rem;
+}
+
+.aiChatbotTitle {
+  font-weight: 500;
+  color: #333;
+}
+
+.aiChatbotContent {
+  font-size: 0.95rem;
+  color: #555;
+  transition: max-height 0.3s ease;
+}
+
+.aiChatbotRightPanel {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiChatbotImage {
+  width: auto;
+  height: 35rem;
+  margin-top: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 1024px){
+  .aiChatbotImage{
+    width: auto;
+    height: 27rem;
+  }
+}
+@media (max-width: 992px) {
+ 
+  .aiChatbotLeftPanel {
+    width: 100%;
+  }
+
+  .aiChatbotRightPanel {
+    margin-top: 2rem;
+  }
+}
+@media(max-width: 785px){
+  .aiChatbotContainer {
+    display: block;
+    gap: 1rem;
+    margin: 5rem auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .aiChatbotContainer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .aiChatbotLeftPanel {
+    max-width: 100%;
+  }
+
+  .aiChatbotRightPanel {
+    margin-top: 1.5rem;
+  }
+  .aiChatbotTitle{
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .aiChatbotImage {
+    width: auto;
+    height: 20rem;
+  }
+}
+@media(max-width: 440px){
+  .aiChatbotTitle{
+    font-size: 1.5rem;
+  }
+  .aiChatbotSubtitle{
+    font-size: 0.9rem;
+  }
+}
+/* aichhatbot next 3rd section */
+ .widgetMain{
+      margin-bottom: 8rem;
+
+  }
+
+  .mediatorFeature {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+  margin: 4rem 0rem;
+}
+
+.mediatorTitle {
+  color: #3d4b73;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.mediaorSubtitle {
+  color: #586898;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+  .widgetFourthSection {
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+}
+
+.sidebar {
+  width: 30%;
+  background-color: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar:last-child {
+  border-left: 1px solid #ddd;
+  border-right: none;
+}
+
+.block {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.block:hover {
+  background-color: #f0f8ff;
+}
+
+.active {
+  background-color: #f6faff;
+  border: 1px solid #2684ff;
+  box-shadow: 0 0 0 2px rgba(38, 132, 255, 0.2);
+}
+
+.icon {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.featureTitle {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.desc {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #555;
+}
+
+.progressBar {
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progressFill {
+  width: 40%;
+  height: 100%;
+  background-color: #2684ff;
+}
+
+.chatbox {
+ 
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widgetSubFeature {
+  width: 15rem;
+  height: 25rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+@media(max-width: 475px){
+  .widgetFourthSection{
+    display: block;
+    gap: 1rem;
+  }
+  .sidebar{
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* aichatbot 4rth section apps implement*/
+      .widget{
+        display: flex;
+      }
+
+    .implementContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 1200px;
+      position: relative;
+      margin: 7rem auto;
+      width: 80%;
+    }
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px solid white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .widgetFeature{
+      margin: auto;
+    }
+
+    .widgetFeatureImg{
+      height: 7rem;
+      width: 7rem;
+      margin: auto;
+      border-radius: 50%;
+      animation: moveUpward 2s infinite ease-in-out;
+    }
+    @keyframes moveUpward{
+      0%{
+        transform: translateY(-5%);
+      }
+      50%{
+        transform: translateY(5%)
+      }
+      100%{
+        transform: translateY(-5%);
+      }
+    }
+    .heading {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .title{
+      font-size: 2rem;
+    }
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: 300px;
+    }
+    @media(max-width: 1124px){
+      .implementContainer{
+        display: block;
+      }
+      .widget{
+        width: 70%;
+        margin: auto;
+      }
+    }
+    @media(max-width: 768px){
+      .widget{
+        width: 100%
+      }
+    }
+    @media(max-width: 480px){
+      .widgetFeatureImg{
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+
+    /* talkie chatbot */
+.talkieWorkSection {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #fff;
+}
+
+.leftPanel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.talkieCard {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  gap: 1rem;
+}
+
+.talkieIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  overflow: hidden;
+}
+
+.talkieIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.iconChatbot {
+  border-color: #4b49c7;
+}
+
+.iconBuild {
+  border-color: #f26464;
+}
+
+.iconApps {
+  border-color: #36d4cf;
+}
+
+.talkieContent h3 {
+  margin: 0;
+  color: #2e2e60;
+  font-size: 1.2rem;
+}
+
+.talkieContent p {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.rightPanel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.talkieImage {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .talkieWorkSection {
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  .leftPanel, .rightPanel {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .talkieCard {
+    flex-direction: row;
+  }
+}
+/* gallery section */
+.gallery {
+  column-count: 3;
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+.galleryItem {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s;
+}
+
+.galleryItem:hover {
+  transform: scale(1.03);
+}
+
+.image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+/* ai image block  */
+.aiChatbotImageContainer {
+  column-count: 5;
+  column-gap: 1rem;
+  padding: 1rem;
+}
+
+.aiChatbotImageBlock {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.aiChatbotImageBlock:hover {
+  transform: scale(1.03);
+}
+
+.aiChatbotImageBlock img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive layout */
+
+.overlay {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  z-index: 1;
+  text-align: center;
+  padding: 10px;
+}
+.aiChatbotImageBlock img:hover,
+.aiChatbotImageBlock img:active,
+.overlay:hover,
+.overlay:active
+{
+  transition: 1s ease-in;
+  cursor: grab;
+}
+.overlay p{
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .aiChatbotImageContainer {
+    column-count: 2;
+  }
+  .aiChatbotImageContainer {
+      column-count: 4;
+    }
+  }
+
+@media (max-width: 600px) {
+  .aiChatbotImageContainer {
+    column-count: 1;
+  }
+  .aiChatbotImageContainer {
+    column-count: 3;
+  }
+}
+@media(max-width: 500px){
+  .aiChatbotImageContainer {
+    column-count: 2;
+  }
+}
+@media(max-width: 400px){
+  .aiChatbotImageContainer {
+    column-count: 1;
+}
+}

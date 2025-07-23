@@ -1,0 +1,154 @@
+/* hero section */
+.integrateWordPressWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.integrateWordPressImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.integrateWordPressImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.integrateWordPressOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.integrateWordPressHeading {
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.integrateWordPressBold {
+  color: white;
+}
+
+.integrateWordPressOutline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px white;
+  font-weight: bold;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+@media (max-width: 1024px) {
+  .integrateWordPressHeading {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .integrateWordPressOverlay {
+    top: 45%;
+  }
+
+  .integrateWordPressHeading {
+    font-size: 36px;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .integrateWordPressOverlay {
+    padding: 0 10px;
+  }
+
+  .integrateWordPressHeading {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+    .wpHeroSection {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wpImageWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wpHeroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wpOverlayContent {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 20vh 10% 0;
+}
+
+.wpWelcomeText {
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.wpTitle {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.wpDescription {
+  margin-top: 20px;
+  font-size: 18px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+.wpIconBox {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.wpIcon {
+  font-size: 30px;
+  background: linear-gradient(135deg, #a65ff8, #ff758c);
+  padding: 20px;
+  border-radius: 50%;
+  color: white;
+}
+

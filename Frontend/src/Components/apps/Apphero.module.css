@@ -1,0 +1,626 @@
+
+  .appDownloadSection{
+    width: 100%;
+    height: 40rem;
+  }
+  .appBack{
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    height: 40rem;
+    z-index: 0;
+    object-fit: cover;
+  }
+   .ovarlay{
+    z-index: 3;
+  }
+  
+  .header h1 {
+    font-size: 4rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+  }
+  
+  .downloadOptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 4rem auto;
+    margin-top: 8rem;
+  }
+  
+  .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid {
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid white;
+    box-shadow: 0px 0px 5px 5px ;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 10px rgba(255, 253, 253, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    animation: webshift 1s ease-in;
+    z-index: 2;
+  }
+  .optionWeb p, .optionMac p, .optionWindows p, .optionIphone p, .optionAndroid p{
+    color: white;
+  }
+   .optionWeb:hover, .optionMac:hover, .optionWindows:hover, .optionIphone:hover, .optionAndroid:hover {
+    transform: translateY(-5px);
+  } 
+  .iconWeb, .iconMac, .iconWindows, .iconIphone, .iconAndroid {
+    width: 2rem;
+    height: 2rem;
+    
+  }
+  .web, .mac, .window, .iphone, .android{
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+  }
+  
+  /* Customize colors */
+  .iconMac { background-color: #e0e7ff; }
+  .iconWindows { background-color: #ccfbf1; }
+  .iconIphone { background-color: #fce7f3; }
+  .iconAndroid { background-color: #d1fae5; }
+  
+  .buttonWeb, .buttonMac, .buttonWindows, .buttonIphone, .buttonAndroid {
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .buttonWeb:hover, .buttonMac:hover, .buttonWindows:hover, .buttonIphone:hover, .buttonAndroid:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 1.5rem;
+    }
+    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
+      padding: 00.5rem 0rem;
+    }
+  
+    .downloadOptions {
+      padding: 5rem 2rem;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @media(max-width: 600px){
+      .downloadOptions{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
+        padding: 0.5rem 0.5rem;
+      }
+
+      .appBack{
+        height: 40rem;
+      }
+          
+  }
+  @media(max-width: 525px){
+      .appBack{
+        height: 44rem;
+      }
+  }
+  @media(max-width: 673px){
+    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
+      padding: 0.5rem 0rem;
+    }
+    .downloadOptions{
+      margin: 0rem;
+      padding: 4rem 0rem;
+    }
+  }
+  @media(max-width: 465px){
+      .downloadOptions{
+        grid-template-columns: 1fr;
+        object-fit: contain;
+      }
+       .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
+        width: 98%;
+        height: auto;
+       }
+       .appBack{
+        height: 50rem;
+       }
+         .downloadOptions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .option {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  }
+
+    @media(max-width: 1024px){
+      .downloadOptions{
+        margin: 8rem 2rem;
+      }
+    }
+  /* app next section  */
+
+  .exclusiveSection {
+    background-color: #0d0d0d;
+    padding: 4rem 1rem;
+    color: white;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .highlight {
+    color: #d4ff00;
+  }
+  
+  .servicesContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  
+  .serviceCard {
+    /* background: #141414; */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.3s ease;
+    animation: slide 0.7s ease-in-out;
+  }
+  @keyframes slide{
+    0% {
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0px); 
+    }
+    
+  }
+  
+  .serviceCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .imageWrapper {
+    height: auto;
+    width: 30%;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+  
+  .image {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0.5;
+  }
+  .image:hover,
+  .image:active{
+    animation: fade 1s ease-in-out;
+    opacity: 1;
+    cursor: grab;
+  }
+  @keyframes fade{
+    0%{
+        transition: transformX(0%);
+    }
+    100%{
+        transition: transformX(100%);
+    }
+  }
+  
+  .textWrapper {
+    height: auto;
+    width: 30%;
+    background-color: #141414;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  
+  .textContent {
+    max-width: 400px;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+  
+  .textContent h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .textContent p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .moreLink {
+    color: #d4ff00;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  .moreLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* RESPONSIVE */
+
+  @media(max-width: 929px){
+    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
+      padding: 0.5rem 0.5rem;
+    }
+    
+  }
+  @media (max-width: 768px) {
+    .textWrapper {
+      padding: 1.5rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  
+    .textContent h2 {
+      font-size: 1.5rem;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+    .image{
+        height: 20rem;
+        width: auto;
+    }
+  }
+  @media(max-width: 525px){
+    .header{
+      margin-bottom: 0rem;
+      margin-top: 2rem;
+    }
+  }
+  @media(max-width: 600px){
+    .servicesContainer{
+      display: block;
+    }
+  }
+
+  /* app third scetion  */
+  .appThird {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f7f7f7;
+  }
+  
+  .leftPanel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .joinBtn {
+    background-color: #5c6bc0;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .joinBtn:hover {
+    background-color: #3f4c7b;
+  }
+  
+  .heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2e3b4e;
+    margin-bottom: 10px;
+  }
+  
+  .subheading {
+    font-size: 24px;
+    text-align: left;
+    font-weight: 500;
+    color: #6a7c91;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #8e9ca5;
+    margin-bottom: 30px;
+  }
+  
+  .buttonsGroup {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .learnMore,
+  .signUpNow {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .learnMore {
+    background-color: #8e9ca5;
+    color: white;
+  }
+  
+  .signUpNow {
+    background-color: #5c6bc0;
+    color: white;
+  }
+  
+  .learnMore:hover {
+    background-color: #7b8a95;
+  }
+  
+  .signUpNow:hover {
+    background-color: #3f4c7b;
+  }
+  
+  .rightPanel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stepBox {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stepNumber {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5c6bc0;
+    margin-right: 15px;
+  }
+  
+  .stepContent h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e3b4e;
+  }
+  
+  .stepContent p {
+    font-size: 14px;
+    color: #8e9ca5;
+  }
+  
+  @media (max-width: 768px) {
+    .appThird {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .leftPanel,
+    .rightPanel {
+      flex: none;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .buttonsGroup {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .learnMore,
+    .signUpNow {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .stepBox {
+      padding: 15px;
+    }
+  }
+
+
+  /* app forth section  */
+  .appFourSection {
+    padding: 40px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e2a47;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #6a7c91;
+    margin-bottom: 40px;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 280px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .iconContainer {
+    background-color: #e0e0e0;
+    width: 100%;
+    height: auto;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .cardTitle {
+    font-size: 22px;
+    color: #1e2a47;
+    margin-bottom: 10px;
+  }
+  
+  .cardDescription {
+    font-size: 14px;
+    color: #8e9ca5;
+  }
+  
+  @media (max-width: 768px) {
+    .cardsContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  
+  /* app third section */
+
+  .appFeatureContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+.appFeatureCard {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.appFeatureCard:hover {
+  transform: scale(1.03);
+}
+
+.appFeatureImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.appFeatureOverlay {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.appFeatureTitle {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.appFeatureText {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  opacity: 0;
+  color: white;
+  padding: 20px;
+  transform: translateY(20px);
+}
+
+.appFeatureCard:hover .appFeatureText {
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .appFeatureCard {
+    width: 90%;
+  }
+}
+
+  
