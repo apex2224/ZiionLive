@@ -7,8 +7,8 @@ const FurtherNav = () => {
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    const prevBtn = document.querySelector(`${styles.carouselBtn}.${styles.prev}`);
-    const nextBtn = document.querySelector(`${styles.carouselBtn}.${styles.next}`);
+    const prevBtn = document.querySelector(`.${styles.carouselBtn}.${styles.prev}`);
+    const nextBtn = document.querySelector(`.${styles.carouselBtn}.${styles.next}`);
     const scrollAmount = 200;
 
     const scrollLeft = () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });

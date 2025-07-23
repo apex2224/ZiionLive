@@ -24,9 +24,9 @@ import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 export const routes=[
     {path:'/',  element:<Main/> },
     { path:'/aboutus',  element:<Pricing/> },
-    { path:'/Integration',  element:<Integrationnextsection/> },
-    {path: '/App', element: <Apphero/>},
-     { path:'/help',  element:<Help/> },
+    { path:'/placement',  element:<Integrationnextsection/> },
+    {path: '/', element: <Apphero/>},
+     { path:'/contact-us',  element:<Help/> },
       { path: "/help/:topicName", element:<HelpTopicArticles/>},
 
   // further menu

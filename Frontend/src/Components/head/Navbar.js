@@ -70,7 +70,7 @@ const Navbar = () => {
             <Link to="/placement" className={styles.link}>
               <li className={styles.menu}>Placement</li>
             </Link>
-            <Link to="/aboutus" className={styles.link}>
+            <Link to="/about-us" className={styles.link}>
               <li className={styles.menu}>About US</li>
             </Link>
             <Link to="/contact-us" className={styles.link}>
@@ -81,9 +81,9 @@ const Navbar = () => {
 
         {/* Right */}
         <div className={styles.right}>
-          
+          <Link to="/signup">
             <button className={styles.headerBtn}>Download Certificate</button>
-         
+          </Link>
         </div>
       </nav>
     </div>
