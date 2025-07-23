@@ -70,7 +70,7 @@ const Navbar = () => {
             <Link to="/placement" className={styles.link}>
               <li className={styles.menu}>Placement</li>
             </Link>
-            <Link to="/about-us" className={styles.link}>
+            <Link to="/aboutus" className={styles.link}>
               <li className={styles.menu}>About US</li>
             </Link>
             <Link to="/contact-us" className={styles.link}>
