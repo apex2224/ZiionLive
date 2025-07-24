@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import styles from './helpTopicArticles.module.css';
 
 const articles = {
-  'Getting Started': [
+  'Data Science': [
     { title: 'How to use the Mediator Inbox for the first time', summary: 'Dedicated video overview for first-time users.' },
     { title: 'Getting Started With Mediator for Customer Support', summary: 'Everything you need to start with Mediator.' },
   ],

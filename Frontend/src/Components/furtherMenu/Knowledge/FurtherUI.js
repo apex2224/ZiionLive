@@ -1,18 +1,70 @@
-import React, {Fragment} from 'react';
-import styles from './furtherUI.module.css';
-import {significantSteps} from './KnowledgeData';
 
-{/* // significant steps */}
+// import React from "react";
+// import styles from "./furtherUI.module.css";
 
-<section className={styles.significantSection}>
-      <h2 className={styles.significantTitle}>Significant things you wouldn't want to miss</h2>
-      <div className={styles.significantItemsWrapper}>
-        {significantSteps.map((item, idx) => (
-          <div className={styles.significantItemCard} key={idx}>
-            <img src={item.icon} alt={item.title} className={styles.icon} />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+// const ServicesGrid = () => {
+//   return (
+//     <div className={styles.grid}>
+//       {servicesGrid.map((service, index) => (
+//         <div key={index} className={`${styles.card} ${styles.curveTopRight} ${styles.curveBottomLeft}`}>
+//           <div className={styles.ServicesCardContent}>
+//             <div className={styles.icon}></div>
+//             <h3>{service.title}</h3>
+//             <p>{service.description}</p>
+           
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default ServicesGrid;
+
+  // const [selectedArticle, setSelectedArticle] = useState(knowldegeArticles[0]);
+
+
+
+  {/* <div className={styles["knowledgebrief-mainContainer"]}> */}
+  
+      {/* <div className={styles["knowledgebrief-leftSection"]}>
+        {knowldegeArticles.map((article, key) => (
+          <div
+            key={key}
+            className={styles["knowledgebrief-cardWrapper"]}
+            onClick={() => setSelectedArticle(article)} 
+            style={{ cursor: "pointer" }}
+          >
+           
+            <div className={styles["knowledgebrief-card"]}>
+              <div className={styles["knowledgebrief-icon"]}>📘</div>
+              <div className={styles["knowledgebrief-cardContent"]}>
+                <h4>{article.title}</h4>
+               
+                <span className={styles["knowledgebrief-badge"]}>{article.badge}</span>
+              </div>
+            </div>
           </div>
-        ))}
+        ))} */}
+      {/* </div> */}
+
+      {/* Right Side: Dynamic Content */}
+      {/* <div className={styles["knowledgebrief-rightSection"]}>
+        <div className={styles["knowledgebrief-rightContent"]}>
+          {selectedArticle ? (
+            <>
+              <h2>{selectedArticle.title}</h2>
+              <p>{selectedArticle.description1}</p>
+              <p>{selectedArticle.description2}</p>
+              
+            </>
+          ) : (
+            <>
+             
+            </>
+          )}
+        </div>
       </div>
-    </section>
+    </div> */}
+
+

@@ -3,8 +3,9 @@ import styles from './knowledgeProcess.module.css';
 import images from '../../../assets/images';
 import { Link } from 'react-router';
 import {significantSteps} from './KnowledgeData';
-import { steps} from './KnowledgeData';
-import KnowledgeTestimonials from './KnowledgeTestimonials';
+import { processSteps} from './KnowledgeData';
+import CuriousSection from '../CuriousSection/CuriousSection'
+
 
 
 
@@ -21,7 +22,7 @@ const KnowledgeProcess = () => {
       </div>
 
       <div className={styles.stepsContainer}>
-        {steps.map((step, index) => (
+        {processSteps.map((step, index) => (
           <div className={styles.stepCard} key={index}>
             <div className={styles.iconWrapper}>
               <img src={step.img} alt={step.title} className={styles.iconImage} />
@@ -34,25 +35,9 @@ const KnowledgeProcess = () => {
       </div>
     </section>
 
-  <div className={styles.curiousSectionWrapper}>
-      <div className={styles.curiousSectionContainer}>
-        <div className={styles.curiousSectionImage}>
-          <img src={images.KnowledgeProcess} alt="Curious illustration" />
-        </div>
-        <div className={styles.curiousSectionContent}>
-          <h2 className={styles.curiousSectionTitle}>Curious about Mediator?</h2>
-          <p className={styles.curiousSectionText}>
-            Book a demo with our experts to learn more about Mediator and how it can help your business
-          </p>
-          <div className={styles.curiousSectionButtons}>
-            <button className={styles.curiousSectionDemoBtn}>Request a demo</button>
-            <Link to='/signup'><button className={styles.curiousSectionFreeBtn}>Get started for free</button></Link>
-          </div>
-        </div>
-      </div>
-    </div>
+ <CuriousSection/>
 
-    {/* significant section */}
+   {/* significant section */}
 
     <section className={styles.significantSection}>
           <h2 className={styles.significantTitle}>Significant things you wouldn't want to miss</h2>
@@ -69,7 +54,8 @@ const KnowledgeProcess = () => {
 
 
 
-       <KnowledgeTestimonials/>
+      
+
     </Fragment>
   );
 };
