@@ -76,21 +76,15 @@ const Pricing = () => {
     <section className={styles.pricingHeroSection}>
       <img src={images.pricingBack} alt="background" className={styles.pricingBack} />
         <div className={styles.pricingHeroContainer}>
-          <h1 className={styles.pricingHeroTitle}>Discover Our Pricing</h1>
+          <h1 className={styles.pricingHeroTitle}>Where Digital Dreams </h1>
           <p className={styles.pricingHeroSubtitle}>
-            Find the perfect package for your business needs.
+            Meat Real Result
           </p>
         </div>
       </section>
 
       <section className={styles.pricingSection}>
-        <div className={styles.pricingHeader}>
-          <h1>Pricing Plans</h1>
-          <p>
-            Each new account gets access to all Mediator features. Try it free for 14
-            days and see if it fits your needs!
-          </p>
-        </div>
+        
         <div className={styles.pricingContainer}>
           {plans.map((plan => (
             <div key={plan._id} className={styles.pricingCard}>
@@ -195,7 +189,37 @@ const Pricing = () => {
           <img src={images.pricingImg} alt="Business Analytics" />
         </div>
       </div>
+
+
+       <div className={styles.heroSection}>
+
+       <div className={styles.imageSection}>
+          <img src={images.pricingImg} alt="Business Analytics" />
+        </div>
+        <div className={styles.contentLeft}>
+          <button className={styles.ctaButton}>GET ROI FAST</button>
+          <h1 className={styles.heading}>
+            Automate Business, <span className={styles.highlight}>Stream</span> More Revenue
+          </h1>
+          <p className={styles.description}>
+            HAIchat is an innovative AI chatbot service designed to automate customer support,
+            improve lead generation, and boost engagement.
+          </p>
+          <div className={styles.pricingStats}>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingValue}>68%</div>
+              <div className={styles.pricingLabel}>Operating Cost Efficiency</div>
+            </div>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingValue}>201+</div>
+              <div className={styles.pricingLabel}>Business Trust Us</div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
     </section>
+   
         <Footer/>
 
    </>

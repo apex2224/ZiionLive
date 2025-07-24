@@ -59,7 +59,7 @@ const Navbar = () => {
                 onClick={() => setShowFurtherNav(true)}
                 onMouseEnter={() => window.innerWidth > 768 && setShowFurtherNav(true)}
               >
-                All Courses
+                 Courses
               </li>
               {showFurtherNav && <FurtherNav />}
             </div>

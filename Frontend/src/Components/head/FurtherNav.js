@@ -40,65 +40,23 @@ const FurtherNav = () => {
   }, []);
 
   return (
-    <div className={styles.carouselContainer}>
+  
       <div className={styles.middleMenu} ref={carouselRef}>
         <ul className={styles.middleMenuList}>
+         
           <li className={styles.menuItem}>
-            <Link to="/widget" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-video"></i> Widget
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="/aichatbot" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-robot"></i> AI Chatbot
+            <Link to="#" className={styles.furtherMenuLink}>
+              <i className="icon fas fa-sync"></i> All Courses
             </Link>
           </li>
           <li className={styles.menuItem}>
             <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-database"></i> CRM
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-envelope"></i> Shared Inbox
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-globe"></i> AI
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="/knowledge" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-th-large"></i> Knowledge
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-ticket-alt"></i> Ticketing System
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-sync"></i> Status Page
-            </Link>
-          </li>
-          <li className={styles.menuItem}>
-            <Link to="#" className={styles.furtherMenuLink}>
-              <i className="icon fas fa-code"></i> Chat SDK
+              <i className="icon fas fa-code"></i> Industrial Training
             </Link>
           </li>
         </ul>
       </div>
-
-     
-
-      {/* FontAwesome */}
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      />
-    </div>
+        
   );
 };
 

@@ -19,6 +19,8 @@ import ForgotPasswordForm from "../Components/signUp_Login/forgot/ForgotPassword
 import ResetPassword from "../Components/signUp_Login/forgot/ResetPassword";
 import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
+
+
  
 
 export const routes=[
@@ -43,4 +45,6 @@ export const routes=[
 
     // app integration
     { path : '/wordpress', element: <Wordpress/>}
+
+    
 ]
