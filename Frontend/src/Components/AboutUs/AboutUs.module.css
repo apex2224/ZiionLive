@@ -100,6 +100,26 @@
 
 
 /* pricing first section */
+
+
+
+/* founder msg section */
+
+/* .founder-main-container{
+
+} */
+
+.founder-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.highlight {
+  color: #2962ff;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -117,38 +137,45 @@
   width: 100%;
 }
 
-.ctaButton {
+.founders-name {
   padding: 0.6rem 1.2rem;
   border: 1px solid #ccc;
   background-color: white;
   border-radius: 999px;
   color: #1a1a1a;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  /* margin-bottom: 1rem; */
   cursor: pointer;
   transition: background-color 0.3s;
+ 
 }
 
-.ctaButton:hover {
+.founders-name:hover {
   background-color: #f0f0f0;
 }
 
-.heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
 
-.highlight {
-  color: #2962ff;
-}
 
-.description {
+
+.founder-message {
   font-size: 1.1rem;
   color: #555;
   max-width: 600px;
-  margin-bottom: 2rem;
+  /* margin-bottom: 1rem; */
+  margin-top: 2rem;
 }
+
+
+.founder-imageSection {
+  width: 100%;
+  max-width: 600px;
+}
+
+.founder-imageSection img {
+  width: 70%;
+  border-radius: 12px;
+}
+
 
 .pricingStats {
   display: flex;
@@ -178,15 +205,6 @@
   margin-top: 0.5rem;
 }
 
-.imageSection {
-  width: 100%;
-  max-width: 600px;
-}
-
-.imageSection img {
-  width: 100%;
-  border-radius: 12px;
-}
 
 /* Responsive Layout */
 @media screen and (min-width: 768px) {
@@ -264,6 +282,10 @@
   transform: translateY(-10px) scale3d(1.05, 1.05, 1.1);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
 
 
 
@@ -530,3 +552,4 @@
     width: 97%;
   }
 }
+

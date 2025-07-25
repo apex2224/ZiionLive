@@ -1,6 +1,6 @@
 
 import Main from "../Components/main-container/Main";
-import Pricing from "../Components/Pricing/Pricing";
+// import Pricing from "../Components/Pricing/Pricing";
 import Integrationnextsection from '../Components/integration/Integration'
 import Apphero from "../Components/apps/Apphero";
 import Help from '../Components/help/Help'
@@ -25,14 +25,20 @@ import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 import CoursesCard from "../Components/allCourses/CoursesCard";
 
 
+// new routing updated
+
+
+import AboutUs from "../Components/AboutUs/AboutUs";
+
+
 
  
 
 export const routes=[
     {path:'/',  element:<Main/> },
-    { path:'/aboutus',  element:<Pricing/> },
+    // { path:'/aboutus',  element:<Pricing/> },
     { path:'/placement',  element:<Integrationnextsection/> },
-    {path: '/', element: <Apphero/>},
+    {path: '/services', element: <Apphero/>},
      { path:'/contact-us',  element:<Help/> },
       { path: "/help/:topicName", element:<HelpTopicArticles/>},
 
@@ -44,7 +50,8 @@ export const routes=[
     { path: '/aichatbot', element:<AiChatbot/>},
 
     {path: '/ai', element:<AI/>},
-        {path:'/sharedInbox', element:<SharedInbox/>},
+
+    {path:'/sharedInbox', element:<SharedInbox/>},
 
 
 
@@ -55,7 +62,12 @@ export const routes=[
     { path:'/resetpassword',  element:<ResetPassword/> },
 
     // app integration
-    { path : '/wordpress', element: <Wordpress/>}
+    { path : '/wordpress', element: <Wordpress/>},
+
+
+    // new routing updated
+ { path:'/aboutus',  element:<AboutUs/> },
+    
 
     
 ]
