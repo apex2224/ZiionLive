@@ -307,97 +307,97 @@
 
 /* services section */
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 40px 20px;
-  background-color: #f5f6f5;
-}
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f5f6f5;
+  }
 
-.card {
-   position: relative;
-  width: 350px;
-  height: 390px;
-  background-color: #e8f0ff;
-  border-radius: 20px;
-  padding: 2rem 3rem 3rem 2rem;
-  color: #000;
-  overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-sizing: border-box;
+  .card {
+    position: relative;
+    width: 350px;
+    height: 390px;
+    background-color: #e8f0ff;
+    border-radius: 20px;
+    padding: 2rem 3rem 3rem 2rem;
+    color: #000;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
 
-}
+  }
 
-.card:hover {
-  background-color: #1a1a1a;
-  color: #fff;
-}
+  .card:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
 
-.curveTopRight::before {
-  content: "";
-  position: absolute;
-  top: 20%;
-  right: 0;
-  width: 40px;
-  height: 10rem;
-  background: #f5f6f5;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 10px;
-  z-index: 1;
-}
+  .curveTopRight::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 40px;
+    height: 10rem;
+    background: #f5f6f5;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+  }
 
-.curveBottomLeft::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  background: #f5f6f5;
-  border-top-right-radius: 20px;
-  z-index: 1;
-}
+  .curveBottomLeft::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: #f5f6f5;
+    border-top-right-radius: 20px;
+    z-index: 1;
+  }
 
-.servicesCardContent {
-  position: relative;
-  z-index: 2;
-}
+  .servicesCardContent {
+    position: relative;
+    z-index: 2;
+  }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #ff6f61, #d43f8d);
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
+  .icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6f61, #d43f8d);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
 
-.servicesCardContent h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-}
+  .servicesCardContent h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
 
-.servicesCardContent p {
-  font-size: 0.85rem;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
+  .servicesCardContent p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
 
-button {
-  padding: 0.6rem 1.3rem;
-  border: none;
-  border-radius: 50px;
-  background: #fff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+  button {
+    padding: 0.6rem 1.3rem;
+    border: none;
+    border-radius: 50px;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
 
-.card:hover button {
-  background: #eee;
-  color: #000;
-}
+  .card:hover button {
+    background: #eee;
+    color: #000;
+  }
