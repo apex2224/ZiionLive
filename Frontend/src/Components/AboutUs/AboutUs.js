@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import styles from "./Pricing.module.css";
+import styles from "./AboutUs.module.css";
 import NavBar from "../head/Navbar";
 import images from "../../assets/images";
 import Footer from "../footer/Footer";
@@ -57,7 +57,7 @@ import axios from "axios";
 // /upgrade  to updgrade
 
 
-const Pricing = () => {
+const AboutUs = () => {
 
    const [plans, setPlans] = useState([]);
 
@@ -77,9 +77,9 @@ const Pricing = () => {
       <img src={images.pricingBack} alt="background" className={styles.pricingBack} />
         <div className={styles.pricingHeroContainer}>
           <h1 className={styles.pricingHeroTitle}>Where Digital Dreams </h1>
-          <p className={styles.pricingHeroSubtitle}>
-            Meat Real Result
-          </p>
+          <h2 className={styles.pricingHeroSubtitle}>
+            Meet Real Result
+          </h2>
         </div>
       </section>
 
@@ -110,7 +110,7 @@ const Pricing = () => {
         </div>
       </section>
 
-    <section className={styles.excellentSection}>
+    {/* <section className={styles.excellentSection}>
       <div className={styles.excellentHeader}>
         <button className={styles.featureTag}>FEATURES</button>
         <h2 className={styles.excellentTitle}>
@@ -146,7 +146,7 @@ const Pricing = () => {
             Continuously improve your chatbot’s intelligence, dedicated space to train responses
             for better interactions.
           </p>
-        </div>
+        </div> 
 
         <div className={styles.featureCard}>
           <img
@@ -161,20 +161,27 @@ const Pricing = () => {
           </p>
         </div>
       </div>
-    </section>
+    </section> */}
+
+{/* founder message section */}
+
+<section className={styles['founder-main-container']}>
+     <h1 className={styles['founder-title']}>
+           A note from <span className={styles.highlight}> Our Visionary</span> 
+          </h1> 
 
     <section className={styles.container}>
       <div className={styles.heroSection}>
         <div className={styles.contentLeft}>
-          <button className={styles.ctaButton}>GET ROI FAST</button>
-          <h1 className={styles.heading}>
+          <span className={styles['founders-name']}>Mr. Phillip Verma</span><br></br>
+          {/* <h1 className={styles.heading}>
             Automate Business, <span className={styles.highlight}>Stream</span> More Revenue
-          </h1>
-          <p className={styles.description}>
-            HAIchat is an innovative AI chatbot service designed to automate customer support,
-            improve lead generation, and boost engagement.
+          </h1> */}
+          <p className={styles['founder-message']}>
+          This journey began with a dream to make digital skills simple, useful, and life-changing for anyone willing to learn. Today, that dream lives on in every course we create and every service we deliver. We’re here to grow together with honesty, care, and a whole lot of heart.
+
           </p>
-          <div className={styles.pricingStats}>
+          {/* <div className={styles.pricingStats}>
             <div className={styles.pricingCard}>
               <div className={styles.pricingValue}>68%</div>
               <div className={styles.pricingLabel}>Operating Cost Efficiency</div>
@@ -183,29 +190,30 @@ const Pricing = () => {
               <div className={styles.pricingValue}>201+</div>
               <div className={styles.pricingLabel}>Business Trust Us</div>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className={styles.imageSection}>
-          <img src={images.pricingImg} alt="Business Analytics" />
+        <div className={styles['founder-imageSection']}>
+          <img src={images.FounderImg1} alt="Business Analytics" className={styles['founder-image']} />
         </div>
       </div>
 
 
        <div className={styles.heroSection}>
 
-       <div className={styles.imageSection}>
-          <img src={images.pricingImg} alt="Business Analytics" />
+       <div className={styles['founder-imageSection']}>
+          <img src={images.FounderImg1} alt="Business Analytics"  className={styles['founder-image']}/>
         </div>
         <div className={styles.contentLeft}>
-          <button className={styles.ctaButton}>GET ROI FAST</button>
-          <h1 className={styles.heading}>
+          <span className={styles['founders-name']}>Mrs. Rashmi Bansal</span><br></br>
+          {/* <h1 className={styles.heading}>
             Automate Business, <span className={styles.highlight}>Stream</span> More Revenue
-          </h1>
-          <p className={styles.description}>
-            HAIchat is an innovative AI chatbot service designed to automate customer support,
-            improve lead generation, and boost engagement.
+          </h1> */}
+          <p className={styles['founder-message']}>
+          What we had was little: passion, sense and a firm conviction that digital skills can lead to opening doors. Since that time, the thing that we have created is not only a company; it is a place where people can learn, develop and go somewhere, bearing in mind that they do this together.
+Thank you for choosing us to go with you.
+
           </p>
-          <div className={styles.pricingStats}>
+          {/* <div className={styles.pricingStats}>
             <div className={styles.pricingCard}>
               <div className={styles.pricingValue}>68%</div>
               <div className={styles.pricingLabel}>Operating Cost Efficiency</div>
@@ -214,11 +222,16 @@ const Pricing = () => {
               <div className={styles.pricingValue}>201+</div>
               <div className={styles.pricingLabel}>Business Trust Us</div>
             </div>
-          </div>
+          </div> */}
         </div>
        
       </div>
     </section>
+
+    </section>
+
+
+  
    
         <Footer/>
 
@@ -226,4 +239,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default AboutUs;
