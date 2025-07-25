@@ -26,6 +26,12 @@ import CoursesCard from "../Components/allCourses/CoursesCard";
 
 
 
+//ziion routineg web dev //
+
+import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
+
+
+
  
 
 export const routes=[
@@ -55,7 +61,15 @@ export const routes=[
     { path:'/resetpassword',  element:<ResetPassword/> },
 
     // app integration
-    { path : '/wordpress', element: <Wordpress/>}
+    { path : '/wordpress', element: <Wordpress/>},
+
+
+
+
+
+    // ziion routing web dev //
+
+    {path : '/webdesigning', element : <Webdesigning/>}
 
     
 ]
