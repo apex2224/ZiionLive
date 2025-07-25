@@ -14,10 +14,17 @@ import AiChatbot from '../Components/furtherMenu/aichatbot/AiChatbot'
 import SignUpForm from "../Components/signUp_Login/signUpForm";
 import LoginForm from "../Components/signUp_Login/LoginForm";
 import MainDashboard from "../Components/Dashboard/MainDashboard";
+import AI from '../Components/furtherMenu/AI/AI'
+import SharedInbox from "../Components/furtherMenu/SharedInbox/SharedInbox";
+
 
 import ForgotPasswordForm from "../Components/signUp_Login/forgot/ForgotPasswordForm";
 import ResetPassword from "../Components/signUp_Login/forgot/ResetPassword";
 import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
+
+import CoursesCard from "../Components/allCourses/CoursesCard";
+
+
 
  
 
@@ -29,10 +36,16 @@ export const routes=[
      { path:'/contact-us',  element:<Help/> },
       { path: "/help/:topicName", element:<HelpTopicArticles/>},
 
+      {path: '/allcourses', element:<CoursesCard/>},
+
   // further menu
     { path : '/widget', element : <Widgets/>},
     {path:'/knowledge', element:<KnowledgeBase/>},
     { path: '/aichatbot', element:<AiChatbot/>},
+
+    {path: '/ai', element:<AI/>},
+        {path:'/sharedInbox', element:<SharedInbox/>},
+
 
 
     { path:'/signup',  element:<SignUpForm/> },
@@ -43,4 +56,6 @@ export const routes=[
 
     // app integration
     { path : '/wordpress', element: <Wordpress/>}
+
+    
 ]

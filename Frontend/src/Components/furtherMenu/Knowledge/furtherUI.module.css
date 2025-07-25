@@ -1,84 +1,203 @@
-
-/* significant step */
-
-.significantTitle {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1b1b1b;
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-inline: auto;
-}
-
-.significantItemsWrapper {
+/* .grid {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f5f6f5;
 }
 
-.significantItemCard {
-  flex: 1 1 280px;
-  max-width: 300px;
-  background: #fff;
-  text-align: center;
-  padding: 1.5rem 1rem;
+.card {
+   position: relative;
+  width: 350px;
+  height: 390px;
+  background-color: #e8f0ff;
+  border-radius: 20px;
+  padding: 2rem 3rem 3rem 2rem;
+  color: #000;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
 
+}
+
+.card:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.curveTopRight::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 40px;
+  height: 10rem;
+  background: #f5f6f5;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 10px;
+  z-index: 1;
+}
+
+.curveBottomLeft::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: #f5f6f5;
+  border-top-right-radius: 20px;
+  z-index: 1;
+}
+
+.servicesCardContent {
+  position: relative;
+  z-index: 2;
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff6f61, #d43f8d);
+  border-radius: 50%;
   margin-bottom: 1rem;
 }
 
-.significantItemCard h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #1b0036;
+.servicesCardContent h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
 }
 
-.significantItemCard p {
-  color: #555;
-  font-size: 0.95rem;
+.servicesCardContent p {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  
-  .significantTitle {
-    font-size: 1.6rem;
-  }
+button {
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card:hover button {
+  background: #eee;
+  color: #000;
+} */
+
+
+
+/* previous articles styling */
+/* 
+
+.knowledgebrief-mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  height: auto;
+
+
+  margin:0 5rem;
+  background: #f5f9ff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.knowledgebrief-leftSection {
+  flex: 1;
+  min-width: 30%;
+  max-width: 50%;
+}
+
+.knowledgebrief-rightSection {
+  flex: 1;
+  min-width: 60%;
+  padding-right:2rem;
+}
+
+.knowledgebrief-rightContent {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.knowledgebrief-cardWrapper {
+  margin-bottom: 2rem;
+}
+
+.knowledgebrief-sectionTitle {
+  color: #002b64;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.knowledgebrief-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.knowledgebrief-card:hover {
+  transform: translateY(-3px);
+}
+
+.knowledgebrief-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #0066ff;
+}
+
+.knowledgebrief-cardContent h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #003366;
+}
+
+.knowledgebrief-cardContent p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.knowledgebrief-badge {
+  display: inline-block;
+  background-color: #e6f0ff;
+  color: #0066cc;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+.knowledgebrief-right h2 {
+  font-size: 1.8rem;
+  color: #002b64;
+  margin-bottom: 1rem;
+}
+
+.knowledgebrief-right p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
-  
-   .significantItemsWrapper {
-    gap: 1.5rem;
-  }
-
-  .significantTitle {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .significantItemsWrapper {
+  .knowledgebrief-mainContainer {
     flex-direction: column;
-    align-items: center;
   }
-
-  .significantTitle {
-    font-size: 1.2rem;
-  }
-
-  .icon {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-
+} */

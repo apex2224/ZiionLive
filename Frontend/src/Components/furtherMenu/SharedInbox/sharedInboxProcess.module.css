@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
+
+/* widget section */
+
+
+.widgetsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+   background-color: #f5f7fa;
+   border-radius: 20px;
+   margin-top: 4rem;
+
+}
+
+.widgetsLeftPanel {
+  flex: 1;
+  width: 400px;
+}
+
+.heading {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.widgetsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.widgetItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.widgetItem:hover {
+  background-color: #f0f4f8;
+}
+
+.active {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.expanded {
+  background-color: #e6f0ff;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.widgetIcon {
+  font-size: 1.8rem;
+}
+
+.widgetTitle {
+  font-weight: 500;
+  color: #333;
+}
+
+.widgetContent {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #555;
+  transition: max-height 0.3s ease;
+}
+
+.widgetsRightPanel {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widgetImage {
+  width: auto;
+  height: 35rem;
+  margin-top: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+@media(max-width: 992px){
+    .widgetsContainer{
+        display: block;
+        gap: 1rem;
+    }
+    .widgetsLeftPanel{
+        width: 100%;
+    }
+    .widgetsRightPanel{
+        margin-top: 2rem;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .widgetsContainer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .widgetsLeftPanel {
+    max-width: 100%;
+  }
+
+  .widgetsRightPanel {
+    margin-top: 1.5rem;
+  }
+  
+}
+@media(max-width: 600px){
+    .widgetImage{
+    width: auto;
+    height: 20rem;
+  }
+}
+
+
+/* process section */
+
+
+.processSection {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.label {
+  color: purple;
+  /* font-weight: ; */
+  font-size: 2rem;
+  font-family: 'Monoton', cursive;
+}
+
+.header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  color: #1b0036;
+}
+
+.header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1rem;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stepCard {
+  flex: 1 1 250px;
+  max-width: 270px;
+  background: #fff;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconImage {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.stepNumber {
+  position: absolute;
+  left: -2.4rem; 
+  top: 10px;   
+  font-size: 6rem;
+  color: #530c0c;
+  opacity: 0.1;
+  font-family: 'Monoton', cursive;
+  z-index: 1;
+  pointer-events: none;
+}
+.stepCard h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b0036;
+  margin: 0.5rem 0;
+}
+
+.stepCard p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+
+@media (max-width: 1200px) {
+  .stepsContainer {
+    gap: 5rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+ }
+
+
+@media (max-width: 1080px) {
+ 
+  .stepCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+ .header h2 {
+    font-size: 1.6rem;
+  }
+  
+}
+
+@media (max-width: 800px) {
+ .stepCard {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .stepsContainer {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1.75rem;
+  }
+
+  .stepNumber {
+    font-size: 3rem;
+  }
+
+  .itemsWrapper {
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  
+  .curiousSectionContent {
+    order: 1;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .stepsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stepCard {
+    max-width: 90%;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .label {
+    font-size: 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .stepCard h3 {
+    font-size: 1rem;
+  }
+
+  .stepCard p {
+    font-size: 0.85rem;
+  }
+
+  
+}
+
+
+
+
+/* workflow section */
+
+
+.workflowSection {
+  background-color: #f5f7fa;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.workflowBox {
+  background-color: #1b2330;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.workflowStep {
+  margin-bottom: 1.5rem;
+}
+
+.workflowLabel {
+  background-color: #2c3a54;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.workflowIcon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.workflowArrow {
+  width: 2px;
+  height: 30px;
+  background-color: white;
+  margin: 0.5rem 0;
+}
+
+.workflowCard {
+  background: linear-gradient(135deg, #187dfc, #2786f8);
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: rotate(-6deg);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.workflowBotIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.workflowText {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.workflowCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2c3a54;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.workflowTitle {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  font-weight: 600;
+  color: #1b1e29;
+}
+
+.workflowTitle span {
+  color: #187dfc;
+}

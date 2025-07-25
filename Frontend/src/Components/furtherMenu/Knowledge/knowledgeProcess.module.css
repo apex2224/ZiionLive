@@ -66,8 +66,8 @@
 
 .stepNumber {
   position: absolute;
-  left: -2.4rem; /* move to right of image */
-  top: 10px;    /* vertical position (adjust as needed) */
+  left: -2.4rem; 
+  top: 10px;   
   font-size: 6rem;
   color: #530c0c;
   opacity: 0.1;
@@ -88,90 +88,6 @@
   line-height: 1.6;
 }
 
-
-/* curious section */
-
-.curiousSectionWrapper {
-  background: rgb(60, 2, 60);
-  border-radius: 2rem;
-  padding: 3rem 2rem;
-  margin: 2rem auto;
-  max-width: 90%;
-}
-
-.curiousSectionContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.curiousSectionImage img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1rem;
-}
-
-.curiousSectionContent {
-  flex: 1;
-  min-width: 300px;
-}
-
-.curiousSectionTitle {
-  font-size: 2rem;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  
-}
-
-.curiousSectionText {
-  color: white;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  max-width: 500px;
-}
-
-.curiousSectionButtons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.curiousSectionDemoBtn {
-  background-color: rgb(228, 49, 151);
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 999px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.curiousSectionDemoBtn:hover {
-  /* background-color: #ff4d2f; */
-}
-
-.curiousSectionFreeBtn {
-  background-color: rgb(228, 49, 151);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 999px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.curiousSectionFreeBtn:hover {
-  /* background-color: #f0f0f0; */
-}
-
-
-/* Responsive */
 @media (max-width: 1200px) {
   .stepsContainer {
     gap: 5rem;
@@ -179,35 +95,23 @@
   .title {
     font-size: 1.6rem;
   }
-  
-  .curiousSectionTitle {
-    font-size: 1.8rem;
-  }
- 
-}
+ }
 
-/* 1080px */
+
 @media (max-width: 1080px) {
- .curiousSectionText {
-    font-size: 1rem;
-  }
+ 
   .stepCard h3 {
     font-size: 1.1rem;
   }
 }
 
-/* 992px */
 @media (max-width: 992px) {
  .header h2 {
     font-size: 1.6rem;
   }
-  .curiousSectionDemoBtn,
-  .curiousSectionFreeBtn {
-    padding: 0.7rem 1.3rem;
-  }
+  
 }
 
-/* 800px */
 @media (max-width: 800px) {
  .stepCard {
     max-width: 90%;
@@ -218,7 +122,6 @@
   }
 }
 
-/* 768px */
 @media (max-width: 768px) {
   .header h2 {
     font-size: 1.75rem;
@@ -236,31 +139,15 @@
     font-size: 1.4rem;
   }
 
-  .curiousSectionContainer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .curiousSectionImage {
-    order: 2;
-  }
-
+  
   .curiousSectionContent {
     order: 1;
   }
 }
 
-/* 600px */
-@media (max-width: 600px) {
-  /* Add your styles for 600px here */
-}
 
-/* 562px */
-@media (max-width: 562px) {
-  /* Add your styles for 562px here */
-}
 
-/* 480px */
+
 @media (max-width: 480px) {
   .stepsContainer {
     flex-direction: column;
@@ -276,7 +163,7 @@
   }
 }
 
-/* 320px */
+
 @media (max-width: 320px) {
   .label {
     font-size: 1.5rem;
@@ -294,13 +181,7 @@
     font-size: 0.85rem;
   }
 
-  .curiousSectionTitle {
-    font-size: 1.4rem;
-  }
-
-  .curiousSectionText {
-    font-size: 1rem;
-  }
+  
 }
 
 /* significant step */
@@ -340,10 +221,7 @@
   border-radius: 1rem;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, purple,rgb(117, 2, 117)) top left,              
-  linear-gradient(90deg,purple,rgb(117, 2, 117)) top right,              
-  linear-gradient(90deg,purple,rgb(117, 2, 117)) bottom right,              
-  linear-gradient(90deg,purple,rgb(117, 2, 117)) bottom left;
+  background: linear-gradient(90deg, purple,rgb(117, 2, 117)) top left,              linear-gradient(90deg,purple,rgb(117, 2, 117)) top right,              linear-gradient(90deg,purple,rgb(117, 2, 117)) bottom right,              linear-gradient(90deg,purple,rgb(117, 2, 117)) bottom left;
   background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
   background-repeat: no-repeat;
   background-position: top left, top right, bottom right, bottom left;
