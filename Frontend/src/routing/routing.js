@@ -24,6 +24,8 @@ import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
 import CoursesCard from "../Components/allCourses/CoursesCard";
 
+
+
  
 
 export const routes=[
@@ -54,4 +56,6 @@ export const routes=[
 
     // app integration
     { path : '/wordpress', element: <Wordpress/>}
+
+    
 ]
