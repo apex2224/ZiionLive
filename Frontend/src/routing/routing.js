@@ -25,12 +25,6 @@ import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 import CoursesCard from "../Components/allCourses/CoursesCard";
 
 
-// new routing updated
-
-
-import AboutUs from "../Components/AboutUs/AboutUs";
-
-
 
  
 
@@ -62,12 +56,7 @@ export const routes=[
     { path:'/resetpassword',  element:<ResetPassword/> },
 
     // app integration
-    { path : '/wordpress', element: <Wordpress/>},
-
-
-    // new routing updated
- { path:'/aboutus',  element:<AboutUs/> },
-    
+    { path : '/wordpress', element: <Wordpress/>}
 
     
 ]
