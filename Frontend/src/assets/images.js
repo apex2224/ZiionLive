@@ -53,11 +53,12 @@ import integrationHero from './integration/color-bg.png'
 import integrationThirdImg from './integration/integrationThirdImg.jpg'
 
 // pricing 
-import pricingImg from './pricing/pricing-img.jpg'
-import pricingFourthSection1 from './pricing/excellent1.png'
-import pricingFourthSection2 from './pricing/excellent2.png'
-import pricingFourthSection3 from './pricing/excellent3.png'
-import pricingBack from './pricing/pricingBack.jpg'
+// import pricingImg from './aboutus/pricing-img.jpg'
+
+import pricingFourthSection1 from './aboutus/excellent1.png'
+import pricingFourthSection2 from './aboutus/excellent2.png'
+import pricingFourthSection3 from './aboutus/excellent3.png'
+import pricingBack from './aboutus/pricingBack.jpg'
 
 // forms
 import signupimg from './form/signupform.jpg'
@@ -104,6 +105,18 @@ import homeFixedImage from './home/homefixedimage.jpg'
 
 // integrate app 
 import wordpressApp from './furtherMenu/integrateapp/hero-bg.jpg'
+
+
+// updated images
+
+//web designing // 
+import willGet from './allcourses/webdesigning/willget.webp'
+import opportunityImg from './allcourses/webdesigning/opportunityImg.png'
+
+// About us 
+
+import FounderImg1 from './aboutus/founder-img1.jpeg'
+
 
 
 
@@ -164,7 +177,7 @@ const images={
     heroRobot3,
 
     // pricing
-    pricingImg,
+    // pricingImg,
     pricingFourthSection1,
     pricingFourthSection2,
     pricingFourthSection3,
@@ -213,6 +226,17 @@ const images={
     faceBook,
     instaGram,
     twiTter,
+
+
+    // updated images
+
+    // web designing //
+    willGet,
+    opportunityImg,
+
+    // about us 
+
+    FounderImg1,
 
 
 }

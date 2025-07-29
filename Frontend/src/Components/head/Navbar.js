@@ -40,7 +40,7 @@ const Navbar = () => {
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-         <img src={images.hamburger} alt='hamburger' />
+          <img src={images.hamburger} alt='hamburger' />
         </div>
 
         {/* Center */}
@@ -56,10 +56,11 @@ const Navbar = () => {
             <div ref={allCoursesRef}>
               <li
                 className={styles.menu}
-                onClick={() => setShowFurtherNav(true)}
+                onClick={() => setShowFurtherNav((prev) => !prev)}
                 onMouseEnter={() => window.innerWidth > 768 && setShowFurtherNav(true)}
+                onMouseLeave={() => window.innerWidth > 768 && setShowFurtherNav(false)}
               >
-                 Courses
+                Courses
               </li>
               {showFurtherNav && <FurtherNav />}
             </div>
