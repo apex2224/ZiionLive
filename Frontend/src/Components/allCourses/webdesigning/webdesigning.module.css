@@ -11,13 +11,17 @@
   color: white;
 }
 
+.webDesigningSubtitle{
+  font-size: 1rem;
+  color: white;
+  line-height: 1rem;
+}
 .webDesigningBgImage {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  /* object-fit: contain; */
   z-index: 0;
 }
 
@@ -35,113 +39,43 @@
   width: 80%;
   margin: auto;
 }
-
 .webDesigningTitle {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-top: 20px;
-  color: white;
-}
-
-@keyframes webDesigningFall {
-  0% {
-    transform: translateY(-1000%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-.webDesigningTitle span {
-  font-weight: 500;
-  animation: webDesigningFalldown 0.7s ease-in-out;
-}
-
-@keyframes webDesigningFalldown {
-  0% {
-    transform: translateY(-1000%);
-  }
-  50% {
-    transform: translateY(0%);
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
-  }
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
 }
 
 .gradientText {
-  background: linear-gradient(to right, #3b82f6, #22c55e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ 
   display: inline-block;
+  position: relative;
+  font-size: 4rem;
 }
 
-.webDesigningSubtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: white;
+.typedText {
+  font-weight: bold;
+  font-size: 4rem;
+  color: white
 }
 
-.webDesigningHerobutton {
-  background: #8b5cf6;
-  color: white;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+.cursor {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 4rem;
+  color:white;
+  margin-left: 2px;
+  animation: blink 1s infinite;
 }
 
-.webDesigningHerobutton:hover,
-.webDesigningHerobutton:active {
-  cursor: pointer;
-  background: #7c3aed;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@media (max-width: 1200px) {
-  .webDesigningContent {
-    margin-top: 13rem;
-  }
-}
 
-@media (max-width: 1024px) {
-  .webDesigningContent {
-    margin-top: 12rem;
-  }
-}
 
-@media (max-width: 843px) {
-  .webDesigningContent {
-    margin-top: 12rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .webDesigningSubtitle {
-    font-size: 1rem;
-  }
-  .webDesigningContent {
-    margin-top: 14rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .webDesigningContent {
-    margin-top: 11rem;
-  }
-}
-
-@media (max-width: 470px) {
-  .webDesigningContent {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .webDesigningContent {
-    margin-top: 10rem;
-  }
-}
 
 
 
@@ -160,11 +94,38 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .statBox {
   text-align: center;
   flex: 1 1 150px;
   min-width: 150px;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+
+}
+
+/* Optional: Delay each box slightly using nth-child */
+.statBox:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.statBox:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.statBox:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.statBox:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 .heading {
@@ -185,9 +146,205 @@
   color: #444;
   font-size: 14px;
 }
+.roadmapBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+/* what will you learn */
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 8rem 1rem;
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subheading {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.roadmapBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 10px;
+}
+
+.leftSection {
+  flex: 1 1 48%;
+  max-width: 48%;
+  animation: slideInFromLeft 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.rightSection {
+  flex: 1 1 48%;
+  max-width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.whatlearnimg {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: left;
+  color: #333;
+  border-left: 4px solid #0b74de;
+  padding-left: 12px;
+}
+
+.pointsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 25px;
+}
+
+.pointItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #0b74de;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+  .roadmapBox {
+    display: block;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .leftSection,
+  .rightSection {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .whatlearnimg {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .sectionTitle {
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+  }
+
+  .subheading {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
 
 
 /* career oportunities */
+.opportunitiesHeading {
+ font-size: 28px;
+  font-weight: 700;
+  color: #003e61;
+  margin-bottom: 10px;
+  display: flex;
+}
+
 .careerOpportunitiesGrid {
   display: flex;
   flex-wrap: wrap;
@@ -195,6 +352,16 @@
   justify-content: center;
   padding: 40px 20px;
   background-color: #f5f6f5;
+}
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .careerCard {
@@ -208,6 +375,21 @@
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
+    animation: fadeInSlideUp 1s ease-out forwards;
+
+}
+ 
+.careerCard:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.careerCard:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.careerCard:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.careerCard:nth-child(4) {
+  animation-delay: 0.8s;
 }
 
 .careerCard:hover {

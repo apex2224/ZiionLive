@@ -24,6 +24,8 @@ import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
 import AboutUs from "../Components/AboutUs/AboutUs";
 import CoursesCard from "../Components/allCourses/CoursesCard";
+import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
+import AboutUs from "../Components/AboutUs/AboutUs";
 
 
 
@@ -58,9 +60,14 @@ export const routes=[
 
     // app integration
     { path : '/wordpress', element: <Wordpress/>},
-    {path: '/aboutus', element: <AboutUs/>}
+
+    // ziion routing //
+    {path : '/webdesigning', element : <Webdesigning/>},
+    {path : '/aboutus', element : <AboutUs/>},
 
 
+    // all cousres routing //
+    {path:'/allcourses', element : <CoursesCard/>}
 
     
 ]

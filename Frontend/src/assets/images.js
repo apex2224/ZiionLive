@@ -109,6 +109,10 @@ import wordpressApp from './furtherMenu/integrateapp/hero-bg.jpg'
 
 // updated images
 
+//web designing // 
+import willGet from './allcourses/webdesigning/willget.webp'
+import opportunityImg from './allcourses/webdesigning/opportunityImg.png'
+
 // About us 
 
 import FounderImg1 from './aboutus/founder-img1.jpeg'
@@ -226,6 +230,10 @@ const images={
 
 
     // updated images
+
+    // web designing //
+    willGet,
+    opportunityImg,
 
     // about us 
 
