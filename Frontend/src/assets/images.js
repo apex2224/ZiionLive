@@ -112,6 +112,7 @@ import wordpressApp from './furtherMenu/integrateapp/hero-bg.jpg'
 // About us 
 
 import FounderImg1 from './aboutus/founder-img1.jpeg'
+import FounderImg2 from './aboutus/founder-img2.jpeg'
 
 
 
@@ -229,6 +230,8 @@ const images={
     // about us 
 
     FounderImg1,
+    FounderImg2
+
 
 
 }

@@ -22,6 +22,7 @@ import ForgotPasswordForm from "../Components/signUp_Login/forgot/ForgotPassword
 import ResetPassword from "../Components/signUp_Login/forgot/ResetPassword";
 import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
+import AboutUs from "../Components/AboutUs/AboutUs";
 import CoursesCard from "../Components/allCourses/CoursesCard";
 
 
@@ -56,7 +57,10 @@ export const routes=[
     { path:'/resetpassword',  element:<ResetPassword/> },
 
     // app integration
-    { path : '/wordpress', element: <Wordpress/>}
+    { path : '/wordpress', element: <Wordpress/>},
+    {path: '/aboutus', element: <AboutUs/>}
+
+
 
     
 ]
