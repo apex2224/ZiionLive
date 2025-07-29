@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./Main.module.css"
 import NavBar from "../head/Navbar"
 import Conversationchatbot from "./Conversationchatbot";
@@ -7,11 +7,6 @@ import images from "../../assets/images";
 
 
 const Main = () => {
-  const [theme, setTheme] = useState('dark');
-
-  const handleToggle = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   return (
     <>
@@ -25,9 +20,7 @@ const Main = () => {
           <img src={images.robot} alt="robot icon" className={styles.robot} title="Hii👋" />
           <img src={images.circle2} alt="robot icon" className={styles.circle2} />
           <img src={images.comment} alt="robot icon" className={styles.comment} />
-            <button className={styles.toggleBtn} onClick={handleToggle} title="Toggle Theme">
-            {/* {theme === 'dark' ? 'light_theme' : 'dark_theme'} */}
-            </button>
+            
         </div>
 
         <div className={styles.content}>

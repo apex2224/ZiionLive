@@ -23,6 +23,8 @@ import ResetPassword from "../Components/signUp_Login/forgot/ResetPassword";
 import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
 import CoursesCard from "../Components/allCourses/CoursesCard";
+import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
+import AboutUs from "../Components/AboutUs/AboutUs";
 
 
 
@@ -56,7 +58,15 @@ export const routes=[
     { path:'/resetpassword',  element:<ResetPassword/> },
 
     // app integration
-    { path : '/wordpress', element: <Wordpress/>}
+    { path : '/wordpress', element: <Wordpress/>},
+
+    // ziion routing //
+    {path : '/webdesigning', element : <Webdesigning/>},
+    {path : '/aboutus', element : <AboutUs/>},
+
+
+    // all cousres routing //
+    {path:'/allcourses', element : <CoursesCard/>}
 
     
 ]
