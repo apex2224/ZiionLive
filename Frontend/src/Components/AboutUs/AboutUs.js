@@ -201,7 +201,7 @@ const AboutUs = () => {
        <div className={styles.heroSection}>
 
        <div className={styles['founder-imageSection']}>
-          <img src={images.FounderImg1} alt="Business Analytics"  className={styles['founder-image']}/>
+          <img src={images.FounderImg2} alt="Business Analytics"  className={styles['founder-image']}/>
         </div>
         <div className={styles.contentLeft}>
           <span className={styles['founders-name']}>Mrs. Rashmi Bansal</span><br></br>
