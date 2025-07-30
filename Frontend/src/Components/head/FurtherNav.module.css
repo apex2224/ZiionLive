@@ -3,9 +3,8 @@
   top: 100%;
   left: 0;         /* align with the parent menu item */
   min-width: 200px;
-  background-color: #fff;
+ background-color: rgba(0, 0, 0, 0.5); 
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   animation: slideDown 0.4s ease-in-out;
   border: 1px solid #e0e0e0;

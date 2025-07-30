@@ -6,13 +6,12 @@ import Footer from '../../footer/Footer';
 
 // stats //
 const statsData = [
-  { heading: 'UPTO', value: '18 LPA', label: 'SALARY PACKAGE' },
-  { heading: 'APPROX.', value: '9 Lakh +', label: 'AVERAGE JOBS IN INDIA' },
-  { heading: 'OVER', value: '30 Lakh +', label: 'AVERAGE REMOTE JOBS' },
-  { heading: 'RANKED', value: '3rd', label: 'IN-DEMAND JOB' },
-  { heading: 'SIZE', value: '465 +', label: 'BILLIONS ($) INDUSTRY' },
-  { heading: 'OVER', value: '9 Billion', label: 'DAILY USERS' },
+  { value: '135K', label: 'Students Enrolled' },
+  { value: '20+', label: 'Overall Branches' },
+  { value: '3000+', label: 'Placed Students' },
+  { value: '13+', label: 'Years Of Experience' }
 ];
+
 
 // career oportunities //
 const servicesGrid = [
@@ -104,6 +103,29 @@ const useCustomTypewriter = (phrasesArray) => {
 const Webdesigning = () => {
   const typedOutput = useCustomTypewriter(phrases);
 
+
+// sylabus //
+
+const [selectedTopic, setSelectedTopic] = useState(null);
+
+  const topics = [
+    "Introduction to Data Science",
+    "Introduction to Python",
+    "Python Basics",
+    "Python Packages",
+    "Importing Data",
+    "Manipulating Data"
+  ];
+
+  const topicDetails = {
+    "Introduction to Data Science": "What is Data Science?",
+    "Introduction to Python": "What is Python Programming?",
+    "Python Basics": "Basics of Python Syntax",
+    "Python Packages": "Common Python Libraries",
+    "Importing Data": "Data Import Techniques",
+    "Manipulating Data": "Data Manipulation Methods"
+  };
+
   return (
     <div>
       <Navbar />
@@ -128,27 +150,26 @@ const Webdesigning = () => {
       </section>
 
       {/* stat section */}
-      <div className={styles.statsSection}>
-        <div className={styles.statsContainer}>
-          {statsData.map((stat, index) => (
-            <div className={styles.statBox} key={index}>
-              <div className={styles.heading}>{stat.heading}</div>
-              <div className={styles.value}>{stat.value}</div>
-              <div className={styles.label}>{stat.label}</div>
-            </div>
-          ))}
+       <div className={styles.statsWrapper}>
+      {statsData.map((stat, index) => (
+        <div className={styles.statCircle} key={index}>
+          <div className={styles.rotatingRing}></div>
+          <div className={styles.statContent}>
+            <h2 className={styles.statValue}>{stat.value}</h2>
+            <p className={styles.statLabel}>{stat.label}</p>
+          </div>
         </div>
-      </div>
-
+      ))}
+    </div>
 
 
       {/* what will you learn */}
       <div className={styles.container}>
-        <h1 className={styles.heading}>What Will Our Trainees Learn In Web Designing Training?</h1>
-        <p className={styles.subheading}>
-          Explore our <strong>Web Designing training course</strong> curriculum to know what you are going to learn exactly.
-          Certiwise is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
-        </p>
+        <h1 className={styles.heading}>Who Can Join Our Web Designing Course?</h1>
+<p className={styles.subheading}>
+  Our <strong>Web Designing course</strong>  Whether you're a 10th or 12th pass student exploring career options, a graduate seeking in-demand skills, a job seeker aiming to stand out, a freelancer ready to expand your portfolio, or an entrepreneur building a digital brand — this course is made for you. No prior experience needed, just your willingness to learn and grow.
+
+</p>
 
         <div className={styles.roadmapBox}>
           <div className={styles.leftSection}>
@@ -200,10 +221,38 @@ const Webdesigning = () => {
         </div>
       </div>
 
-
-      <div>
-        {/* syllabus */}
+        {/* sylabus */}
+     <div className={styles.container}>
+      <div className={styles.leftPanel}>
+        <div className={styles.header}>Data Science with Python</div>
+        {topics.map((topic, index) => (
+          <div
+            key={index}
+            className={styles.topic}
+            onClick={() => setSelectedTopic(topic)}
+          >
+            {topic}
+          </div>
+        ))}
       </div>
+      <div className={styles.rightPanel}>
+        <h2 className={styles.title}>Topics:</h2>
+        {selectedTopic ? (
+          <ul className={styles.list}>
+            <li>{topicDetails[selectedTopic]}</li>
+          </ul>
+        ) : (
+          <ul className={styles.list}>
+            <li>What is Data Science?</li>
+            <li>What is Machine Learning?</li>
+            <li>What is Deep Learning?</li>
+            <li>What is AI?</li>
+            <li>Data Analytics & its types</li>
+          </ul>
+        )}
+        <button className={styles.button}>Download Curriculum</button>
+      </div>
+    </div>
 
       {/* career oportunities */}
 
