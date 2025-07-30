@@ -22,9 +22,13 @@ import ForgotPasswordForm from "../Components/signUp_Login/forgot/ForgotPassword
 import ResetPassword from "../Components/signUp_Login/forgot/ResetPassword";
 import Wordpress from "../Components/furtherMenu/integrateapps/Wordpress";
 
-import AboutUs from "../Components/AboutUs/AboutUs";
+
 import CoursesCard from "../Components/allCourses/CoursesCard";
+import CourseDetail from "../Components/allCourses/CourseDetail";
+
 import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
+import DigitalMarketing from "../Components/allCourses/digitalMarketing/DigitalMarketing";
+import DataScience from "../Components/allCourses/dataScience/DataScience";
 import AboutUs from "../Components/AboutUs/AboutUs";
 
 
@@ -63,11 +67,14 @@ export const routes=[
 
     // ziion routing //
     {path : '/webdesigning', element : <Webdesigning/>},
+    {path:'/digitalmarketing', element: <DigitalMarketing/>},
+    {path:'/datascience', element: <DataScience/>},
     {path : '/aboutus', element : <AboutUs/>},
 
 
     // all cousres routing //
-    {path:'/allcourses', element : <CoursesCard/>}
+    {path:'/allcourses', element : <CoursesCard/>},
+    {path: '/allcourses/:courseTitle', element: <CourseDetail/>}
 
     
 ]

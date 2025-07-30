@@ -119,6 +119,13 @@ import FounderImg1 from './aboutus/founder-img1.jpeg'
 import FounderImg2 from './aboutus/founder-img2.jpeg'
 
 
+// courses card images
+
+import webdesigning from './allcourses/cardimages/webdesigning.png'
+import datascience from './allcourses/cardimages/datascience.webp'
+import digital from './allcourses/cardimages/digital.webp'
+
+
 
 
 const images={
@@ -238,8 +245,14 @@ const images={
     // about us 
 
     FounderImg1,
-    FounderImg2
+    FounderImg2,
 
+
+    // coursescard
+
+    webdesigning,
+    datascience,
+    digital,
 
 
 }
