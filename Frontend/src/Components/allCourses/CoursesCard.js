@@ -10,7 +10,7 @@ const topics = [
   { id: 2, title: 'WebDevelopment', label: 'Web Development', description: 'Frontend, Backend, Fullstack...', color: '#3498db' },
   { id: 3, title: 'webdesigning', label: 'Web Designing', description: 'UI/UX design fundamentals.', color: '#000000', images: images.webdesigning  },
   { id: 4, title: 'DigitalMarketing', label: 'Digital Marketing', description: 'SEO, Ads, Campaigns, Analytics.', color: '#00bfa5', images: images.digital },
-  { id: 5, title: 'Artificial Intelligence',label: 'Artificial Intelligence', description: 'Everything related to your account: avatar, password, notifications & more.', color: '#f39c12' },
+  { id: 5, title: 'ArtificialIntelligence',label: 'Artificial Intelligence', description: 'Everything related to your account: avatar, password, notifications & more.', color: '#f39c12' },
   { id: 6, title: 'Machine Learning',label: 'Machine Learning', description: 'How to reply to your users using Mediators Inbox.', color: '#9b59b6' },
   { id: 7, title: 'Data Analytics', label: 'Data Analytics', description: 'Having Trouble.?Find a solutions there!.', color: '#2b5971' },
   { id: 8, title: 'Mobile application Development',label: 'Mobile application Development', description: 'How touse Mediator integrations to external services', color: '#459c42' },

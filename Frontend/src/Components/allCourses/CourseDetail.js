@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Webdesigning from './webdesigning/Webdesigning';
 import DigitalMarketing from './digitalMarketing/DigitalMarketing';
 import DataScience from './dataScience/DataScience';
+import ArtificialIntelligence from './ai-ml/AI';
 
 const CourseDetail = () => {
   const { courseTitle } = useParams();
@@ -15,6 +16,7 @@ const CourseDetail = () => {
     webdesigning: <Webdesigning />,
     digitalmarketing: <DigitalMarketing/>,
     datascience: <DataScience/>,
+    artificialintelligence: <ArtificialIntelligence/>
   
   };
 

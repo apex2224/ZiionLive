@@ -14,7 +14,7 @@ import AiChatbot from '../Components/furtherMenu/aichatbot/AiChatbot'
 import SignUpForm from "../Components/signUp_Login/signUpForm";
 import LoginForm from "../Components/signUp_Login/LoginForm";
 import MainDashboard from "../Components/Dashboard/MainDashboard";
-import AI from '../Components/furtherMenu/AI/AI'
+import AIPage from '../Components/furtherMenu/AI/AI'
 import SharedInbox from "../Components/furtherMenu/SharedInbox/SharedInbox";
 
 
@@ -29,6 +29,7 @@ import CourseDetail from "../Components/allCourses/CourseDetail";
 import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
 import DigitalMarketing from "../Components/allCourses/digitalMarketing/DigitalMarketing";
 import DataScience from "../Components/allCourses/dataScience/DataScience";
+import ArtificialIntelligence from "../Components/allCourses/ai-ml/AI";
 import AboutUs from "../Components/AboutUs/AboutUs";
 
 
@@ -50,7 +51,7 @@ export const routes=[
     {path:'/knowledge', element:<KnowledgeBase/>},
     { path: '/aichatbot', element:<AiChatbot/>},
 
-    {path: '/ai', element:<AI/>},
+    {path: '/ai', element:<AIPage/>},
 
     {path:'/sharedInbox', element:<SharedInbox/>},
 
@@ -69,6 +70,7 @@ export const routes=[
     {path : '/webdesigning', element : <Webdesigning/>},
     {path:'/digitalmarketing', element: <DigitalMarketing/>},
     {path:'/datascience', element: <DataScience/>},
+    {path: '/artificialintelligence', element: <ArtificialIntelligence/>},
     {path : '/aboutus', element : <AboutUs/>},
 
 

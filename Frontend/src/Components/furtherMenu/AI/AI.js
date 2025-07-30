@@ -9,7 +9,7 @@ import KnowledgeTestimonials from '../Knowledge/KnowledgeTestimonials'
 import Footer from '../../footer/Footer'
 
 
-const AI = () => {
+const AIPage = () => {
   return (
     <>
     <Navbar/>
@@ -116,4 +116,4 @@ const AI = () => {
   )
 }
 
-export default AI
+export default AIPage
