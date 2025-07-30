@@ -1,19 +1,21 @@
-
-
 .middleMenu {
   position: absolute;
-  left: 26rem;
-  overflow-x: auto;
-  height: 10rem;
-  white-space: nowrap;
-  padding: 0 20px;
+  top: 100%;
+  left: 0;         /* align with the parent menu item */
+  min-width: 200px;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
   animation: slideDown 0.4s ease-in-out;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
 }
 
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-10px);
   }
   100% {
     opacity: 1;
@@ -21,23 +23,31 @@
   }
 }
 
-
 .middleMenuList {
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
   list-style: none;
-  margin: 0;
   padding: 0;
-  justify-content: center;
+  margin: 0;
+  gap: 10px;
 }
 
 .menuItem {
-  flex: 0 0 auto;
+  background-color: #f9f9f9;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: #e6f7f7;
 }
 
 .furtherMenuLink {
-  color: #000; /* Updated for contrast */
+  color: #000;
   text-decoration: none;
   font-size: 16px;
+  font-weight: 500;
   transition: color 0.2s ease-in-out;
 }
 
@@ -45,51 +55,31 @@
   color: #007a7a;
 }
 
-@media(max-width: 1050px) {
-  .carouselContainer {
-    padding: 1rem;
-  }
-}
-
-@media(max-width: 868px) {
-  .carouselContainer {
-    display: block;
-    width: 100%;
-  }
-
+/* 🔽 Responsive: Stack in column on mobile screens */
+@media (max-width: 768px) {
   .middleMenu {
-    display: block;
+    position: static;
     width: 100%;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 0;
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .middleMenuList {
-    display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    gap: 10px;
+    gap: 1rem;
   }
 
   .menuItem {
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for mobile too */
-    padding: 12px 20px;
-    margin: 0 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-
-  .menuItem:hover {
-    background-color: rgba(230, 230, 230, 0.9);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 16px;
   }
 
   .furtherMenuLink {
-    text-decoration: none;
+    font-size: 15px;
     color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 }
