@@ -1,24 +1,18 @@
+
 // hero phrase
  export const heroPhrases = [
-    'Become a Data Scientist',
-  'Master Machine Learning',
-  'Analyze Real-World Data',
-  'Build Predictive Models'
+  'Become a Professional',
+  'Become a Web Designer'
 ]
+
 
 // stats //
 export const statsData = [
   { value: '135K', label: 'Students Enrolled' },
-  { value: '1500+', label: 'Placemnet Partners' },
+  { value: '20+', label: 'Overall Branches' },
   { value: '3000+', label: 'Placed Students' },
-  { value: '7+', label: 'Years Of Experience' },
-  {value: '350+', label: 'Reviews on Google'}
-
+  { value: '13+', label: 'Years Of Experience' }
 ];
-
-
-
-
 
 
 

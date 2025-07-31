@@ -5,18 +5,31 @@ import { useParams } from 'react-router-dom';
 import Webdesigning from './webdesigning/Webdesigning';
 import DigitalMarketing from './digitalMarketing/DigitalMarketing';
 import DataScience from './dataScience/DataScience';
-import ArtificialIntelligence from './ai-ml/AI';
+import ArtificialIntelligence from './AI/AI';
+import MachineLearning from './ML/ML';
+import WebDevelopment from './webDevelopment/WebDevelopment';
+import DataAnalytics from './DataAnalytics/DataAnalytics';
+import MobileAppDevelopment from './Mobileapp/MobileApp';
+import PHP from './PHP/Php';
+import GraphicDesigning from './graphic/Graphic';
 
 const CourseDetail = () => {
-  const { courseTitle } = useParams();
+  const { courseRoute } = useParams();
 
-  const normalizedTitle = courseTitle?.toLowerCase();
+  const normalizedTitle = courseRoute?.toLowerCase();
 
   const courseComponents = {
-    webdesigning: <Webdesigning />,
-    digitalmarketing: <DigitalMarketing/>,
-    datascience: <DataScience/>,
-    artificialintelligence: <ArtificialIntelligence/>
+    'web-designing': <Webdesigning />,
+    'web-development': <WebDevelopment/>,
+    'digital-marketing': <DigitalMarketing/>,
+    'data-science': <DataScience/>,
+    'data-analytics': <DataAnalytics/>,
+    'ai': <ArtificialIntelligence/>,
+    'ml': <MachineLearning/>,
+    'mobileapp': <MobileAppDevelopment/>,
+    'php': <PHP/>,
+    'graphic-designing': <GraphicDesigning/>,
+
   
   };
 

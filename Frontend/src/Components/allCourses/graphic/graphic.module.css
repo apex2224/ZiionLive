@@ -78,10 +78,7 @@
 
 
 
-
-
 /* stats section */
-
 
 .statsWrapper {
   display: flex;
@@ -164,11 +161,8 @@
 }
 
 
-
-
-
 /* what will you learn */
-.container {
+.learncontainer {
   width: 90%;
   margin: auto;
   padding: 8rem 1rem;

@@ -38,10 +38,9 @@ const MainNextSection = () => {
             <img src={images.heroRobot1} alt="Card visual" />
           </div>
           <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Card Title</h2>
+            <h2 className={styles.cardTitle}>Courses</h2>
             <p className={styles.description}>
-              This is a sample description for the card component.
-              It can contain any text you want to display.
+              Learn the set of high-demand digital skills, be it web, mobile, digital marketing, design or AI.
             </p>
             <button className={styles.button}>Learn More</button>
           </div>
@@ -51,15 +50,14 @@ const MainNextSection = () => {
         <div className={styles.card}>
           <div className={styles.cardImage}>
             <img
-              src={images.heroRobot2}
+              src={images.heroRobot1}
               alt="Card visual"
             />
           </div>
           <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Card Title</h2>
+            <h2 className={styles.cardTitle}>Trainings</h2>
             <p className={styles.description}>
-              This is a sample description for the card component.
-              It can contain any text you want to display.
+              Upgrade your career in the shortest time with training in web development, digital marketing, graphic designing, data analytics, AI, and others. 
             </p>
             <button className={styles.button}>Learn More</button>
           </div>
@@ -69,15 +67,15 @@ const MainNextSection = () => {
         <div className={styles.card}>
           <div className={styles.cardImage}>
             <img
-              src={images.heroRobot3}
+              src={images.heroRobot1}
               alt="Card visual"
             />
           </div>
           <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Card Title</h2>
+            <h2 className={styles.cardTitle}>IT Services</h2>
             <p className={styles.description}>
-              This is a sample description for the card component.
-              It can contain any text you want to display.
+              We deliver smart, scalable IT solutions—from cloud services and cybersecurity to software development, IT support, and infrastructure management.
+
             </p>
             <button className={styles.button}>Learn More</button>
           </div>

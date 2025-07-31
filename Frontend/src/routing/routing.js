@@ -29,9 +29,14 @@ import CourseDetail from "../Components/allCourses/CourseDetail";
 import Webdesigning from "../Components/allCourses/webdesigning/Webdesigning";
 import DigitalMarketing from "../Components/allCourses/digitalMarketing/DigitalMarketing";
 import DataScience from "../Components/allCourses/dataScience/DataScience";
-import ArtificialIntelligence from "../Components/allCourses/ai-ml/AI";
+import ArtificialIntelligence from "../Components/allCourses/AI/AI";
+import MachineLearning from "../Components/allCourses/ML/ML";
 import AboutUs from "../Components/AboutUs/AboutUs";
-
+import DataAnalytics from "../Components/allCourses/DataAnalytics/DataAnalytics";
+import WebDevelopment from "../Components/allCourses/webDevelopment/WebDevelopment";
+import MobileAppDevelopment from '../Components/allCourses/Mobileapp/MobileApp'
+import PHP from "../Components/allCourses/PHP/Php";
+import GraphicDesigning from "../Components/allCourses/graphic/Graphic";
 
 
  
@@ -51,7 +56,7 @@ export const routes=[
     {path:'/knowledge', element:<KnowledgeBase/>},
     { path: '/aichatbot', element:<AiChatbot/>},
 
-    {path: '/ai', element:<AIPage/>},
+    {path: '/aipage', element:<AIPage/>},
 
     {path:'/sharedInbox', element:<SharedInbox/>},
 
@@ -67,16 +72,24 @@ export const routes=[
     { path : '/wordpress', element: <Wordpress/>},
 
     // ziion routing //
-    {path : '/webdesigning', element : <Webdesigning/>},
-    {path:'/digitalmarketing', element: <DigitalMarketing/>},
-    {path:'/datascience', element: <DataScience/>},
-    {path: '/artificialintelligence', element: <ArtificialIntelligence/>},
+    {path: '/web-development', element: <WebDevelopment/>},
+    {path : '/web-designing', element : <Webdesigning/>},
+    {path:'/digital-marketing', element: <DigitalMarketing/>},
+    {path:'/data-science', element: <DataScience/>},
+     {path: '/data-analytics',element: <DataAnalytics/>},
+    {path: '/ai', element: <ArtificialIntelligence/>},
+    {path: '/ml', element: <MachineLearning/>},
+    {path: '/mobileapp', element: <MobileAppDevelopment/>},
+    {path: '/php', element: <PHP/>},
+    {path: '/graphic-designing', element: <GraphicDesigning/>},
+   
+    
     {path : '/aboutus', element : <AboutUs/>},
 
 
     // all cousres routing //
     {path:'/allcourses', element : <CoursesCard/>},
-    {path: '/allcourses/:courseTitle', element: <CourseDetail/>}
+    {path: '/allcourses/:courseRoute', element: <CourseDetail/>}
 
     
 ]

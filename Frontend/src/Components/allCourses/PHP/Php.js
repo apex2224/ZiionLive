@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styles from './webdesigning.module.css'
+import styles from './Php.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
-
+import { heroPhrases, statsData,chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './PhpData';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -35,31 +34,8 @@ const useCustomTypewriter = (phrasesArray) => {
 
   return text;
 }
-const Webdesigning = () => {
-  const typedOutput = useCustomTypewriter(phrases);
-
-
-// sylabus //
-
-const [selectedTopic, setSelectedTopic] = useState(null);
-
-  const topics = [
-    "Introduction to Data Science",
-    "Introduction to Python",
-    "Python Basics",
-    "Python Packages",
-    "Importing Data",
-    "Manipulating Data"
-  ];
-
-  const topicDetails = {
-    "Introduction to Data Science": "What is Data Science?",
-    "Introduction to Python": "What is Python Programming?",
-    "Python Basics": "Basics of Python Syntax",
-    "Python Packages": "Common Python Libraries",
-    "Importing Data": "Data Import Techniques",
-    "Manipulating Data": "Data Manipulation Methods"
-  };
+const PHP= () => {
+  const typedOutput = useCustomTypewriter(heroPhrases);
 
   return (
     <div>
@@ -72,13 +48,13 @@ const [selectedTopic, setSelectedTopic] = useState(null);
         <div className={styles.webDesigningContent}>
           <h1 className={styles.webDesigningTitle}>
       <span className={`${styles.webDesigningFalldown} ${styles.gradientText}`}>
-        Web Designing Course in Chandigarh <br />
+        Machine Learning Course in Chandigarh <br />
         <span className={styles.typedText}>{typedOutput}</span>
         <span className={styles.cursor}>|</span>
       </span>
     </h1>
           <h2 className={styles.webDesigningSubtitle}>
-            Our Web Designing Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
+            Our Machine Learning Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
           </h2>
           <button className={styles.webDesigningHerobutton}>View Demo →</button>
         </div>
@@ -86,25 +62,26 @@ const [selectedTopic, setSelectedTopic] = useState(null);
 
       {/* stat section */}
        <div className={styles.statsWrapper}>
-      {statsData.map((stat, index) => (
-        <div className={styles.statCircle} key={index}>
-          <div className={styles.rotatingRing}></div>
-          <div className={styles.statContent}>
-            <h2 className={styles.statValue}>{stat.value}</h2>
-            <p className={styles.statLabel}>{stat.label}</p>
+            {statsData.map((stat, index) => (
+              <div className={styles.statCircle} key={index}>
+                <div className={styles.statsrotatingRing}></div>
+                <div className={styles.statContent}>
+                  <h2 className={styles.statValue}>{stat.value}</h2>
+                  <p className={styles.statLabel}>{stat.label}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      ))}
-    </div>
+
 
 
       {/* what will you learn */}
-      <div className={styles.container}>
-        <h1 className={styles.heading}>Who Can Join Our Web Designing Course?</h1>
-<p className={styles.subheading}>
-  Our <strong>Web Designing course</strong>  Whether you're a 10th or 12th pass student exploring career options, a graduate seeking in-demand skills, a job seeker aiming to stand out, a freelancer ready to expand your portfolio, or an entrepreneur building a digital brand — this course is made for you. No prior experience needed, just your willingness to learn and grow.
-
-</p>
+      <div className={styles.learncontainer}>
+        <h1 className={styles.heading}>What Will Our Trainees Learn In Machine Learning Training?</h1>
+        <p className={styles.subheading}>
+          Explore our <strong>Machine Learning training course</strong> curriculum to know what you are going to learn exactly.
+          Certiwise is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
+        </p>
 
         <div className={styles.roadmapBox}>
           <div className={styles.leftSection}>
@@ -156,38 +133,10 @@ const [selectedTopic, setSelectedTopic] = useState(null);
         </div>
       </div>
 
-        {/* sylabus */}
-     <div className={styles.container}>
-      <div className={styles.leftPanel}>
-        <div className={styles.header}>Data Science with Python</div>
-        {topics.map((topic, index) => (
-          <div
-            key={index}
-            className={styles.topic}
-            onClick={() => setSelectedTopic(topic)}
-          >
-            {topic}
-          </div>
-        ))}
+
+      <div>
+        {/* syllabus */}
       </div>
-      <div className={styles.rightPanel}>
-        <h2 className={styles.title}>Topics:</h2>
-        {selectedTopic ? (
-          <ul className={styles.list}>
-            <li>{topicDetails[selectedTopic]}</li>
-          </ul>
-        ) : (
-          <ul className={styles.list}>
-            <li>What is Data Science?</li>
-            <li>What is Machine Learning?</li>
-            <li>What is Deep Learning?</li>
-            <li>What is AI?</li>
-            <li>Data Analytics & its types</li>
-          </ul>
-        )}
-        <button className={styles.button}>Download Curriculum</button>
-      </div>
-    </div>
 
       {/* career oportunities */}
 
@@ -218,10 +167,10 @@ const [selectedTopic, setSelectedTopic] = useState(null);
         <div className={styles.whychooseusTitleBlock}>
           <p className={styles.whychooseusTagline}>MASTER NEW SKILLS</p>
           <h2 className={styles.whychooseusHeading}>
-            Why Choose <span>Ziion Technology</span> For Web Designing Course In Mohali?
+            Why Choose <span>Ziion Technology</span> For Machine Learning In Mohali?
           </h2>
           <p className={styles.whychooseusSubtitle}>
-            Ziion Technology enables every student to develop exceptional skills in <strong>Digital Marketing Training</strong> and guarantees 100% job assistance in the industry.
+            Ziion Technology enables every student to develop exceptional skills in <strong>Machine Learning Training</strong> and guarantees 100% job assistance in the industry.
           </p>
         </div>
 
@@ -254,4 +203,4 @@ const [selectedTopic, setSelectedTopic] = useState(null);
     </div>
   )
 }
-export default Webdesigning;
+export default PHP;

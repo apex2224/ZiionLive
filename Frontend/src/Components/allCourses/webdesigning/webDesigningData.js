@@ -1,45 +1,16 @@
-// stats //
-export const statsData = [
-  { heading: 'UPTO', value: '18 LPA', label: 'SALARY PACKAGE' },
-  { heading: 'APPROX.', value: '9 Lakh +', label: 'AVERAGE JOBS IN INDIA' },
-  { heading: 'OVER', value: '30 Lakh +', label: 'AVERAGE REMOTE JOBS' },
-  { heading: 'RANKED', value: '3rd', label: 'IN-DEMAND JOB' },
-  { heading: 'SIZE', value: '465 +', label: 'BILLIONS ($) INDUSTRY' },
-  { heading: 'OVER', value: '9 Billion', label: 'DAILY USERS' },
-];
 
-
-
-
-
-
-
-
-// why choose us //
-export const chooseUsLeftItems = [
-  { icon: '🧑‍🏫', text: 'Focused on 90% Practical Training' },
-  { icon: '💼', text: 'LED Based Smart Classes' },
-  { icon: '📚', text: 'Learn with Real Projects' },
-  { icon: '💳', text: 'Affordable Fee Structure' },
-  { icon: '🧠', text: 'Trainers with 7+ Years Experience' },
-];
-
-export const chooseUsRightItems = [
-  { icon: '✅', text: '100% Placement Assistance' },
-  { icon: '📜', text: 'Certification' },
-  { icon: '🤝', text: '1200+ Placement Partners' },
-  { icon: '👨‍💻', text: 'Internship + Job Placement Support' },
-  { icon: '📝', text: 'Interview Preparation Classes' },
-];
-
-
-// hero phrase
- export const heroPhrases = [
-  'Become a Professional',
-  'Become a Web Designer'
+export const phrases = [
+  'Code Smarter',
+  'Achieve More'
 ]
 
-
+// stats //
+export const statsData = [
+  { value: '135K', label: 'Students Enrolled' },
+  { value: '20+', label: 'Overall Branches' },
+  { value: '3000+', label: 'Placed Students' },
+  { value: '13+', label: 'Years Of Experience' }
+];
 
 
 // career oportunities //
@@ -75,4 +46,23 @@ export const careerOpportunities = [
       "Leverage the power of AI to build scalable artificial and biological neural networks and ensure swift and efficient info processing.",
   },
 ];
+
+
+// why choose us //
+export const chooseUsLeftItems = [
+  { icon: '🧑‍🏫', text: 'Focused on 90% Practical Training' },
+  { icon: '💼', text: 'LED Based Smart Classes' },
+  { icon: '📚', text: 'Learn with Real Projects' },
+  { icon: '💳', text: 'Freebies worth Rs.15000/' },
+  { icon: '🧠', text: 'Trainers with 7+ Years Experience' },
+];
+
+export const chooseUsRightItems = [
+  { icon: '✅', text: '100% Placement Assistance' },
+  { icon: '📜', text: '350+ Reviews on Google' },
+  { icon: '🤝', text: '1500+ Placement Partners' },
+  { icon: '👨‍💻', text: 'Internship + Job Placement Support' },
+  { icon: '📝', text: 'Interview Preparation Classes' },
+];
+
 
