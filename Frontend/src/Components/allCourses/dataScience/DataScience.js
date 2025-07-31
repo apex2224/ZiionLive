@@ -48,39 +48,39 @@ const DataScience= () => {
         <div className={styles.webDesigningContent}>
           <h1 className={styles.webDesigningTitle}>
       <span className={`${styles.webDesigningFalldown} ${styles.gradientText}`}>
-        Web Designing Course in Chandigarh <br />
+         Data Science Course in Chandigarh<br />
         <span className={styles.typedText}>{typedOutput}</span>
         <span className={styles.cursor}>|</span>
       </span>
     </h1>
           <h2 className={styles.webDesigningSubtitle}>
-            Our Data SCience Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
+      Our Data Science Course is designed to provide hands-on training in Python, Machine Learning, Deep Learning, Data Visualization, Statistics, and more. Master real-world skills to analyze data, build models, and gain insights that drive decisions in today’s data-driven world.
           </h2>
           <button className={styles.webDesigningHerobutton}>View Demo →</button>
         </div>
       </section>
 
       {/* stat section */}
-      <div className={styles.statsSection}>
-        <div className={styles.statsContainer}>
-          {statsData.map((stat, index) => (
-            <div className={styles.statBox} key={index}>
-              <div className={styles.heading}>{stat.heading}</div>
-              <div className={styles.value}>{stat.value}</div>
-              <div className={styles.label}>{stat.label}</div>
-            </div>
-          ))}
+     <div className={styles.statsWrapper}>
+      {statsData.map((stat, index) => (
+        <div className={styles.statCircle} key={index}>
+          <div className={styles.statsrotatingRing}></div>
+          <div className={styles.statContent}>
+            <h2 className={styles.statValue}>{stat.value}</h2>
+            <p className={styles.statLabel}>{stat.label}</p>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
 
 
 
       {/* what will you learn */}
       <div className={styles.container}>
-        <h1 className={styles.heading}>What Will Our Trainees Learn In Web Designing Training?</h1>
+        <h1 className={styles.heading}>What Will Our Trainees Learn In Data Science Training?</h1>
         <p className={styles.subheading}>
-          Explore our <strong>Web Designing training course</strong> curriculum to know what you are going to learn exactly.
-          Certiwise is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
+          Explore our <strong>Data Science training course</strong> curriculum to know what you are going to learn exactly.
+         Ziion Technology is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
         </p>
 
         <div className={styles.roadmapBox}>
@@ -167,10 +167,10 @@ const DataScience= () => {
         <div className={styles.whychooseusTitleBlock}>
           <p className={styles.whychooseusTagline}>MASTER NEW SKILLS</p>
           <h2 className={styles.whychooseusHeading}>
-            Why Choose <span>Ziion Technology</span> For Digital Marketing Course In Mohali?
+            Why Choose <span>Ziion Technology</span> For Data Science Course In Mohali?
           </h2>
           <p className={styles.whychooseusSubtitle}>
-            Ziion Technology enables every student to develop exceptional skills in <strong>Digital Marketing Training</strong> and guarantees 100% job assistance in the industry.
+            Ziion Technology enables every student to develop exceptional skills in <strong>Data Science Training</strong> and guarantees 100% job assistance in the industry.
           </p>
         </div>
 

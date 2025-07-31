@@ -181,7 +181,7 @@ const AboutUs = () => {
           This journey began with a dream to make digital skills simple, useful, and life-changing for anyone willing to learn. Today, that dream lives on in every course we create and every service we deliver. We’re here to grow together with honesty, care, and a whole lot of heart.
 
           </p>
-          {/* <div className={styles.pricingStats}>
+          <div className={styles.pricingStats}>
             <div className={styles.pricingCard}>
               <div className={styles.pricingValue}>68%</div>
               <div className={styles.pricingLabel}>Operating Cost Efficiency</div>
@@ -190,7 +190,7 @@ const AboutUs = () => {
               <div className={styles.pricingValue}>201+</div>
               <div className={styles.pricingLabel}>Business Trust Us</div>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className={styles['founder-imageSection']}>
           <img src={images.FounderImg1} alt="Business Analytics" className={styles['founder-image']} />
@@ -213,7 +213,7 @@ const AboutUs = () => {
 Thank you for choosing us to go with you.
 
           </p>
-          {/* <div className={styles.pricingStats}>
+          <div className={styles.pricingStats}>
             <div className={styles.pricingCard}>
               <div className={styles.pricingValue}>68%</div>
               <div className={styles.pricingLabel}>Operating Cost Efficiency</div>
@@ -222,7 +222,7 @@ Thank you for choosing us to go with you.
               <div className={styles.pricingValue}>201+</div>
               <div className={styles.pricingLabel}>Business Trust Us</div>
             </div>
-          </div> */}
+          </div>
         </div>
        
       </div>

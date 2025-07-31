@@ -61,17 +61,17 @@ const DigitalMarketing= () => {
       </section>
 
       {/* stat section */}
-      <div className={styles.statsSection}>
-        <div className={styles.statsContainer}>
-          {statsData.map((stat, index) => (
-            <div className={styles.statBox} key={index}>
-              <div className={styles.heading}>{stat.heading}</div>
-              <div className={styles.value}>{stat.value}</div>
-              <div className={styles.label}>{stat.label}</div>
-            </div>
-          ))}
+     <div className={styles.statsWrapper}>
+      {statsData.map((stat, index) => (
+        <div className={styles.statCircle} key={index}>
+          <div className={styles.statsrotatingRing}></div>
+          <div className={styles.statContent}>
+            <h2 className={styles.statValue}>{stat.value}</h2>
+            <p className={styles.statLabel}>{stat.label}</p>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
 
 
 

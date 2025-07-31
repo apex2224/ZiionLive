@@ -106,53 +106,90 @@
 }
 
 
-.statBox {
-  text-align: center;
-  flex: 1 1 150px;
-  min-width: 150px;
-  animation: fadeSlideUp 0.8s ease-out forwards;
 
-}
+/* stats section */
 
-/* Optional: Delay each box slightly using nth-child */
-.statBox:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.statBox:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.statBox:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.statBox:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.heading {
-  font-weight: 600;
-  color: #333;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.value {
-  font-size: 28px;
-  font-weight: bold;
-  color: #000;
-}
-
-.label {
-  margin-top: 5px;
-  color: #444;
-  font-size: 14px;
-}
-.roadmapBox {
+.statsWrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f7f7fb;
 }
+
+.statCircle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statsrotatingRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #0036d6;
+  border-bottom: 5px solid #0036d6;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.statCircle:hover .statsrotatingRing {
+  animation: rotate 2s linear infinite;
+}
+
+.statContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #5e5e5e;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .statCircle {
+    width: 120px;
+    height: 120px;
+  }
+  .statValue {
+    font-size: 1.4rem;
+  }
+  .statLabel {
+    font-size: 0.85rem;
+  }
+}
+
+
 
 
 

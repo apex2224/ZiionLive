@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styles from './webdesigning.module.css'
+import styles from './AI.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
-
+import { heroPhrases, statsData,chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './AIdata';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -35,112 +34,55 @@ const useCustomTypewriter = (phrasesArray) => {
 
   return text;
 }
-
-// sylabus //
-
-
-// sylabus //
-
-const syllabusData = {
-  "HTML, HTML5, Bootstrap": [
-    "Introduction HTML",
-    "HTML Basics",
-    "HTML Elements",
-    "HTML5 Semantic",
-    "HTML Attributes",
-    "HTML Headings",
-    "HTML Paragraph",
-    "HTML styles",
-    "HTML Formatting",
-    "HTML Quotations"
-  ],
-  "CSS, CSS3": [
-    "CSS Basics",
-    "Selectors",
-    "Box Model",
-    "Flexbox",
-    "Grid Layout"
-  ],
-  "JQuery": [
-    "jQuery Basics",
-    "DOM Manipulation",
-    "Events",
-    "Effects"
-  ],
-  "Java Script": [
-    "JS Basics",
-    "Functions",
-    "DOM",
-    "ES6+ Features"
-  ],
-  "AngularJS": [
-    "Angular Basics",
-    "Components",
-    "Routing",
-    "Services"
-  ],
-  "ReactJS": [
-    "React Basics",
-    "JSX",
-    "Props & State",
-    "Hooks",
-    "React Router"
-  ]
-};
-
-
-
-
-
-const Webdesigning = () => {
-  const typedOutput = useCustomTypewriter(phrases);
-   const [selected, setSelected] = useState("HTML, HTML5, Bootstrap");
-  
+const ArtificialIntelligence= () => {
+  const typedOutput = useCustomTypewriter(heroPhrases);
 
   return (
     <div>
       <Navbar />
       <section className={styles.webDesigningHeroSection}>
-        <div className={styles.webDesigning}>
-          <img src={images.knowledgeHeroImage} alt="background" className={styles.webDesigningBgImage} />
-        </div>
+  <div className={styles.webDesigning}>
+    <img src={images.knowledgeHeroImage} alt="background" className={styles.webDesigningBgImage} />
+  </div>
 
-        <div className={styles.webDesigningContent}>
-          <h1 className={styles.webDesigningTitle}>
+  <div className={styles.webDesigningContent}>
+    <h1 className={styles.webDesigningTitle}>
       <span className={`${styles.webDesigningFalldown} ${styles.gradientText}`}>
-        Web Designing Course in Chandigarh <br />
+        Artificial Intelligence Course in Chandigarh <br />
         <span className={styles.typedText}>{typedOutput}</span>
         <span className={styles.cursor}>|</span>
       </span>
     </h1>
-          <h2 className={styles.webDesigningSubtitle}>
-            Our Web Designing Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
-          </h2>
-          <button className={styles.webDesigningHerobutton}>View Demo →</button>
-        </div>
-      </section>
+    <h2 className={styles.webDesigningSubtitle}>
+      Our Artificial Intelligence Course provides in-depth training in Machine Learning, Deep Learning, Neural Networks, Natural Language Processing, and AI model deployment. Gain practical experience by working on real-world AI projects to build intelligent systems.
+    </h2>
+    <button className={styles.webDesigningHerobutton}>View Demo →</button>
+  </div>
+</section>
+
 
       {/* stat section */}
        <div className={styles.statsWrapper}>
-      {statsData.map((stat, index) => (
-        <div className={styles.statCircle} key={index}>
-          <div className={styles.rotatingRing}></div>
-          <div className={styles.statContent}>
-            <h2 className={styles.statValue}>{stat.value}</h2>
-            <p className={styles.statLabel}>{stat.label}</p>
+            {statsData.map((stat, index) => (
+              <div className={styles.statCircle} key={index}>
+                <div className={styles.statsrotatingRing}></div>
+                <div className={styles.statContent}>
+                  <h2 className={styles.statValue}>{stat.value}</h2>
+                  <p className={styles.statLabel}>{stat.label}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      ))}
-    </div>
+
 
 
       {/* what will you learn */}
-      <div className={styles.container}>
-        <h1 className={styles.heading}>Who Can Join Our Web Designing Course?</h1>
-<p className={styles.subheading}>
-  Our <strong>Web Designing course</strong>  Whether you're a 10th or 12th pass student exploring career options, a graduate seeking in-demand skills, a job seeker aiming to stand out, a freelancer ready to expand your portfolio, or an entrepreneur building a digital brand — this course is made for you. No prior experience needed, just your willingness to learn and grow.
-
-</p>
+      <div className={styles.learncontainer}>
+        <h1 className={styles.heading}>What Will Our Trainees Learn In Artificial Intelligence Training?</h1>
+        <p className={styles.subheading}>
+          Explore our <strong>Artificial Intelligence training course</strong> curriculum to know what you are going to learn exactly.
+          Ziion Technology is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
+        </p>
 
         <div className={styles.roadmapBox}>
           <div className={styles.leftSection}>
@@ -192,34 +134,10 @@ const Webdesigning = () => {
         </div>
       </div>
 
-        {/* sylabus */}
-     <div className={styles.container}>
-     <h1>Heading</h1>
-     <p>para for heading</p>
 
-      <div className={styles.contentWrapper}>
-        <div className={styles.leftPanel}>
-          {Object.keys(syllabusData).map((topic) => (
-            <div
-              key={topic}
-              className={`${styles.topicItem} ${selected === topic ? styles.active : ''}`}
-              onClick={() => setSelected(topic)}
-            >
-              {topic}
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.rightPanel}>
-          <h3>{selected}:</h3>
-          <ul>
-            {syllabusData[selected].map((item, index) => (
-              <li key={index}> {item} </li>
-            ))}
-          </ul>
-        </div>
+      <div>
+        {/* syllabus */}
       </div>
-    </div>
 
       {/* career oportunities */}
 
@@ -250,10 +168,10 @@ const Webdesigning = () => {
         <div className={styles.whychooseusTitleBlock}>
           <p className={styles.whychooseusTagline}>MASTER NEW SKILLS</p>
           <h2 className={styles.whychooseusHeading}>
-            Why Choose <span>Ziion Technology</span> For Web Designing Course In Mohali?
+            Why Choose <span>Ziion Technology</span> For Artificial Intelligence Course In Mohali?
           </h2>
           <p className={styles.whychooseusSubtitle}>
-            Ziion Technology enables every student to develop exceptional skills in <strong>Digital Marketing Training</strong> and guarantees 100% job assistance in the industry.
+            Ziion Technology enables every student to develop exceptional skills in <strong>Artificial Intelligence Training</strong> and guarantees 100% job assistance in the industry.
           </p>
         </div>
 
@@ -286,4 +204,4 @@ const Webdesigning = () => {
     </div>
   )
 }
-export default Webdesigning;
+export default ArtificialIntelligence;

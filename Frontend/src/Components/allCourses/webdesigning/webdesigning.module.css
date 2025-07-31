@@ -77,7 +77,7 @@
 
 
 /* stat section */
-/* components/Stats.module.css */
+
 
 .statsWrapper {
   display: flex;
@@ -228,13 +228,6 @@ li::before {
     max-height: 300px;
   }
 }
-
-
-
-
-
-
-
 
 
 /* what will you learn */

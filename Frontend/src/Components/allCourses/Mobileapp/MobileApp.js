@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styles from './AI.module.css'
+import styles from './mobileApp.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './AIdata';
+import { heroPhrases, statsData,chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './mobileAppdata';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -34,7 +34,7 @@ const useCustomTypewriter = (phrasesArray) => {
 
   return text;
 }
-const ArtificialIntelligence= () => {
+const MobileAppDevelopment= () => {
   const typedOutput = useCustomTypewriter(heroPhrases);
 
   return (
@@ -48,38 +48,38 @@ const ArtificialIntelligence= () => {
         <div className={styles.webDesigningContent}>
           <h1 className={styles.webDesigningTitle}>
       <span className={`${styles.webDesigningFalldown} ${styles.gradientText}`}>
-        Web Designing Course in Chandigarh <br />
+        Machine Learning Course in Chandigarh <br />
         <span className={styles.typedText}>{typedOutput}</span>
         <span className={styles.cursor}>|</span>
       </span>
     </h1>
           <h2 className={styles.webDesigningSubtitle}>
-            Our Data SCience Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
+            Our Machine Learning Course is designed to provide hands-on training with a focus on HTML, CSS, JavaScript, Bootstrap, WordPress, and more. We help you learn how to build responsive, user-friendly websites that meet industry standards.
           </h2>
           <button className={styles.webDesigningHerobutton}>View Demo →</button>
         </div>
       </section>
 
       {/* stat section */}
-      <div className={styles.statsSection}>
-        <div className={styles.statsContainer}>
-          {statsData.map((stat, index) => (
-            <div className={styles.statBox} key={index}>
-              <div className={styles.heading}>{stat.heading}</div>
-              <div className={styles.value}>{stat.value}</div>
-              <div className={styles.label}>{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+       <div className={styles.statsWrapper}>
+            {statsData.map((stat, index) => (
+              <div className={styles.statCircle} key={index}>
+                <div className={styles.statsrotatingRing}></div>
+                <div className={styles.statContent}>
+                  <h2 className={styles.statValue}>{stat.value}</h2>
+                  <p className={styles.statLabel}>{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
 
 
       {/* what will you learn */}
-      <div className={styles.container}>
-        <h1 className={styles.heading}>What Will Our Trainees Learn In Web Designing Training?</h1>
+      <div className={styles.learncontainer}>
+        <h1 className={styles.heading}>What Will Our Trainees Learn In Machine Learning Training?</h1>
         <p className={styles.subheading}>
-          Explore our <strong>Web Designing training course</strong> curriculum to know what you are going to learn exactly.
+          Explore our <strong>Machine Learning training course</strong> curriculum to know what you are going to learn exactly.
           Certiwise is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.
         </p>
 
@@ -167,10 +167,10 @@ const ArtificialIntelligence= () => {
         <div className={styles.whychooseusTitleBlock}>
           <p className={styles.whychooseusTagline}>MASTER NEW SKILLS</p>
           <h2 className={styles.whychooseusHeading}>
-            Why Choose <span>Ziion Technology</span> For Digital Marketing Course In Mohali?
+            Why Choose <span>Ziion Technology</span> For Machine Learning In Mohali?
           </h2>
           <p className={styles.whychooseusSubtitle}>
-            Ziion Technology enables every student to develop exceptional skills in <strong>Digital Marketing Training</strong> and guarantees 100% job assistance in the industry.
+            Ziion Technology enables every student to develop exceptional skills in <strong>Machine Learning Training</strong> and guarantees 100% job assistance in the industry.
           </p>
         </div>
 
@@ -203,4 +203,4 @@ const ArtificialIntelligence= () => {
     </div>
   )
 }
-export default ArtificialIntelligence;
+export default MobileAppDevelopment;
