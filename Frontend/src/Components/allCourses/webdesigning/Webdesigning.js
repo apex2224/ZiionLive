@@ -100,31 +100,67 @@ const useCustomTypewriter = (phrasesArray) => {
 
   return text;
 }
-const Webdesigning = () => {
-  const typedOutput = useCustomTypewriter(phrases);
+
+// sylabus //
 
 
 // sylabus //
 
-const [selectedTopic, setSelectedTopic] = useState(null);
+const syllabusData = {
+  "HTML, HTML5, Bootstrap": [
+    "Introduction HTML",
+    "HTML Basics",
+    "HTML Elements",
+    "HTML5 Semantic",
+    "HTML Attributes",
+    "HTML Headings",
+    "HTML Paragraph",
+    "HTML styles",
+    "HTML Formatting",
+    "HTML Quotations"
+  ],
+  "CSS, CSS3": [
+    "CSS Basics",
+    "Selectors",
+    "Box Model",
+    "Flexbox",
+    "Grid Layout"
+  ],
+  "JQuery": [
+    "jQuery Basics",
+    "DOM Manipulation",
+    "Events",
+    "Effects"
+  ],
+  "Java Script": [
+    "JS Basics",
+    "Functions",
+    "DOM",
+    "ES6+ Features"
+  ],
+  "AngularJS": [
+    "Angular Basics",
+    "Components",
+    "Routing",
+    "Services"
+  ],
+  "ReactJS": [
+    "React Basics",
+    "JSX",
+    "Props & State",
+    "Hooks",
+    "React Router"
+  ]
+};
 
-  const topics = [
-    "Introduction to Data Science",
-    "Introduction to Python",
-    "Python Basics",
-    "Python Packages",
-    "Importing Data",
-    "Manipulating Data"
-  ];
 
-  const topicDetails = {
-    "Introduction to Data Science": "What is Data Science?",
-    "Introduction to Python": "What is Python Programming?",
-    "Python Basics": "Basics of Python Syntax",
-    "Python Packages": "Common Python Libraries",
-    "Importing Data": "Data Import Techniques",
-    "Manipulating Data": "Data Manipulation Methods"
-  };
+
+
+
+const Webdesigning = () => {
+  const typedOutput = useCustomTypewriter(phrases);
+   const [selected, setSelected] = useState("HTML, HTML5, Bootstrap");
+  
 
   return (
     <div>
@@ -223,34 +259,30 @@ const [selectedTopic, setSelectedTopic] = useState(null);
 
         {/* sylabus */}
      <div className={styles.container}>
-      <div className={styles.leftPanel}>
-        <div className={styles.header}>Data Science with Python</div>
-        {topics.map((topic, index) => (
-          <div
-            key={index}
-            className={styles.topic}
-            onClick={() => setSelectedTopic(topic)}
-          >
-            {topic}
-          </div>
-        ))}
-      </div>
-      <div className={styles.rightPanel}>
-        <h2 className={styles.title}>Topics:</h2>
-        {selectedTopic ? (
-          <ul className={styles.list}>
-            <li>{topicDetails[selectedTopic]}</li>
+     <h1>Heading</h1>
+     <p>para for heading</p>
+
+      <div className={styles.contentWrapper}>
+        <div className={styles.leftPanel}>
+          {Object.keys(syllabusData).map((topic) => (
+            <div
+              key={topic}
+              className={`${styles.topicItem} ${selected === topic ? styles.active : ''}`}
+              onClick={() => setSelected(topic)}
+            >
+              {topic}
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.rightPanel}>
+          <h3>{selected}:</h3>
+          <ul>
+            {syllabusData[selected].map((item, index) => (
+              <li key={index}> {item} </li>
+            ))}
           </ul>
-        ) : (
-          <ul className={styles.list}>
-            <li>What is Data Science?</li>
-            <li>What is Machine Learning?</li>
-            <li>What is Deep Learning?</li>
-            <li>What is AI?</li>
-            <li>Data Analytics & its types</li>
-          </ul>
-        )}
-        <button className={styles.button}>Download Curriculum</button>
+        </div>
       </div>
     </div>
 
