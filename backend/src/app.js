@@ -1,42 +1,57 @@
+require('dotenv').config(); 
+
 const express = require('express');
 const cors = require('cors');
 const otpRoutes = require('./routes/otpRoutes');
 
-const authRoutes = require('./routes/authRoutes'); // Import Routes
-const generalRoutes = require('./routes/generalRoutes'); // Import Routes
-const chatRoutes = require('./routes/chatRoutes'); // Import Routes
-const domainRoutes = require('./routes/domainRoutes'); // Import Routes
-const planRoutes = require("./routes/PlanRoutes"); // import Routes
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+const authRoutes = require('./routes/authRoutes');
+const generalRoutes = require('./routes/generalRoutes');
+const chatRoutes = require('./routes/chatRoutes');
+const domainRoutes = require('./routes/domainRoutes');
+const planRoutes = require("./routes/PlanRoutes");
 const errorHandler = require('./middleware/errorMiddleware');
 const visitorRoutes = require("./routes/visitorRoutes");
-
+const studentRoutes = require('./routes/studentRoutes');
 
 const app = express();
 
+const store = new MongoDBStore({
+  uri: process.env.MONGO_URI,
+  collection: 'sessions'
+});
+
 // Middleware
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 
-
-
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: store
+  })
+);
 
 // Routes
-app.use('/api/auth', authRoutes); //cred routes
-app.use('/',generalRoutes) // general Routes
-app.use('/api/chat', chatRoutes); // chat routes
-app.use('/api/domain', domainRoutes); // websitedomain route validator
-app.use('/api/otp', otpRoutes); // otp routing
-app.use("/api/plans", planRoutes); // plan routes
-app.use("/api/visitor", visitorRoutes); // visitor routes
+app.use('/api/auth', authRoutes);
+app.use('/', generalRoutes);
+app.use('/api/chat', chatRoutes);
+app.use('/api/domain', domainRoutes);
+app.use('/api/otp', otpRoutes);
+app.use("/api/plans", planRoutes);
+app.use("/api/visitor", visitorRoutes);
+app.use('/api', studentRoutes);
 
-// Handle unknown routes
+// 404 for unknown routes
 app.use((req, res, next) => {
-    res.status(404).json({ success: false, message: 'Route not found' });
-  });
+  res.status(404).json({ success: false, message: 'Route not found' });
+});
 
- // Global Error Handling Middleware
+// Global error handler
 app.use(errorHandler);
 
-
 module.exports = app;
-

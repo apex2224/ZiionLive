@@ -124,6 +124,11 @@ import FounderImg2 from './aboutus/founder-img2.jpeg'
 import webdesigning from './allcourses/cardimages/webdesigning.png'
 import datascience from './allcourses/cardimages/datascience.webp'
 import digital from './allcourses/cardimages/digital.webp'
+import ai from './allcourses/cardimages/ai.jpg'
+import graphic from './allcourses/cardimages/graphic.jpg'
+import ml from './allcourses/cardimages/ml.jpg'
+import mobileapp from './allcourses/cardimages/mobileapp.jpg'
+import webdev from './allcourses/cardimages/webdev.jpg'
 
 
 // certifications
@@ -133,6 +138,19 @@ import certificate1 from './certification/certificate-image1.jpg'
 import certificate2 from './certification/certificate-image2.jpg'
 import certificate3 from './certification/certificate-image3.jpg'
 import certificate4 from './certification/certificate-image4.jpg'
+
+// courses tool images
+
+import python from './allcourses/datascience/python.png'
+import tensorflow from './allcourses/datascience/tensorflow.webp'
+
+import sklearn from './allcourses/datascience/scikitlearn.png'
+import pytorch from './allcourses/datascience/pytorch.png'
+import numpy from './allcourses/datascience/numpy.png'
+import matplotlib from './allcourses/datascience/matpolib.png'
+import jupyter from './allcourses/datascience/jupyter.png'
+import seaborn from './allcourses/datascience/seaborn.png'
+
 
 
 
@@ -263,6 +281,16 @@ const images={
     webdesigning,
     datascience,
     digital,
+    ai,
+    graphic,
+    ml,
+    mobileapp,
+    webdev,
+
+
+    // tools icon
+
+    python, jupyter,matplotlib,numpy,pytorch,sklearn,seaborn,tensorflow,
 
 
     // certifications
