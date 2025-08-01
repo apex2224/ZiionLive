@@ -3,10 +3,12 @@ import styles from './digitalMarketing.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions } from './digitalMarketingData';
+import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions,syllabusData,projectData } from './digitalMarketingData';
 import EnrollProcess from '../ProcessSection/EnrollProcess';
 import Certification from '../../Certification/Certification';
 import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
+
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -63,6 +65,27 @@ const DigitalMarketing= () => {
       }
     });
   }, [openIndex]);
+
+    const [selected, setSelected] = useState("HTML, HTML5, Bootstrap");
+
+
+  //  project //
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCount = 4;
+
+  const nextProject = () => {
+    if (currentIndex + visibleCount < projectData.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const prevProject = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+  const visibleProjects = projectData.slice(currentIndex, currentIndex + visibleCount);
 
 
 
@@ -165,10 +188,75 @@ const DigitalMarketing= () => {
 
 <EnrollProcess/>
 
-      <div>
-        {/* syllabus */}
-      </div>
+         {/* sylabus */}
+   <div className={styles.syllabusContainer}>
+  <h1>What Will Our Trainees Learn In Web Designing Training</h1>
+  <p>Explore our <strong>Data Science training course</strong> curriculum to know what you are going to learn exactly.
+         Ziion Technology is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.</p>
 
+  <div className={styles.syllabusWrapper}>
+    <div className={styles.topicList}>
+      {Object.keys(syllabusData).map((topic) => (
+        <div
+          key={topic}
+          className={`${styles.topicItem} ${selected === topic ? styles.active : ''}`}
+          onClick={() => setSelected(topic)}
+        >
+          {topic}
+        </div>
+      ))}
+    </div>
+
+    <div className={styles.topicDetails}>
+      <h3>{selected}:</h3>
+      <ul>
+        {syllabusData[selected].map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{/* projects */}
+ <div className={styles.projectforwebdesigning_container}>
+      <h2 className={styles.projectforwebdesigning_heading}>Build Real-Time Projects to be Industry-Ready</h2>
+      <p className={styles.projectforwebdesigning_subheading}>
+        At Tutort, you learn and grow in the same way that you would on the job. You will learn the fundamentals,
+        receive guidance from our mentors, solve real-world problems, and work your way to the top - all while doing
+        professional work on real-time projects.
+      </p>
+
+      <div className={styles.projectforwebdesigning_slider}>
+        <button onClick={prevProject} className={styles.projectforwebdesigning_arrow} disabled={currentIndex === 0}>
+          <FaArrowLeft />
+        </button>
+
+        <div className={styles.projectforwebdesigning_cardContainer}>
+          {visibleProjects.map((project, index) => (
+            <div key={index} className={styles.projectforwebdesigning_card}>
+              <div className={styles.projectforwebdesigning_company}>{project.company}</div>
+              <h3 className={styles.projectforwebdesigning_title}>{project.title}</h3>
+              <p className={styles.projectforwebdesigning_description}>{project.description}</p>
+              <div className={styles.projectforwebdesigning_tags}>
+                {project.tags.map((tag, i) => (
+                  <span key={i} className={styles.projectforwebdesigning_tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={nextProject}
+          className={styles.projectforwebdesigning_arrow}
+          disabled={currentIndex + visibleCount >= projectData.length}
+        >
+          <FaArrowRight />
+        </button>
+      </div>
+    </div>
       <PlacementCarousel/>
 
       {/* career oportunities */}

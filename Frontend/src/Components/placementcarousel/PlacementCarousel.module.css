@@ -13,10 +13,6 @@
   animation-iteration-count: infinite;
 }
 
-.placementheading{
-  text-align: center;
-  font-weight: bold;
-}
 .scrollLeft {
   animation-name: scrollLeft;
 }
@@ -55,16 +51,35 @@
 }
 
 .profileSection {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .companySection {
   font-size: 0.9rem;
+  text-align: center;
   color: #aaa;
 }
 
+.storyHeading{
+  font-size: 7.5vw;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.cardImage{
+border: 1px white solid;
+border-radius: 50%;
+height: 65%;
+}
+
+.iFrame{
+
+}
 /* Optional: Diagonal pattern */
 .carouselWrapper::before {
   content: '';

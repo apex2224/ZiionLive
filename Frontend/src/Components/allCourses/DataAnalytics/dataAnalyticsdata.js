@@ -93,3 +93,109 @@ export const faqQuestions = [
   },
 ];
 
+
+// sylabus //
+
+export const syllabusData = {
+  "HTML, HTML5, Bootstrap": [
+    "Introduction HTML",
+    "HTML Basics",
+    "HTML Elements",
+    "HTML5 Semantic",
+    "HTML Attributes",
+    "HTML Headings",
+    "HTML Paragraph",
+    "HTML styles",
+    "HTML Formatting",
+    "HTML Quotations"
+  ],
+  "CSS, CSS3": [
+    "CSS Basics",
+    "Selectors",
+    "Box Model",
+    "Flexbox",
+    "Grid Layout"
+  ],
+  "JQuery": [
+    "jQuery Basics",
+    "DOM Manipulation",
+    "Events",
+    "Effects"
+  ],
+  "Java Script": [
+    "JS Basics",
+    "Functions",
+    "DOM",
+    "ES6+ Features"
+  ],
+  "AngularJS": [
+    "Angular Basics",
+    "Components",
+    "Routing",
+    "Services"
+  ],
+  "ReactJS": [
+    "React Basics",
+    "JSX",
+    "Props & State",
+    "Hooks",
+    "React Router"
+  ]
+};
+
+
+
+
+// projects //
+
+export const projectData = [
+  {
+    title: 'Inventory Management',
+    company: 'FOSSIL',
+    description: 'Help companies in finding out current market trends with respect to different regions and predict the correct inventory mix to reduce inter-transional cost of...',
+    tags: [ 'ML', 'SQL'],
+  },
+  {
+    title: 'Predict the US Mortgage Loan Market',
+    company: 'Bank of America',
+    description: 'Help in business to improve decision making and approvals of loans in the credit department.',
+    tags: [ 'PowerBI', 'ML'],
+  },
+  {
+    title: 'Anomaly Detection',
+    company: 'HSBC',
+    description: 'Identify whether connection requests into the system are legal and flag if any suspicious-looking activities are present.',
+    tags: [ 'Classification', 'SQL'],
+  },
+  {
+    title: 'Credit Card Renewal Campaign',
+    company: '',
+    description: 'Identifying the best customers for a credit card promotional offer using causal inference and ML.',
+    tags: ['Python', 'ML'],
+  },
+  {
+    title: 'Anomaly Detection',
+    company: 'HSBC',
+    description: 'Identify whether connection requests into the system are legal and flag if any suspicious-looking activities are present.',
+    tags: [ 'Classification', 'SQL'],
+  },
+  {
+    title: 'Anomaly Detection',
+    company: 'HSBC',
+    description: 'Identify whether connection requests into the system are legal and flag if any suspicious-looking activities are present.',
+    tags: ['Classification', 'SQL'],
+  },
+  {
+    title: 'Anomaly Detection',
+    company: 'HSBC',
+    description: 'Identify whether connection requests into the system are legal and flag if any suspicious-looking activities are present.',
+    tags: [ 'Classification', 'SQL'],
+  },
+  {
+    title: 'Anomaly Detection',
+    company: 'HSBC',
+    description: 'Identify whether connection requests into the system are legal and flag if any suspicious-looking activities are present.',
+    tags: ['Classification', 'SQL'],
+  }
+];
+

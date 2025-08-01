@@ -325,7 +325,8 @@
 }
 
 .statCircle:hover .rotatingRing {
-  animation: rotate 2s linear infinite;
+  animation: rotate 3s linear infinite;
+  -webkit-animation: rotate 3s linear infinite;
 }
 
 .statContent {
@@ -353,9 +354,20 @@
   0% {
     transform: rotate(0);
   }
-  100% {
-    transform: rotate(360deg);
-  }
+  50% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+100%{
+ transform: rotate(0);
+ -webkit-transform: rotate(0);
+ -moz-transform: rotate(0);
+ -ms-transform: rotate(0);
+ -o-transform: rotate(0);
+}
 }
 
 @media (max-width: 768px) {

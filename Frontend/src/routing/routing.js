@@ -91,9 +91,13 @@ export const routes=[
 
     // all cousres routing //
     {path:'/allcourses', element : <CoursesCard/>},
-
-    {path: '/form', element: <Form/>},
+<<<<<<<<< Temporary merge branch 1
     {path: '/allcourses/:courseRoute', element: <CourseDetail/>}
+=========
+    {path: '/allcourses/:courseTitle', element: <CourseDetail/>},
+
+    {path: '/form', element: <Form/>}
+>>>>>>>>> Temporary merge branch 2
 
     
 ]

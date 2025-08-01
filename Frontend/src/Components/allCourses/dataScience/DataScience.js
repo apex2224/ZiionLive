@@ -1,13 +1,13 @@
 import React, {  useState, useRef, useEffect } from 'react'
-// import { useNavigate } from 'react-router';
 import styles from './dataScience.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions } from './dataScienceData';
+import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions,syllabusData,projectData } from './dataScienceData';
 import EnrollProcess from '../ProcessSection/EnrollProcess';
 import Certification from '../../Certification/Certification';
 import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -26,7 +26,7 @@ const useCustomTypewriter = (phrasesArray) => {
       );
 
       if (!isDeleting && text === currentPhrase) {
-        setTimeout(() => setIsDeleting(true), 1200); // pause before deleting
+        setTimeout(() => setIsDeleting(true), 1200);
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
         setCurrentPhraseIndex((prev) => (prev + 1) % phrasesArray.length);
@@ -37,22 +37,20 @@ const useCustomTypewriter = (phrasesArray) => {
   }, [text, isDeleting, currentPhraseIndex, phrasesArray]);
 
   return text;
-}
+};
+
 const DataScience= () => {
-  const typedOutput = useCustomTypewriter(heroPhrases);
+ const typedOutput = useCustomTypewriter(heroPhrases);
 
-
-  
+  // FAQ toggle
   const [openIndex, setOpenIndex] = useState(null);
-  const faqRefs = useRef([]); 
-  
+  const faqRefs = useRef([]);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   useEffect(() => {
-   
     faqRefs.current.forEach((ref, i) => {
       if (ref) {
         if (i === openIndex) {
@@ -63,6 +61,27 @@ const DataScience= () => {
       }
     });
   }, [openIndex]);
+
+  // Syllabus tab
+  const [selected, setSelected] = useState("CSS, CSS3");
+
+  // Projects slider
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCount = 4;
+
+  const nextProject = () => {
+    if (currentIndex + visibleCount < projectData.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const prevProject = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const visibleProjects = projectData.slice(currentIndex, currentIndex + visibleCount);
 
 
   return (
@@ -101,7 +120,111 @@ Learn to transform raw data into powerful predictions and intelligent solutions,
         </div>
       ))}
     </div>
+    
+{/* tools container */}
+<section className={styles.toolsMain}>
+  <h1>tools</h1>
+<div className={styles.webdevtoolsContainer}>
+      <div className={styles.webdevtools}>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>Python</h3>
+          <p className={styles.description}>
+            Python is the most widely used programming language in Data Science due to its simplicity and powerful libraries like NumPy, Pandas, and Matplotlib.
+          </p>
+        </div>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.python} alt="Python for Data Science" className={styles.webdevtoolsFeatureImg} />
+        </div>
+      </div>
 
+      <div className={styles.webdevtools}>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.tensorflow} alt="TensorFlow" className={styles.webdevtoolsFeatureImg} />
+        </div>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>TensorFlow</h3>
+          <p className={styles.description}>
+            TensorFlow is an open-source machine learning framework developed by Google, ideal for building deep learning models.
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.webdevtools}>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>Scikit-learn</h3>
+          <p className={styles.description}>
+            Scikit-learn is a Python library that provides simple and efficient tools for data mining, machine learning, and data analysis.
+          </p>
+        </div>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.sklearn} alt="Scikit-learn" className={styles.webdevtoolsFeatureImg} />
+        </div>
+      </div>
+
+      <div className={styles.webdevtools}>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.pytorch} alt="Keras" className={styles.webdevtoolsFeatureImg} />
+        </div>
+         <div className={styles.textBlock}>
+          <h3 className={styles.title}>PyTorch</h3>
+          <p className={styles.description}>
+            Developed by Facebook, PyTorch is popular for its dynamic computational graph and is widely used for research and production in deep learning.
+          </p>
+        </div>
+      </div>
+
+        <div className={styles.webdevtools}>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>NumPy</h3>
+          <p className={styles.description}>
+            A foundational library for numerical computing in Python, NumPy supports large, multi-dimensional arrays and matrices along with mathematical functions.
+          </p>
+        </div>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.numpy} alt="NumPy" className={styles.webdevtoolsFeatureImg} />
+        </div>
+      </div>
+
+      
+      <div className={styles.webdevtools}>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.matplotlib} alt="Matplotlib" className={styles.webdevtoolsFeatureImg} />
+        </div>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>Matplotlib</h3>
+          <p className={styles.description}>
+            Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.webdevtools}>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>Jupyter Notebook</h3>
+          <p className={styles.description}>
+            Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, and visualizations.
+          </p>
+        </div>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.jupyter} alt="Jupyter Notebook" className={styles.webdevtoolsFeatureImg} />
+        </div>
+      </div>
+
+      
+      <div className={styles.webdevtools}>
+        <div className={styles.webdevtoolsFeature}>
+          <img src={images.seaborn} alt="Matplotlib" className={styles.webdevtoolsFeatureImg} />
+        </div>
+        <div className={styles.textBlock}>
+          <h3 className={styles.title}>Seaborn</h3>
+          <p className={styles.description}>
+            Seaborn is built on top of Matplotlib and provides a high-level interface for drawing attractive and informative statistical graphics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+</section>
 
 
       {/* what will you learn */}
@@ -172,9 +295,76 @@ Wanting to upgrade skills with modern tools and machine learning techniques.    
       </div>
 
 <EnrollProcess/>
-      <div>
-        {/* syllabus */}
+      
+          {/* sylabus */}
+   <div className={styles.syllabusContainer}>
+  <h1>What Will Our Trainees Learn In Web Designing Training</h1>
+  <p>Explore our <strong>Data Science training course</strong> curriculum to know what you are going to learn exactly.
+         Ziion Technology is one of India’s leading industrial training institutes, offering comprehensive training to our <strong>trainees</strong>.</p>
+
+  <div className={styles.syllabusWrapper}>
+    <div className={styles.topicList}>
+      {Object.keys(syllabusData).map((topic) => (
+        <div
+          key={topic}
+          className={`${styles.topicItem} ${selected === topic ? styles.active : ''}`}
+          onClick={() => setSelected(topic)}
+        >
+          {topic}
+        </div>
+      ))}
+    </div>
+
+    <div className={styles.topicDetails}>
+      <h3>{selected}:</h3>
+      <ul>
+        {syllabusData[selected].map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{/* projects */}
+ <div className={styles.projectforwebdesigning_container}>
+      <h2 className={styles.projectforwebdesigning_heading}>Build Real-Time Projects to be Industry-Ready</h2>
+      <p className={styles.projectforwebdesigning_subheading}>
+        At Tutort, you learn and grow in the same way that you would on the job. You will learn the fundamentals,
+        receive guidance from our mentors, solve real-world problems, and work your way to the top - all while doing
+        professional work on real-time projects.
+      </p>
+
+      <div className={styles.projectforwebdesigning_slider}>
+        <button onClick={prevProject} className={styles.projectforwebdesigning_arrow} disabled={currentIndex === 0}>
+          <FaArrowLeft />
+        </button>
+
+        <div className={styles.projectforwebdesigning_cardContainer}>
+          {visibleProjects.map((project, index) => (
+            <div key={index} className={styles.projectforwebdesigning_card}>
+              <div className={styles.projectforwebdesigning_company}>{project.company}</div>
+              <h3 className={styles.projectforwebdesigning_title}>{project.title}</h3>
+              <p className={styles.projectforwebdesigning_description}>{project.description}</p>
+              <div className={styles.projectforwebdesigning_tags}>
+                {project.tags.map((tag, i) => (
+                  <span key={i} className={styles.projectforwebdesigning_tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={nextProject}
+          className={styles.projectforwebdesigning_arrow}
+          disabled={currentIndex + visibleCount >= projectData.length}
+        >
+          <FaArrowRight />
+        </button>
       </div>
+    </div>
 
       <PlacementCarousel/>
 

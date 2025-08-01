@@ -1,26 +1,36 @@
 import React from 'react';
 import styles from './PlacementCarousel.module.css';
-
-const leftScrollCards = [
-  { name: "Mandeep Singh", company: "Techo AI" },
-  { name: "Simran Kaur", company: "CodeBase" },
-  { name: "Amit Sharma", company: "Designify" },
-  { name: "Priya Kapoor", company: "DevStack" },
-  { name: "Rohit Verma", company: "Bitwise" },
-  { name: "Anjali Das", company: "BrightTech" },
-  { name: "Karan Mehta", company: "NextGen" },
-  { name: "Tanya Gill", company: "CodeCraft" },
-];
+import images from '../../assets/images'
 
 const rightScrollCards = [
-  { name: "Ravi Kumar", company: "Pixel Logic" },
-  { name: "Neha Rani", company: "Softway Inc." },
-  { name: "Arjun Mehta", company: "CloudSync" },
-  { name: "Harshit Jain", company: "AiFuel" },
-  { name: "Sakshi Yadav", company: "ThinkStack" },
-  { name: "Dev Sharma", company: "Macroverse" },
-  { name: "Ishita Malhotra", company: "Skysoft" },
-  { name: "Nikhil Bansal", company: "Logicode" },
+  { name: "Mandeep Singh", company: "Techo AI",image:images.aichatfeature1 },
+  { name: "Simran Kaur", company: "CodeBase",image:images.aichatfeature1  },
+  { name: "Amit Sharma", company: "Designify",image:images.aichatfeature1  },
+  { name: "Priya Kapoor", company: "DevStack",image:images.aichatfeature1  },
+  { name: "Rohit Verma", company: "Bitwise",image:images.aichatfeature1  },
+  { name: "Anjali Das", company: "BrightTech",image:images.aichatfeature1  },
+  { name: "Karan Mehta", company: "NextGen",image:images.aichatfeature1  },
+  { name: "Tanya Gill", company: "CodeCraft",image:images.aichatfeature1  },
+];
+
+
+const leftScrollCards = [
+  { name: "Ravi Kumar", company: "Pixel Logic",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX" },
+  { name: "Neha Rani", company: "Softway Inc.",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Arjun Mehta", company: "CloudSync",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Harshit Jain", company: "AiFuel",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Sakshi Yadav", company: "ThinkStack",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Dev Sharma", company: "Macroverse",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Ishita Malhotra", company: "Skysoft",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
+  { name: "Nikhil Bansal", company: "Logicode",
+    iframe:"https://youtube.com/shorts/jqavyDF02so?si=n0PfvdyQvLDIn5gX"  },
 ];
 
 const PlacementCarousel = () => {
@@ -43,11 +53,11 @@ const PlacementCarousel = () => {
   );
 
   return (
-    <div>
-      <h1 className={styles.placementheading}>SUCCESS STORIES</h1>
-      {renderCards(rightScrollCards, 'left')} {/* Top row scrolls left */}
-      {renderCards(leftScrollCards, 'right')} {/* Bottom row scrolls right */}
-    </div>
+   <div>
+         <div className={styles.carouselWrapper}><h1 className={styles.storyHeading}>Our Success Story</h1></div>
+         {renderCards(rightScrollCards, 'left')} {/* Top row scrolls left */}
+         {renderCards(leftScrollCards, 'right')} {/* Bottom row scrolls right */}
+       </div>
   );
 };
 

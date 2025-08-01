@@ -3,11 +3,15 @@ import styles from './webdesigning.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
-import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities, projectData,syllabusData } from './webDesigningData';
+<<<<<<<<< Temporary merge branch 1
+import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
 import EnrollProcess from '../ProcessSection/EnrollProcess';
 import Certification from '../../Certification/Certification';
 import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
+=========
+import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities,  projectData, syllabusData} from './webDesigningData';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+>>>>>>>>> Temporary merge branch 2
 
 
 const useCustomTypewriter = (phrasesArray) => {
