@@ -4,6 +4,9 @@ import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
 import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
+import EnrollProcess from '../ProcessSection/EnrollProcess';
+import Certification from '../../Certification/Certification';
+import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
 
 
 const useCustomTypewriter = (phrasesArray) => {
@@ -192,6 +195,9 @@ const Webdesigning = () => {
         </div>
       </div>
 
+
+      <EnrollProcess/>
+
         {/* sylabus */}
      <div className={styles.container}>
      <h1>Heading</h1>
@@ -221,6 +227,8 @@ const Webdesigning = () => {
       </div>
     </div>
 
+
+<PlacementCarousel/>
       {/* career oportunities */}
 
       <div>
@@ -281,6 +289,8 @@ const Webdesigning = () => {
           </div>
         </div>
       </section>
+
+      <Certification/>
 
       <Footer />
     </div>

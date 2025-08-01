@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, {  useState, useRef, useEffect } from 'react'
+// import { useNavigate } from 'react-router';
 import styles from './dataScience.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './dataScienceData';
+import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions } from './dataScienceData';
+import EnrollProcess from '../ProcessSection/EnrollProcess';
+import Certification from '../../Certification/Certification';
+import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -37,6 +41,30 @@ const useCustomTypewriter = (phrasesArray) => {
 const DataScience= () => {
   const typedOutput = useCustomTypewriter(heroPhrases);
 
+
+  
+  const [openIndex, setOpenIndex] = useState(null);
+  const faqRefs = useRef([]); 
+  
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  useEffect(() => {
+   
+    faqRefs.current.forEach((ref, i) => {
+      if (ref) {
+        if (i === openIndex) {
+          ref.classList.add(styles.openBody);
+        } else {
+          ref.classList.remove(styles.openBody);
+        }
+      }
+    });
+  }, [openIndex]);
+
+
   return (
     <div>
       <Navbar />
@@ -48,13 +76,14 @@ const DataScience= () => {
         <div className={styles.webDesigningContent}>
           <h1 className={styles.webDesigningTitle}>
       <span className={`${styles.webDesigningFalldown} ${styles.gradientText}`}>
-         Data Science Course in Chandigarh<br />
+       AI-Driven Data Science Course in Chandigarh
+<br />
         <span className={styles.typedText}>{typedOutput}</span>
         <span className={styles.cursor}>|</span>
       </span>
     </h1>
           <h2 className={styles.webDesigningSubtitle}>
-      Our Data Science Course is designed to provide hands-on training in Python, Machine Learning, Deep Learning, Data Visualization, Statistics, and more. Master real-world skills to analyze data, build models, and gain insights that drive decisions in today’s data-driven world.
+Learn to transform raw data into powerful predictions and intelligent solutions, building the core skills essential for Artificial Intelligence and Machine Learning, with our top-rated Data Science course in Chandigarh.
           </h2>
           <button className={styles.webDesigningHerobutton}>View Demo →</button>
         </div>
@@ -91,32 +120,41 @@ const DataScience= () => {
                 <li className={styles.pointItem}>
                   <span className={styles.arrow}>→</span>
                   <div>
-                    <strong>Students (10th/12th Pass)</strong><br />
-                    Turn your curiosity into a career! Get early exposure to real-world tech skills and unlock internships or junior roles in web, design, or digital sectors.
+                    <strong>Aspiring Data Scientist</strong><br />
+                     Beginners with an analytical mindset eager to enter the field.
+
+                  </div>
+                </li>
+                <li className={styles.pointItem}>
+                  <span className={styles.arrow}>→</span>
+                  <div>
+                    <strong>Software Developers/Engineers</strong><br />
+                     Looking to transition into data-centric roles.
+
+
                   </div>
                 </li>
 
                 <li className={styles.pointItem}>
                   <span className={styles.arrow}>→</span>
                   <div>
-                    <strong>Graduates / Job Seekers</strong><br />
-                    Bridge the gap between education and employment. Master job-relevant tools and confidently apply for high-demand roles in tech, marketing, or business.
+                    <strong>Analysts & Statisticians</strong><br />
+Wanting to upgrade skills with modern tools and machine learning techniques.                  </div>
+                </li>
+
+                <li className={styles.pointItem}>
+                  <span className={styles.arrow}>→</span>
+                  <div>
+                    <strong>Academics & Researchers</strong><br />
+                      Seeking practical applications for their theoretical knowledge.
                   </div>
                 </li>
 
                 <li className={styles.pointItem}>
                   <span className={styles.arrow}>→</span>
                   <div>
-                    <strong>Freelancers & Entrepreneurs</strong><br />
-                    Transform your ideas into income. Learn to build websites, promote your brand online, and scale your freelance services or startup with digital excellence.
-                  </div>
-                </li>
-
-                <li className={styles.pointItem}>
-                  <span className={styles.arrow}>→</span>
-                  <div>
-                    <strong>Working Professionals (Upskilling)</strong><br />
-                    Future-proof your career. Stay ahead in your field, shift into trending tech roles, or gain the edge for promotions and leadership opportunities.
+                    <strong>Any Professional</strong><br />
+          With a keen interest in data, problem-solving, and a desire to make data-driven decisions.
                   </div>
                 </li>
               </ul>
@@ -133,10 +171,12 @@ const DataScience= () => {
         </div>
       </div>
 
-
+<EnrollProcess/>
       <div>
         {/* syllabus */}
       </div>
+
+      <PlacementCarousel/>
 
       {/* career oportunities */}
 
@@ -198,6 +238,49 @@ const DataScience= () => {
           </div>
         </div>
       </section>
+
+      <Certification/>
+
+{/* faq section */}
+
+
+       <div className={styles.faqContainer}>
+  <div className={styles.faqContent}>
+    <div className={styles.faqLeft}>
+      <h1 className={styles.faqHeading}>Frequently Asked Questions</h1>
+      {/* <p className={styles.faqDescription}>
+        Blandit nunc sapien orci egestas scelerisque mattis. Pulvinar pellentesque cursus ornare neque non mi pellentesque adipiscing mollis.
+      </p> */}
+
+      <div className={styles.faqFaqs}>
+        {faqQuestions.map((item, index) => (
+          <div key={index} className={styles.faqFaqCard}>
+            <div
+              className={styles.faqFaqHeader}
+              onClick={() => toggleFAQ(index)}
+            >
+              <span className={styles.faqIconCircle}>
+                {openIndex === index ? '−' : '+'}
+              </span>
+              <span className={styles.faqQuestionText}>{item.question}</span>
+            </div>
+            {openIndex === index && (
+              <div
+                ref={(el) => (faqRefs.current[index] = el)}
+                className={styles.faqFaqBody}
+              >
+                {item.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
       <Footer />
     </div>
