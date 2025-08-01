@@ -126,6 +126,16 @@ import datascience from './allcourses/cardimages/datascience.webp'
 import digital from './allcourses/cardimages/digital.webp'
 
 
+// certifications
+
+import certificatehero from './certification/certificate-hero.png'
+import certificate1 from './certification/certificate-image1.jpg'
+import certificate2 from './certification/certificate-image2.jpg'
+import certificate3 from './certification/certificate-image3.jpg'
+import certificate4 from './certification/certificate-image4.jpg'
+
+
+
 
 
 const images={
@@ -254,6 +264,14 @@ const images={
     datascience,
     digital,
 
+
+    // certifications
+
+    certificate1,
+    certificate2,
+    certificate3,
+    certificate4,
+    certificatehero,
 
 }
 export default images

@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import styles from './digitalMarketing.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities } from './digitalMarketingData';
+import { statsData, heroPhrases, chooseUsLeftItems, chooseUsRightItems, careerOpportunities,faqQuestions } from './digitalMarketingData';
+import EnrollProcess from '../ProcessSection/EnrollProcess';
+import Certification from '../../Certification/Certification';
+import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
 
 const useCustomTypewriter = (phrasesArray) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+
+
+
 
   useEffect(() => {
     const currentPhrase = phrasesArray[currentPhraseIndex];
@@ -36,6 +42,29 @@ const useCustomTypewriter = (phrasesArray) => {
 }
 const DigitalMarketing= () => {
   const typedOutput = useCustomTypewriter(heroPhrases);
+
+   const [openIndex, setOpenIndex] = useState(null);
+  const faqRefs = useRef([]); 
+  
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  useEffect(() => {
+   
+    faqRefs.current.forEach((ref, i) => {
+      if (ref) {
+        if (i === openIndex) {
+          ref.classList.add(styles.openBody);
+        } else {
+          ref.classList.remove(styles.openBody);
+        }
+      }
+    });
+  }, [openIndex]);
+
+
 
   return (
     <div>
@@ -134,9 +163,13 @@ const DigitalMarketing= () => {
       </div>
 
 
+<EnrollProcess/>
+
       <div>
         {/* syllabus */}
       </div>
+
+      <PlacementCarousel/>
 
       {/* career oportunities */}
 
@@ -198,6 +231,47 @@ const DigitalMarketing= () => {
           </div>
         </div>
       </section>
+
+
+<Certification/>
+
+      {/* faq section */}
+      
+      
+             <div className={styles.faqContainer}>
+        <div className={styles.faqContent}>
+          <div className={styles.faqLeft}>
+            <h1 className={styles.faqHeading}>Frequently Asked Questions</h1>
+            {/* <p className={styles.faqDescription}>
+              Blandit nunc sapien orci egestas scelerisque mattis. Pulvinar pellentesque cursus ornare neque non mi pellentesque adipiscing mollis.
+            </p> */}
+      
+            <div className={styles.faqFaqs}>
+              {faqQuestions.map((item, index) => (
+                <div key={index} className={styles.faqFaqCard}>
+                  <div
+                    className={styles.faqFaqHeader}
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span className={styles.faqIconCircle}>
+                      {openIndex === index ? '−' : '+'}
+                    </span>
+                    <span className={styles.faqQuestionText}>{item.question}</span>
+                  </div>
+                  {openIndex === index && (
+                    <div
+                      ref={(el) => (faqRefs.current[index] = el)}
+                      className={styles.faqFaqBody}
+                    >
+                      {item.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>

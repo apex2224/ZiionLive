@@ -3,8 +3,10 @@ import styles from './webdesigning.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities,  projectData, syllabusData} from './webDesigningData';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
+import EnrollProcess from '../ProcessSection/EnrollProcess';
+import Certification from '../../Certification/Certification';
+import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
 
 
 const useCustomTypewriter = (phrasesArray) => {
@@ -155,6 +157,9 @@ const Webdesigning = () => {
         </div>
       </div>
 
+
+      <EnrollProcess/>
+
         {/* sylabus */}
    <div className={styles.syllabusContainer}>
   <h1>What Will Our Trainees Learn In Web Designing Training</h1>
@@ -227,6 +232,8 @@ const Webdesigning = () => {
 
 
 
+
+<PlacementCarousel/>
       {/* career oportunities */}
 
       <div className={styles.carerrOpportunities}>
@@ -287,6 +294,8 @@ const Webdesigning = () => {
           </div>
         </div>
       </section>
+
+      <Certification/>
 
       <Footer />
     </div>

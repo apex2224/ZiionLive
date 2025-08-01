@@ -73,3 +73,24 @@ export const careerOpportunities = [
   },
 ];
 
+
+
+
+export const faqQuestions = [
+  {
+    question: 'What software and tools will I learn in this Data Science course?',
+    answer: 'You will primarily learn Python, along with libraries like NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, and an introduction to TensorFlow/Keras for deep learning/AI concepts, and SQL.',
+  },
+  {
+    question: 'Is this course only for AI roles?',
+    answer: 'While this course provides a strong foundation for AI, it is a comprehensive Data Science program. You will be prepared for various roles like Data Analyst, Data Scientist, and entry-level Machine Learning Engineer, all of which leverage the skills learned here, making it a versatile Data Science course in Chandigarh for the job market',
+  },
+  {
+    question: 'Is there any certification provided?',
+    answer: 'Yes, upon successful completion of the Data Science course in Chandigarh and projects, you will receive an industry-recognized certification from Ziion Technology.',
+  },
+  {
+    question: 'Is classroom training available?',
+    answer: 'Yes, we offer flexible learning options including interactive classroom training sessions at our Chandigarh center, in addition to live online classes, making us a leading provider of Data Science course.',
+  },
+];

@@ -28,7 +28,7 @@ const CourseDetail = () => {
     'ml': <MachineLearning/>,
     'mobileapp': <MobileAppDevelopment/>,
     'php': <PHP/>,
-    'graphic-designing': <GraphicDesigning/>,
+    'graphic': <GraphicDesigning/>,
 
   
   };

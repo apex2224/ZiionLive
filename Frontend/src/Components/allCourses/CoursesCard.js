@@ -15,7 +15,7 @@ const topics = [
   { id: 7, route: 'data-analytics', title: 'Data Analytics', label: 'Data Analytics', description: 'Having Trouble.?Find a solutions there!.', color: '#2b5971' },
   { id: 8, route: 'mobileapp', title: 'Mobile App Development', label: 'Mobile Application Development', description: 'How to use Mediator integrations to external services', color: '#459c42' },
   { id: 9, route: 'php', title: 'PHP', label: 'PHP', description: 'Get the best Mediator Chatbot AI and Automations Hub.', color: '#000fac' },
-  { id: 10, route: 'graphic-designing', title: 'Graphic Designing', label: 'Graphic Designing', description: 'Automate Mediator to engage & target your visitors & users.', color: '#603418' },
+  { id: 10, route: 'graphic', title: 'Graphic Designing', label: 'Graphic Designing', description: 'Automate Mediator to engage & target your visitors & users.', color: '#603418' },
 ];
 
 const CoursesCard = () => {

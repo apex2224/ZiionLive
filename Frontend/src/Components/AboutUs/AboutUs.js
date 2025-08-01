@@ -4,6 +4,7 @@ import NavBar from "../head/Navbar";
 import images from "../../assets/images";
 import Footer from "../footer/Footer";
 import axios from "axios";
+import Journey from "./Journey";
 
 
 
@@ -70,6 +71,7 @@ const AboutUs = () => {
     .catch(err => console.error("Error fetching plans:", err));
 }, []);
   return (
+    
    <>
 
    <NavBar/>
@@ -228,7 +230,17 @@ Thank you for choosing us to go with you.
       </div>
     </section>
 
+
+   
     </section>
+
+    
+
+
+
+{/* journey section */}
+<Journey/>
+
 
 
   

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+.processSection {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.label {
+  color: purple;
+  /* font-weight: ; */
+  font-size: 2rem;
+  font-family: 'Monoton', cursive;
+}
+
+.header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  color: #1b0036;
+  text-align: center;
+}
+
+.header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1rem;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stepCard {
+  flex: 1 1 250px;
+  max-width: 270px;
+  background: #fff;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconImage {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.stepNumber {
+  position: absolute;
+  left: -2.4rem; 
+  top: 10px;   
+  font-size: 6rem;
+  color: #530c0c;
+  opacity: 0.1;
+  font-family: 'Monoton', cursive;
+  z-index: 1;
+  pointer-events: none;
+}
+.stepCard h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b0036;
+  margin: 0.5rem 0;
+}
+
+.stepCard p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .stepsContainer {
+    gap: 5rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+ }
+
+
+@media (max-width: 1080px) {
+ 
+  .stepCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+ .header h2 {
+    font-size: 1.6rem;
+  }
+  
+}
+
+@media (max-width: 800px) {
+ .stepCard {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .stepsContainer {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1.75rem;
+  }
+
+  .stepNumber {
+    font-size: 3rem;
+  }
+
+  .itemsWrapper {
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  
+  .curiousSectionContent {
+    order: 1;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .stepsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stepCard {
+    max-width: 90%;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .label {
+    font-size: 1.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .stepCard h3 {
+    font-size: 1rem;
+  }
+
+  .stepCard p {
+    font-size: 0.85rem;
+  }
+
+  
+}

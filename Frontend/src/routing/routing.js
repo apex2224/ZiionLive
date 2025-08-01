@@ -83,7 +83,7 @@ export const routes=[
     {path: '/ml', element: <MachineLearning/>},
     {path: '/mobileapp', element: <MobileAppDevelopment/>},
     {path: '/php', element: <PHP/>},
-    {path: '/graphic-designing', element: <GraphicDesigning/>},
+    {path: '/graphic', element: <GraphicDesigning/>},
    
     
     {path : '/aboutus', element : <AboutUs/>},
@@ -94,6 +94,7 @@ export const routes=[
     {path: '/allcourses/:courseTitle', element: <CourseDetail/>},
 
     {path: '/form', element: <Form/>}
+    {path: '/allcourses/:courseRoute', element: <CourseDetail/>}
 
     
 ]
