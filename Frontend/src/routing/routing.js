@@ -91,7 +91,9 @@ export const routes=[
 
     // all cousres routing //
     {path:'/allcourses', element : <CoursesCard/>},
-    {path: '/allcourses/:courseTitle', element: <CourseDetail/>}
+    {path: '/allcourses/:courseTitle', element: <CourseDetail/>},
+
+    {path: '/form', element: <Form/>}
 
     
 ]

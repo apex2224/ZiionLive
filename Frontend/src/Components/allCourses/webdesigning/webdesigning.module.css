@@ -165,69 +165,274 @@
 
 
 /* sylabus */
-.container {
-  padding: 20px;
+.syllabusContainer {
+  width: 100%;
+  padding: 5rem 2rem;
+  color: white;
   font-family: sans-serif;
-  background: #f4f9ff;
+  background: #0e0e0e;
+  text-align: center; /* Center the heading and paragraph */
 }
 
-.contentWrapper {
+.syllabusContainer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.syllabusContainer p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.syllabusWrapper {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  width: 80%;
+  margin: auto;
 }
 
-.leftPanel {
+.topicList {
   width: 30%;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: #222121;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  overflow-y: auto;
+  overflow-y: scroll;
   max-height: 400px;
+  color: white;
 }
 
-.rightPanel {
-  flex: 1;
-  background: #cfe2ff;
+.topicDetails {
+  color: white;
+  width: 60%;
   padding: 20px;
+  border: 1px solid white;
   border-radius: 8px;
-  overflow-y: auto;
+  overflow-y: scroll;
   max-height: 400px;
+  background-color: #1a1a1a;
+  text-align: left;
 }
 
 .topicItem {
   padding: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .topicItem:hover,
 .active {
   background-color: #e1edff;
   font-weight: bold;
+  color: black;
 }
 
 ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 10px;
 }
 
-li::before {
-  content: "\25C6";
-  margin-right: 10px;
-  color: #003399;
-}
 
 @media (max-width: 768px) {
-  .contentWrapper {
+  .syllabusWrapper {
     flex-direction: column;
+    width: 100%;
   }
 
-  .leftPanel, .rightPanel {
+  .topicList,
+  .topicDetails {
     width: 100%;
     max-height: 300px;
   }
+
+  .syllabusContainer h1 {
+    font-size: 2rem;
+  }
+
+  .syllabusContainer p {
+    font-size: 1rem;
+  }
 }
+
+
+
+
+
+/* projects */
+.projectforwebdesigning_container {
+  padding: 4rem 2rem;
+  background-color: #0e0e0e;
+  text-align: center;
+  font-family: sans-serif;
+  width: 100%;
+  margin: auto;
+}
+
+.projectforwebdesigning_heading {
+  font-size: 2.2rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.projectforwebdesigning_subheading {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectforwebdesigning_slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
+  background-color: #0e0e0e;
+  padding: 6rem 2rem;
+}
+
+.projectforwebdesigning_cardContainer {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  width: 100%;
+
+}
+
+.projectforwebdesigning_card {
+  background-color: #222121;
+  border: 1px solid white;
+  padding: 2rem 3rem;
+  flex: 1;
+  min-width: 0;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+.projectforwebdesigning_card:hover,
+.projectforwebdesigning_card:active{
+  transition: 0.4s ease-in;
+ box-shadow: 0px 0px 2px white;
+
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projectforwebdesigning_company {
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.projectforwebdesigning_title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.projectforwebdesigning_description {
+  color: #7e7c7c;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.projectforwebdesigning_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: left;
+
+}
+
+.projectforwebdesigning_tag {
+  background: #0e0e0e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+.projectforwebdesigning_tag:hover,
+.projectforwebdesigning_tag:active{
+  transition: 0.3s ease-in;
+  border: 1px solid white;
+  box-shadow: 0px 0px 4px white;
+  cursor: grab;
+}
+
+.projectforwebdesigning_arrow {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.projectforwebdesigning_arrow:hover:enabled {
+  background-color: white;
+  color: black;
+}
+
+.projectforwebdesigning_arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .projectforwebdesigning_cardContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projectforwebdesigning_card {
+    flex: 0 0 48%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projectforwebdesigning_card {
+    flex: 0 0 100%;
+  }
+
+  .projectforwebdesigning_slider {
+    flex-direction: column;
+  }
+
+  .projectforwebdesigning_arrow {
+    margin: 1rem 0;
+  }
+}
+
+
+
+
+
+
 
 
 /* what will you learn */
@@ -406,12 +611,21 @@ li::before {
 
 
 /* career oportunities */
+.carerrOpportunities{
+  height: auto;
+  width: 100%;
+  background-color: #0e0e0e;
+  
+}
+
 .opportunitiesHeading {
  font-size: 28px;
   font-weight: 700;
-  color: #003e61;
   margin-bottom: 10px;
   display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #222121;
 }
 
 .careerOpportunitiesGrid {
@@ -420,7 +634,6 @@ li::before {
   gap: 2rem;
   justify-content: center;
   padding: 40px 20px;
-  background-color: #f5f6f5;
 }
 @keyframes fadeInSlideUp {
   0% {
@@ -437,14 +650,14 @@ li::before {
   position: relative;
   width: 350px;
   height: 390px;
-  background-color: #e8f0ff;
+  background-color: #222121;
   border-radius: 20px;
   padding: 2rem 3rem 3rem 2rem;
-  color: #000;
+  color: white;
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
-    animation: fadeInSlideUp 1s ease-out forwards;
+  animation: fadeInSlideUp 1s ease-out forwards;
 
 }
  
@@ -462,8 +675,8 @@ li::before {
 }
 
 .careerCard:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: white;
+  color: black;
 }
 
 .curveTopRight::before {
@@ -473,7 +686,7 @@ li::before {
   right: 0;
   width: 40px;
   height: 10rem;
-  background: #f5f6f5;
+  background: #0e0e0e;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 1rem;
@@ -488,7 +701,7 @@ li::before {
   left: 0;
   width: 50px;
   height: 50px;
-  background: #f5f6f5;
+  background: #0e0e0e;
   border-top-right-radius: 20px;
   z-index: 1;
 }
