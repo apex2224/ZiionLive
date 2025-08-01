@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.9); 
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
 }
 
@@ -19,25 +18,18 @@
 }
 
 .hamburger {
-  display: none;
+  height: 1.5rem;
+  width: 1.5rem;
   cursor: pointer;
-  height: 1rem;
-  width: 1rem;
+  display: none;
+  z-index: 1000;
 }
 
-/* Hide hamburger by default */
-.hamburger {
-  height: 1rem;
-  width: 1rem;
-  display: none;
-  cursor: pointer;
-}
-
-.center {
+.mainMenuContainer {
   flex: 2;
 }
 
-.mainMenuUl {
+.mainMenuList {
   display: flex;
   list-style: none;
   gap: 20px;
@@ -45,7 +37,7 @@
   margin: 0;
 }
 
-.menu {
+.mainMenuItem {
   cursor: pointer;
   color: white;
 }
@@ -74,25 +66,25 @@
   position: relative;
 }
 
-.submenuContainer {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 999;
+.furtherNavWrapper {
+    left: 0;
+  z-index: 1;
+  position: inherit;
 }
-
-.middleMenu {
+.externalFurtherNav {
+  position: absolute;
+  top: 70px; /* Adjust as needed based on nav height */
+  left: 30%; /* Approximate left offset, can be refined or calculated dynamically */
   z-index: 1000;
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
   .hamburger {
-    z-index: 1000;
     display: block;
   }
 
-  .center {
+  .mainMenuContainer {
     position: absolute;
     top: 70px;
     left: 0;
@@ -101,24 +93,21 @@
     padding: 20px;
     display: none;
     flex-direction: column;
-    z-index: 999;
+    
   }
 
   .showMenu {
     display: flex;
   }
 
-  .mainMenuUl {
+  .mainMenuList {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .menu {
+  .mainMenuItem {
     padding: 10px;
-  }
-
-  .submenuContainer {
-    position: static;
+    color: black;
   }
 
   .right {
@@ -128,32 +117,10 @@
   .dropdownWrapper {
     width: 100%;
   }
-}
 
-/* Desktop menu */
-@media (min-width: 769px) {
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .mainMenuUl {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .submenuContainer {
-    display: none;
-    background-color: white;
-    min-width: 150px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .dropdownWrapper:hover .submenuContainer {
-    display: block;
+  .furtherNavWrapper {
+    
+    width: 100%;
+    padding-left: 10px;
   }
 }

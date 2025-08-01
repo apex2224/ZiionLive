@@ -125,6 +125,12 @@ export const syllabusData = {
     "HTML Paragraph",
     "HTML styles",
     "HTML Formatting",
+    "HTML Quotations",
+    "HTML Attributes",
+    "HTML Headings",
+    "HTML Paragraph",
+    "HTML styles",
+    "HTML Formatting",
     "HTML Quotations"
   ],
   "CSS, CSS3": [
@@ -153,6 +159,25 @@ export const syllabusData = {
     "Services"
   ],
   "ReactJS": [
+    "React Basics",
+    "JSX",
+    "Props & State",
+    "Hooks",
+    "React Router"
+  ],
+  "Java def": [
+    "JS Basics",
+    "Functions",
+    "DOM",
+    "ES6+ Features"
+  ],
+  "bsc": [
+    "Angular Basics",
+    "Components",
+    "Routing",
+    "Services"
+  ],
+  "abc": [
     "React Basics",
     "JSX",
     "Props & State",

@@ -8,19 +8,31 @@ const Navbar = () => {
   const [showFurtherNav, setShowFurtherNav] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const navWrapperRef = useRef();
+  const [furtherNavLocked, setFurtherNavLocked] = useState(false); // track if menu is manually opened
 
-  // ✅ Track screen resize for mobile state
+  const navWrapperRef = useRef();
+  const coursesRef = useRef();
+  const furtherNavRef = useRef();
+  const justClickedCourses = useRef(false); // to delay outside click close
+
+  // Update screen size
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // ✅ Close menu on outside click
+  // Click outside logic
   const handleClickOutside = (e) => {
-    if (navWrapperRef.current && !navWrapperRef.current.contains(e.target)) {
+    if (justClickedCourses.current) return;
+
+    if (
+      navWrapperRef.current &&
+      !navWrapperRef.current.contains(e.target) &&
+      (!furtherNavRef.current || !furtherNavRef.current.contains(e.target))
+    ) {
       setShowFurtherNav(false);
+      setFurtherNavLocked(false);
       setMenuOpen(false);
     }
   };
@@ -30,56 +42,84 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const closeMobileMenu = () => {
+    if (isMobile) {
+      setMenuOpen(false);
+      setShowFurtherNav(false);
+      setFurtherNavLocked(false);
+    }
+  };
+
+  const handleCoursesClick = () => {
+    setShowFurtherNav(true);
+    setFurtherNavLocked(true);
+    justClickedCourses.current = true;
+    setTimeout(() => {
+      justClickedCourses.current = false;
+    }, 100);
+  };
+
   return (
-    <div ref={navWrapperRef}>
-      <nav className={styles.navbar}>
-        {/* Left Logo */}
-        <div className={styles.left}>
-          <h1 className={styles.logo}>ZIION TECHNOLOGY</h1>
-        </div>
-
-        {/* ✅ Hamburger only if isMobile */}
-        {isMobile && (
-          <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-            <img src={images.hamburger} alt="hamburger" />
+    <>
+      <div ref={navWrapperRef}>
+        <nav className={styles.navbar}>
+          <div className={styles.left}>
+            <h1 className={styles.logo}>ZIION TECHNOLOGY</h1>
           </div>
-        )}
 
-        {/* Center Menu */}
-        <div className={`${styles.center} ${menuOpen ? styles.showMenu : ''}`}>
-          <ul className={styles.mainMenuUl}>
-            <Link to="/" className={styles.link}><li className={styles.menu}>Home</li></Link>
-
-            {/* Courses Dropdown */}
-            <div
-              className={styles.dropdownWrapper}
-              onMouseEnter={() => !isMobile && setShowFurtherNav(true)}
-              onMouseLeave={() => !isMobile && setShowFurtherNav(false)}
-              onClick={() => isMobile && setShowFurtherNav(prev => !prev)}
-            >
-              <li className={styles.menu}>Courses</li>
-              {showFurtherNav && (
-                <div className={styles.middleMenu}>
-                  <FurtherNav />
-                </div>
-              )}
+          {isMobile && (
+            <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+              <img src={images.hamburger} alt="hamburger" />
             </div>
+          )}
 
-            <Link to="/services" className={styles.link}><li className={styles.menu}>Services</li></Link>
-            <Link to="/placement" className={styles.link}><li className={styles.menu}>Placement</li></Link>
-            <Link to="/aboutus" className={styles.link}><li className={styles.menu}>About Us</li></Link>
-            <Link to="/contact-us" className={styles.link}><li className={styles.menu}>Contact Us</li></Link>
-          </ul>
-        </div>
+          <div className={`${styles.mainMenuContainer} ${menuOpen ? styles.showMenu : ''}`}>
+            <ul className={styles.mainMenuList}>
+              <Link to="/" className={styles.link} onClick={closeMobileMenu}>
+                <li className={styles.mainMenuItem}>Home</li>
+              </Link>
 
-        {/* Right Button */}
-        <div className={styles.right}>
-          <Link to="/signup">
-            <button className={styles.headerBtn}>Download Certificate</button>
-          </Link>
+              {/* Courses menu item */}
+              <li
+                className={styles.mainMenuItem}
+                ref={coursesRef}
+                onClick={handleCoursesClick}
+                onMouseEnter={() => !isMobile && setShowFurtherNav(true)}
+                onMouseLeave={() => !isMobile && !furtherNavLocked && setShowFurtherNav(false)}
+              >
+                Courses
+              </li>
+
+              <Link to="/services" className={styles.link} onClick={closeMobileMenu}>
+                <li className={styles.mainMenuItem}>Services</li>
+              </Link>
+              <Link to="/placement" className={styles.link} onClick={closeMobileMenu}>
+                <li className={styles.mainMenuItem}>Placement</li>
+              </Link>
+              <Link to="/aboutus" className={styles.link} onClick={closeMobileMenu}>
+                <li className={styles.mainMenuItem}>About Us</li>
+              </Link>
+              <Link to="/contact-us" className={styles.link} onClick={closeMobileMenu}>
+                <li className={styles.mainMenuItem}>Contact Us</li>
+              </Link>
+            </ul>
+          </div>
+
+          <div className={styles.right}>
+            <Link to="/signup">
+              <button className={styles.headerBtn}>Download Certificate</button>
+            </Link>
+          </div>
+        </nav>
+      </div>
+
+      {/* FurtherNav menu (dropdown content) */}
+      {showFurtherNav && (
+        <div ref={furtherNavRef} className={styles.externalFurtherNav}>
+          <FurtherNav />
         </div>
-      </nav>
-    </div>
+      )}
+    </>
   );
 };
 

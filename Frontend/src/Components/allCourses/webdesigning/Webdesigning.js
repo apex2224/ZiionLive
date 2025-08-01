@@ -3,7 +3,8 @@ import styles from './webdesigning.module.css'
 import images from '../../../assets/images'
 import Navbar from '../../head/Navbar';
 import Footer from '../../footer/Footer';
-import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities } from './webDesigningData';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
+import { phrases,statsData,chooseUsLeftItems,chooseUsRightItems,careerOpportunities, projectData,syllabusData } from './webDesigningData';
 import EnrollProcess from '../ProcessSection/EnrollProcess';
 import Certification from '../../Certification/Certification';
 import PlacementCarousel from '../../placementcarousel/PlacementCarousel';
@@ -66,6 +67,15 @@ const Webdesigning = () => {
     <div>
       <Navbar />
       <section className={styles.webDesigningHeroSection}>
+
+        <div className={styles.overlay}>
+          <img src={images.html} alt="html" className={styles.html} />
+          <img src={images.css} alt="css" className={styles.css} />
+          <img src={images.js} alt="js" className={styles.js}/>
+          <img src={images.react} alt="react" className={styles.react} />
+          <img src={images.Bootstrap} alt="bootstrap" className={styles.bootstrap} />
+            
+        </div>
         <div className={styles.webDesigning}>
           <img src={images.knowledgeHeroImage} alt="background" className={styles.webDesigningBgImage} />
         </div>

@@ -112,6 +112,17 @@ import wordpressApp from './furtherMenu/integrateapp/hero-bg.jpg'
 //web designing // 
 import willGet from './allcourses/webdesigning/willget.webp'
 import opportunityImg from './allcourses/webdesigning/opportunityImg.png'
+import html from './allcourses/webdesigning/html.png'
+import css from './allcourses/webdesigning/css.png'
+import js from './allcourses/webdesigning/js.png'
+import react from './allcourses/webdesigning/react.png'
+import Bootstrap from './allcourses/webdesigning/bootstrap.png'
+
+// ewb development //
+import mongo from './allcourses/webdevelopment/mongodb.png'
+import express from './allcourses/webdevelopment/express.png'
+import nodejs from './allcourses/webdevelopment/nodejs.png'
+
 
 // About us 
 
@@ -251,6 +262,17 @@ const images={
     // web designing //
     willGet,
     opportunityImg,
+    html,    
+    css,
+    js,
+    react,
+    Bootstrap,
+
+    // web development
+    mongo,
+    express,
+    nodejs,
+
 
     // about us 
 

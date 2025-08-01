@@ -66,6 +66,15 @@ const WebDevelopment= () => {
     <div>
       <Navbar />
       <section className={styles.webDesigningHeroSection}>
+         <div className={styles.overlay}>
+          <img src={images.mongo} alt="mongo" className={styles.mongo} />
+<img src={images.express} alt="express" className={styles.express} />
+<img src={images.html} alt="html" className={styles.html} />
+<img src={images.js} alt="js" className={styles.js} />
+<img src={images.css} alt="css" className={styles.css} />
+
+            
+        </div>
         <div className={styles.webDesigning}>
           <img src={images.knowledgeHeroImage} alt="background" className={styles.webDesigningBgImage} />
         </div>

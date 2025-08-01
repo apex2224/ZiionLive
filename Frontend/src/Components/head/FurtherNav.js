@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import styles from './FurtherNav.module.css';
 
 const FurtherNav = () => {
   return (
-    <div className={styles.middleMenu}>
+    <div className={styles.furtherMenu}>
       <ul className={styles.middleMenuList}>
         <li className={styles.menuItem}>
           <Link to="/allcourses" className={styles.furtherMenuLink}>
