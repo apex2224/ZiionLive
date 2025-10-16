@@ -1,49 +1,14 @@
-/* Global Wrapper for Theme */
-.appWrapper {
-  transition: all 0.3s ease;
-  min-height: 100vh;
-  padding: 1rem;
-}
-
-/* Your dark theme */
-.dark_theme {
-  background-color: #0a0a0a;
-  color: white;
-}
-
-/* Your light theme */
-.light_theme {
-  background-color: #f9f9f9;
-  color: #111;
-}
-
-/* Theme toggle button */
-.themeToggleBtn {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-
-
-
-
 .heroSection {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
   color: white;
-  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .heroImage {
@@ -51,34 +16,34 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
-  border: none;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 0;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* darker overlay for readability */
+  z-index: 1;
 }
 
 .content {
+  position: relative;
   z-index: 2;
   max-width: 900px;
+  padding: 20px;
+  margin-top: 5rem;
 }
 
+/* Title & Animation */
 .title {
   font-size: 2.8rem;
   font-weight: bold;
   margin-top: 20px;
-  color: white;
 }
 
-@keyframes fall {
+@keyframes falldown {
   0% {
     transform: translateY(-1000%);
   }
@@ -87,18 +52,9 @@
   }
 }
 
-.title span {
-  font-weight: 500;
+.falldown {
+  display: inline-block;
   animation: falldown 0.7s ease-in-out;
-}
-
-@keyframes falldown {
-  0% {
-    transform: translateY(-1000%);
-  }
-  50% {
-    transform: translateY(0%);
-  }
 }
 
 .gradientText {
@@ -108,26 +64,64 @@
   display: inline-block;
 }
 
+/* Subtitle */
 .subtitle {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: white;
 }
 
+/* Button */
 .herobutton {
-  background: #8b5cf6;
+  background: #3b82f6;
   color: white;
+  font-size: 1.1rem;
   padding: 12px 28px;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.herobutton:hover {
+  background: #2563eb;
+}
+
+/* Ratings & Trust */
+.rating {
+  margin-top: 10px;
   font-size: 1rem;
 }
 
-.herobutton:hover,
-.herobutton:active {
-  cursor: pointer;
-  background: #7c3aed;
+.trust {
+  font-size: 0.95rem;
+  margin-top: 5px;
 }
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .herobutton {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
 
 /* Decorations */
 .circle {
@@ -264,5 +258,116 @@
 
   .subtitle {
     font-size: 1rem;
+  }
+}
+
+
+/* Add at bottom */
+@media (max-width: 768px) {
+  .mobileFurtherNav {
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  .title{
+    font-size: 2rem;
+  }
+}
+
+.headerBtn {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 0;
+  transition: color 0.3s ease;
+}
+
+.headerBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: translateX(-100%);  /* Start hidden on left */
+  transition: transform 0.5s ease;
+  z-index: -1;
+  border-radius: 0; /* remove rounding */
+}
+
+.headerBtn:hover::before {
+  transform: translateX(0); 
+}
+
+.headerBtn:hover {
+  color: black;
+}
+
+
+
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  max-width: 800px;
+}
+
+.rating {
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.trust {
+  font-size: 1rem;
+  line-height: 1.5;
+  height: auto;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+ 
+  .rating {
+    font-size: 1rem;
+  }
+  .trust {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  .rating {
+    font-size: 0.9rem;
+  }
+  .trust {
+    font-size: 0.8rem;
   }
 }

@@ -1,155 +1,229 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router';
-import styles from './Help.module.css';
-import images from '../../assets/images';
-import NavBar from '../head/Navbar';
-// import HelpBrowseArticles from './HelpBrowseArticles';
-
-const faqData = [
-  {
-    question: 'Question 1',
-    answer: 'Lorem ipsum dolor sit amet consectetur. Eu tortor eget sed amet tortor enim iaculis ultricies sit at arcu amet nisi scelerisque aliquam diam.',
-  },
-  {
-    question: 'Question 2',
-    answer: 'Lorem ipsum dolor sit amet consectetur. Eu tortor eget sed amet tortor enim iaculis ultricies sit at arcu amet nisi scelerisque aliquam diam.',
-  },
-  {
-    question: 'Question 3',
-    answer: 'Lorem ipsum dolor sit amet consectetur. Eu tortor eget sed amet tortor enim iaculis ultricies sit at arcu amet nisi scelerisque aliquam diam.',
-  },
-  {
-    question: 'Question 4',
-    answer: 'Lorem ipsum dolor sit amet consectetur. Eu tortor eget sed amet tortor enim iaculis ultricies sit at arcu amet nisi scelerisque aliquam diam.',
-  },
-];
+import React, { Fragment, useState } from "react";
+import { Link } from 'react-router-dom'
+import styles from "./Help.module.css";
+import Navbar from '../head/Navbar'
+import Footer from '../footer/Footer'
+import Form from '../form/Form'
+import useCustom from '../customHook/useCustom'
+import { useDispatch, useSelector } from 'react-redux';
+import { FormFilled, resetForm } from '../../store/studentSlice';
+import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 
 
-const topics = [
-  { id: 1, title: 'Getting Started', description: 'Best place to get everything right from the beginning with Mediator', color: '#f25c5c' },
-  { id: 2, title: 'Install Mediator', description: 'How to install  Mediator on your website & apps.', color: '#3498db' },
-  { id: 3, title: 'Developers', description: 'Documentation for our REST & JS APIs.', color: '#000000' },
-  { id: 4, title: 'Customization', description: 'Adjust Mediator for your needs.', color: '#00bfa5' },
-  { id: 5, title: 'My Account', description: 'Everything related to your account: avatar, password, notifications & more.', color: '#f39c12' },
-  { id: 6, title: 'Mediator Inbox', description: 'How to reply to your users using Mediators Inbox.', color: '#9b59b6' },
-  { id: 7, title: 'Troubleshooting', description: 'Having Trouble.?Find a solutions there!.', color: '#2b5971' },
-  { id: 8, title: 'Integrations', description: 'How touse Mediator integrations to external services', color: '#459c42' },
-  { id: 9, title: 'AI Chatbot & Automations', description: 'Get the best Mediator Chatbot AI and Automations Hub.', color: '#000fac' },
-  { id: 10, title: 'Automate', description: 'Automate Mediator to engage & target your visitors & users.', color: '#603418' },
-  { id: 11, title: 'Billing & Pricing', description: 'Help with Mediator billing & pricing matters.', color: '#f25c5b' },
-  { id: 12, title: 'My Contacts', description: 'Do more with your Mediator contacts.', color: '#68233a' },
-];
-const Help = () => {
-  
-  const [openIndex, setOpenIndex] = useState(null);
-  const faqRefs = useRef([]); 
-    const navigate = useNavigate();
+const Help = ({closeForm}) => {
+  useCustom('About us | Ziion Technology')
+  const [showForm, setShowForm] = useState(false);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+
+  // form //
+  const formData = useSelector(state => state.student);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+    const [data, setData] = useState()
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(FormFilled({ field: name, value }));
   };
 
-  useEffect(() => {
-   
-    faqRefs.current.forEach((ref, i) => {
-      if (ref) {
-        if (i === openIndex) {
-          ref.classList.add(styles.openBody);
-        } else {
-          ref.classList.remove(styles.openBody);
-        }
-      }
-    });
-  }, [openIndex]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await emailjs.send(
+        'service_4zv8d5l',
+        'template_7lt1pb6',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          course: formData.course,
+        },
+        'j6fsWCbZRRU2n1J4A'
+      );
 
-
-
-
-  const handleCardClick = (topic) => {
-    navigate(`/help/${(topic.title)}`);
+      dispatch(resetForm());
+      closeForm();
+      navigate('/thank-you');
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
+  const handleReset = () => {
+  setData({
+    name: '',
+    email: '',
+    phone: '',
+    course: ''
+  });
+};
+
 
   return (
-    <>
-    <NavBar/>
-     <section className={styles.helpmainHeroSection}>
-  <div className={styles.helpmainHeroContainer}>
-    <h1 className={styles.helpmainHeroTitle}>Help Center</h1>
-    <p className={styles.helpmainHeroSubtitle}>Help</p>
-  </div>
-</section>
+    <Fragment>
+      
+      <Navbar />
+      <div>
+        <section className={styles.hero}>
+          <div className={styles.overlay}>
+            <div className={styles.content}>
+              <h1 className={styles.title}>Get in Touch With Us</h1>
+              <p className={styles.subtitle}>
+                Have questions? We’d love to hear from you. Whether you need support,
+                training details, or want to visit us — we’re here to help.
+              </p>
+              <button className={styles.headerBtn} onClick={() => setShowForm(true)}>
+               
+                  Contact Us
+               
+              </button>
+                    {showForm && <Form closeForm={() => setShowForm(false)} />}
 
-      <div className={styles.helpContainer}>
-        <div className={styles.helpContent}>
-          <div className={styles.helpLeft}>
-            <h1 className={styles.helpHeading}>EVERYTHING YOU NEED TO KNOW ABOUT OUR MEDIATOR</h1>
-            <p className={styles.helpDescription}>
-              Blandit nunc sapien orci egestas scelerisque mattis. Pulvinar pellentesque cursus ornare neque non mi pellentesque adipiscing mollis.
-            </p>
+            </div>
+          </div>
+        </section>
+      </div>
 
-            <div className={styles.helpFaqs}>
-              {faqData.map((item, index) => (
-                <div key={index} className={styles.helpFaqCard}>
-                  <div
-                    className={styles.helpFaqHeader}
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <span className={styles.helpIconCircle}>
-                      {openIndex === index ? '−' : '+'}
-                    </span>
-                    <span className={styles.helpQuestionText}>{item.question}</span>
-                  </div>
-                  {openIndex === index && (
-                    <div
-                      ref={(el) => (faqRefs.current[index] = el)}
-                      className={styles.helpFaqBody}
-                    >
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
+
+
+
+      <div className={styles.wrapper}>
+        {/* Top Section */}
+        <div className={styles.container}>
+          {/* Left Section */}
+          <div className={styles.left}>
+            <h4 className={styles.subHeading}>LET’S PLAN YOUR JOURNEY…</h4>
+            <h2 className={styles.heading}>Reach Us!</h2>
+
+            <div className={styles.infoBlock}>
+              <h3>Address</h3>
+
+              <p>
+                <strong>Mohali:</strong> D-152 First Floor Industrial Area Phase-8
+                Sector-72, Mohali
+              </p>
+
+            </div>
+
+            <div className={styles.infoBlock}>
+              <h3>Contact</h3>
+              <p>
+                <strong>Mobile:</strong> +91 9878564224 | +91 9779904224
+              </p>
+              <p>
+                <strong>Mail:</strong> ziiontechnology@gmail.com
+              </p>
+            </div>
+
+            <div className={styles.infoBlock}>
+              <h3>Office Timing</h3>
+              <p>Mon – Sat : 9:00 AM – 6:30 PM</p>
             </div>
           </div>
 
-          <div className={styles.helpRight}>
-            <img src={images.helpfaq} alt="AI Robot" className={styles.helpImage} />
-            <div className={styles.helpContactBox}>
-              <div className={styles.helpPhone}>
-                <span className={styles.helpIcon}>📞</span> +91 1234567890
-              </div>
-              <button className={styles.helpContactBtn}>CONTACT US</button>
-            </div>
+          {/* Right Section */}
+          <div className={styles.right}>
+            <h4 className={styles.subHeading}>CONTACT US</h4>
+            <h2 className={styles.heading}>Get in Touch</h2>
+
+            <form onSubmit={handleSubmit} className={styles.form}>
+                       <input
+                         type="text"
+                         name="name"
+                         placeholder="Full Name*"
+                         value={formData.name}
+                         onChange={handleChange}
+                         required
+                       />
+                       <input
+                         type="email"
+                         name="email"
+                         placeholder="Email*"
+                         value={formData.email}
+                         onChange={handleChange}
+                         required
+                       />
+                       <input
+                         type="tel"
+                         name="phone"
+                         placeholder="Phone Number*"
+                         value={formData.phone}
+                         onChange={handleChange}
+                         required
+                       />
+                       <select
+                         name="course"
+                         value={formData.course}
+                         onChange={handleChange}
+                         required
+                       >
+                         <option value="">Select Course*</option>
+           <option value="Full Stack Development">Full Stack Development</option>
+           <option value="Data Science">Data Science</option>
+           <option value="Web Designing">Web Designing</option>
+           <option value="Digital Marketing">Digital Marketing</option>
+           <option value="Graphic Designing">Graphic Designing</option>
+           <option value="PHP">PHP</option>
+           <option value="Python">Python</option>
+           <option value="Artificial Intelligence">Artificial Intelligence</option>
+           <option value="Machine Learning">Machine Learning</option>
+           <option value="Mobile App Development">Mobile App Development</option>
+           
+                       </select>
+           
+                       <div>
+                        <button type="submit" disabled={loading} className={styles.headerBtn}>
+                         {loading ? 'Submitting...' : 'Submit'}
+                       </button>
+                        <button type="button" onClick={handleReset} className={styles.headerBtn}>
+                 Reset
+               </button>
+                       </div>
+                     </form>
           </div>
         </div>
-      </div>
-      
-      <div className={styles.helpBrowseSectionWrapper}>
-           <h2 className={styles.helpBrowseSectionHeading}>Browse All Categories</h2>
-           <div className={styles.helpBrowseSectionGrid}>
-             {topics.map(topic => (
-               <div
-                 key={topic.id}
-                 className={styles.helpBrowseSectionCard}
-                 onClick={() => handleCardClick(topic)}
-               >
-                 <div className={styles.helpBrowseSectionIcon}></div>
-                 <div className={styles.helpBrowseSectionText}>
-                   <span
-                     className={styles.helpBrowseSectionLabel}
-                     style={{ backgroundColor: topic.color }}
-                   >
-                     {topic.title}
-                   </span>
-                   <p className={styles.helpBrowseSectionDescription}>{topic.description}</p>
-                 </div>
-               </div>
-             ))}
-           </div>
-         </div>
-    </>
-  );
-}
 
+        {/* Map Section */}
+        <div className={styles.mapSection}>
+          {[
+            {
+              city: "MOHALI",
+              address:
+                "D152, First Floor, Phase-8, Industrial Area, Sector - 72, Mohali - 160055",
+              phone: "+91 9878564224 | +91 9779904224",
+              mapSrc:
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2092264234693!2d76.70553657537212!3d30.71251797459404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef7b48418d6b%3A0x8b24ec380ed85440!2sZiion%20Technology%20-%20Software%20Company%20in%20Mohali!5e0!3m2!1sen!2sin!4v1756213977139!5m2!1sen!2sin",
+            },
+
+          ].map((loc, idx) => (
+            <div key={idx} className={styles.mapCard}>
+              <h3>{loc.city}</h3>
+              <p>{loc.address}</p>
+              <p>
+                <strong>Mobile:</strong> {loc.phone}
+              </p>
+              <iframe
+                src={loc.mapSrc}
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                title={loc.city}
+              ></iframe>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </Fragment>
+  );
+};
 
 export default Help;

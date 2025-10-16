@@ -1,0 +1,219 @@
+@media screen and (min-width: 575px) {
+    .student-carousel__inner .student-carousel__bottom .placement-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        max-width: 80%;
+        margin: 0 auto;
+        height: 18rem;
+    }
+
+    .student-carousel__inner .custom-arrow.prev {
+        left: 0.5rem;
+    }
+
+    .student-carousel__inner .student-carousel__top .placement-headingText {
+        font-size: 1.1rem;
+    }
+
+    .student-carousel__inner .student-carousel__top p {
+        font-size: 0.9rem;
+    }
+
+    .student-carousel__inner .placed-student-picture {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        max-width: 13rem;
+        width: 100%;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .fname {
+        font-size: 1.4rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .lname {
+        font-size: 1.2rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-company h4 {
+        font-size: 0.75rem;
+    }
+
+    .student-carousel__inner .placed-student-package p {
+        font-size: 0.7rem;
+    }
+
+    .student-carousel__inner .placed-student-picture img {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .student-carousel__inner .student-carousel__bottom {
+        padding: 2rem 0 1rem;
+    }
+
+    .student-carousel-section .student-carousel__inner button.slick-arrow.slick-next {
+        right: 1.8rem;
+    }
+
+    .student-carousel-section button.slick-arrow.slick-prev {
+        left: 1.5rem;
+    }
+
+    .student-carousel__bottom .student-name h4 .fname {
+        font-size: 1.5rem;
+    }
+
+    .student-carousel__bottom .student-name h4 .lname {
+        font-size: 1.3rem;
+    }
+
+    .student-carousel__bottom .student-company h4 {
+        font-size: 0.9rem;
+    }
+
+    .student-carousel__bottom .company-image img {
+        max-width: 7.5rem;
+        width: 100%;
+    }
+
+    .student-carousel__bottom .placed-student-package span.salary {
+        font-size: 2rem;
+    }
+
+    .student-carousel__bottom .lpa {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .student-carousel__inner .student-carousel__bottom .placement-card {
+        max-width: 75%;
+        width: 100%;
+        padding: 1rem 2.5rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .fname {
+        font-size: 1.5rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .lname {
+        font-size: 1.3rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-company h4 {
+        font-size: 0.85rem;
+    }
+
+    .student-carousel__bottom .company-image img {
+        max-width: 8rem;
+        width: 100%;
+    }
+
+    .student-carousel__bottom .placed-student-package span.salary {
+        font-size: 2.3rem;
+    }
+
+    .student-carousel__inner .placed-student-package p {
+        font-size: 0.8rem;
+    }
+
+    .student-carousel-section .placement-slider .slick-slide>div {
+        margin: 0 7px;
+    }
+
+    .student-carousel-section .placement-slider button.slick-arrow.slick-next {
+        right: 0.2rem;
+    }
+
+    .student-carousel-section .placement-slider button.slick-arrow.slick-prev {
+        left: 0rem;
+    }
+
+    .student-carousel__inner .student-carousel__top .placement-headingText {
+        font-size: 1.15rem;
+    }
+
+    .student-carousel__inner .student-carousel__top p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .student-carousel__inner .student-carousel__bottom .placement-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .student-carousel-section .placement-slider .custom-arrow.prev {
+        left: 0rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .fname {
+        font-size: 1.6rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .lname {
+        font-size: 1.3rem;
+    }
+
+    .student-carousel__bottom .placed-student-package span.salary {
+        font-size: 2.2rem;
+    }
+
+    .student-carousel__inner .placed-student-package p {
+        font-size: 0.9rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .placement-card {
+        padding: 1.5rem 2.5rem;
+    }
+
+    .student-carousel__inner .student-carousel__top .placement-headingText {
+        font-size: 1.1rem;
+    }
+
+    .student-carousel__inner .student-carousel__top p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .fname {
+        font-size: 1.8rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-name h4 .lname {
+        font-size: 1.4rem;
+    }
+
+    .student-carousel__inner .student-carousel__bottom .student-company h4 {
+        font-size: 1rem;
+    }
+
+    .student-carousel__bottom .company-image img {
+        max-width: 9rem;
+        width: 100%;
+    }
+
+    .student-carousel__bottom .placed-student-package span.salary {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .student-carousel__inner .student-carousel__bottom .placement-card {
+        max-width: 95%;
+        width: 100%;
+    }
+
+    .student-carousel-section .placement-slider .slick-slide>div {
+        margin: 0;
+    }
+}

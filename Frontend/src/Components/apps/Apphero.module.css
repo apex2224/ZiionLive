@@ -1,323 +1,249 @@
+.servicesSection {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-  .appDownloadSection{
-    width: 100%;
-    height: 40rem;
-  }
-  .appBack{
-    position: absolute;
-    top: 0rem;
-    width: 100%;
-    height: 40rem;
-    z-index: 0;
-    object-fit: cover;
-  }
-   .ovarlay{
-    z-index: 3;
-  }
-  
-  .header h1 {
-    font-size: 4rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-  }
-  
-  .downloadOptions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 4rem auto;
-    margin-top: 8rem;
-  }
-  
-  .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid {
-    border-radius: 20px;
-    padding: 1.5rem;
-    border: 1px solid white;
-    box-shadow: 0px 0px 5px 5px ;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 4px 10px rgba(255, 253, 253, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease;
-    animation: webshift 1s ease-in;
-    z-index: 2;
-  }
-  .optionWeb p, .optionMac p, .optionWindows p, .optionIphone p, .optionAndroid p{
-    color: white;
-  }
-   .optionWeb:hover, .optionMac:hover, .optionWindows:hover, .optionIphone:hover, .optionAndroid:hover {
-    transform: translateY(-5px);
-  } 
-  .iconWeb, .iconMac, .iconWindows, .iconIphone, .iconAndroid {
-    width: 2rem;
-    height: 2rem;
-    
-  }
-  .web, .mac, .window, .iphone, .android{
-    height: 2rem;
-    width: 2rem;
-    object-fit: contain;
-  }
-  
-  /* Customize colors */
-  .iconMac { background-color: #e0e7ff; }
-  .iconWindows { background-color: #ccfbf1; }
-  .iconIphone { background-color: #fce7f3; }
-  .iconAndroid { background-color: #d1fae5; }
-  
-  .buttonWeb, .buttonMac, .buttonWindows, .buttonIphone, .buttonAndroid {
-    margin-top: 1rem;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .buttonWeb:hover, .buttonMac:hover, .buttonWindows:hover, .buttonIphone:hover, .buttonAndroid:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
+.servicesBackground {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .header h1 {
-      font-size: 1.5rem;
-    }
-    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
-      padding: 00.5rem 0rem;
-    }
-  
-    .downloadOptions {
-      padding: 5rem 2rem;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-  @media(max-width: 600px){
-      .downloadOptions{
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-      .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
-        padding: 0.5rem 0.5rem;
-      }
+.servicesImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-      .appBack{
-        height: 40rem;
-      }
-          
-  }
-  @media(max-width: 525px){
-      .appBack{
-        height: 44rem;
-      }
-  }
-  @media(max-width: 673px){
-    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
-      padding: 0.5rem 0rem;
-    }
-    .downloadOptions{
-      margin: 0rem;
-      padding: 4rem 0rem;
-    }
-  }
-  @media(max-width: 465px){
-      .downloadOptions{
-        grid-template-columns: 1fr;
-        object-fit: contain;
-      }
-       .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
-        width: 98%;
-        height: auto;
-       }
-       .appBack{
-        height: 50rem;
-       }
-         .downloadOptions {
-    flex-direction: column;
-    align-items: center;
-  }
+.servicesOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 16px;
+}
 
-  .option {
-    width: 90%;
-    max-width: 300px;
-  }
+.servicesTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
-  }
+.servicesSubtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
 
-    @media(max-width: 1024px){
-      .downloadOptions{
-        margin: 8rem 2rem;
-      }
-    }
-  /* app next section  */
+.servicesButton {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 
-  .exclusiveSection {
-    background-color: #0d0d0d;
-    padding: 4rem 1rem;
-    color: white;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  
-  .highlight {
-    color: #d4ff00;
-  }
-  
-  .servicesContainer {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    gap: 4rem;
-    margin-top: 2rem;
-  }
-  
-  .serviceCard {
-    /* background: #141414; */
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    align-items: center;
-    transition: transform 0.3s ease;
-    animation: slide 0.7s ease-in-out;
-  }
-  @keyframes slide{
-    0% {
-      transform: translateX(100px);
-    }
-    100% {
-      transform: translateX(0px); 
-    }
-    
-  }
-  
-  .serviceCard:hover {
-    transform: translateY(-5px);
-  }
-  
-  .imageWrapper {
-    height: auto;
-    width: 30%;
-    border-radius: 12px;
-    margin-top: 2rem;
-  }
-  
-  .image {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    opacity: 0.5;
-  }
-  .image:hover,
-  .image:active{
-    animation: fade 1s ease-in-out;
-    opacity: 1;
-    cursor: grab;
-  }
-  @keyframes fade{
-    0%{
-        transition: transformX(0%);
-    }
-    100%{
-        transition: transformX(100%);
-    }
-  }
-  
-  .textWrapper {
-    height: auto;
-    width: 30%;
-    background-color: #141414;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    border-radius: 12px;
-  }
-  
-  .textContent {
-    max-width: 400px;
-    text-align: left;
-    flex-wrap: wrap;
-  }
-  
-  .textContent h2 {
+.servicesButton:hover {
+  background: #e65c00;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .servicesTitle {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
   }
-  
-  .textContent p {
-    color: #b0b0b0;
+  .servicesSubtitle {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
   }
-  
-  .moreLink {
-    color: #d4ff00;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: none;
+  .servicesOverlay {
+    width: 90%;
+    padding: 1rem;
   }
-  
-  .moreLink:hover {
-    text-decoration: underline;
-  }
-  
-  /* RESPONSIVE */
+}
+/* app next section  */
+.clientReviewsSection {
+  background-color: #0d0d0d;
+  padding: 4rem 1rem;
+  color: white;
+}
 
-  @media(max-width: 929px){
-    .optionWeb, .optionMac, .optionWindows, .optionIphone, .optionAndroid{
-      padding: 0.5rem 0.5rem;
-    }
-    
+.clientHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.clientHeader h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.clientHighlight {
+  color: #d4ff00;
+}
+
+.reviewContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 4rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.reviewCard {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  transition: transform 0.3s ease;
+  animation: slide 0.7s ease-in-out;
+  flex: 1 1 45%; /* each card takes ~half width, adjusts on wrap */
+  min-width: 300px; /* prevents breaking too small */
+}
+@keyframes slide {
+  0% {
+    transform: translateX(100px);
   }
-  @media (max-width: 768px) {
-    .textWrapper {
-      padding: 1.5rem;
-      width: 100%;
-      margin-top: 2rem;
-    }
-  
-    .textContent h2 {
-      font-size: 1.5rem;
-    }
-  
-    .header h1 {
-      font-size: 2rem;
-    }
-    .image{
-        height: 20rem;
-        width: auto;
-    }
+  100% {
+    transform: translateX(0px);
   }
-  @media(max-width: 525px){
-    .header{
-      margin-bottom: 0rem;
-      margin-top: 2rem;
-    }
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px);
+}
+
+.reviewImageWrapper {
+  width: 30%;
+  border-radius: 12px;
+}
+
+.reviewImage {
+  width: 100%;   /* full width of wrapper */
+  height: auto;  /* maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.reviewImage:hover,
+.reviewImage:active {
+  animation: fade 0.5s ease-in-out;
+  opacity: 1;
+  cursor: grab;
+}
+@keyframes fade {
+  0% {
+    transform: scale(100%);
   }
-  @media(max-width: 600px){
-    .servicesContainer{
-      display: block;
-    }
+  100% {
+    transform: scale(102%);
   }
+}
+
+.reviewTextWrapper {
+  background-color: #141414;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.reviewTextContent {
+  max-width: 400px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.reviewTextContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.reviewTextContent p {
+  color: #b0b0b0;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.reviewMoreLink {
+  color: #d4ff00;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.reviewMoreLink:hover {
+  text-decoration: underline;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 992px) {
+  .reviewCard {
+    flex-direction: column; /* stack image on top */
+    text-align: center;
+  }
+
+  .reviewImageWrapper {
+    width: 100%; /* full width on small screens */
+    margin-top: 0;
+  }
+
+  .reviewImage {
+    width: 100%;
+    max-height: 250px; /* keep consistent height */
+    object-fit: cover;
+  }
+
+  .reviewTextWrapper {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .reviewTextContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .clientHeader h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviewContainer {
+    display: block;
+  }
+}
+
+@media (max-width: 525px) {
+  .clientHeader {
+    margin-bottom: 0rem;
+    margin-top: 2rem;
+  }
+}
+
+
 
   /* app third scetion  */
   .appThird {
@@ -554,20 +480,18 @@
   }
 
 
-  
-  /* app third section */
 
-  .appFeatureContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* app third section */
+.appFeatureContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards on desktop */
   gap: 24px;
   padding: 20px;
 }
 
 .appFeatureCard {
   position: relative;
-  width: 300px;
+  width: 100%; /* fill grid cell */
   height: 350px;
   overflow: hidden;
   border-radius: 12px;
@@ -607,6 +531,7 @@
   color: white;
   padding: 20px;
   transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .appFeatureCard:hover .appFeatureText {
@@ -614,13 +539,148 @@
   background: rgba(255,255,255,0.1);
   height: 100%;
   width: 100%;
-  transition: all 0.3s ease;
 }
 
+/* Tablet - 3 columns */
+@media screen and (max-width: 1200px) {
+  .appFeatureContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile - 1 column */
 @media screen and (max-width: 768px) {
+  .appFeatureContainer {
+    grid-template-columns: 1fr;
+  }
+
   .appFeatureCard {
-    width: 90%;
+    height: 300px; /* shorter cards on small screens */
   }
 }
 
   
+
+
+/* Page wrapper */
+.serviceFeature {
+  width: 100%;
+  
+}
+
+.pageWrapper {
+  margin: auto;
+  background: #0e0e0e; /* dark background */
+padding: 8rem 1rem;
+  color: #fff; /* default text color */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header section */
+.headerSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mainHeading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #fff;
+}
+
+/* Content area */
+.contentArea {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Grid layout for features */
+.featurecontent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 on desktop */
+  gap: 1.5rem;
+}
+
+/* Feature card */
+.featureBox {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #222;
+}
+
+.featureBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  border-color: #333;
+}
+
+/* Icon inside box */
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.featureTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Description */
+.featureDescription {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Action link */
+.actionLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #0070f3;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.actionLink:hover {
+  background: #005bb5;
+}
+
+/* Responsive grid & typography */
+@media (max-width: 1200px) {
+  .featurecontent {
+    grid-template-columns: repeat(3, 1fr); /* 3 on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .featurecontent {
+    grid-template-columns: 1fr; /* 1 on mobile */
+  }
+
+  .mainHeading {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,64 @@
+.custom-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white; /* white background */
+  border-radius: 50%; /* circular shape */
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.2);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0.3rem 0.7rem rgba(0,0,0,0.3);
+}
+
+.next {
+  right: 1%;
+}
+
+.prev {
+  left: 1%;
+}
+
+.arrows-icon {
+  font-size: 1.5rem;
+  color: #11649c; /* arrow color */
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Optional blue bar (if you still want it) */
+.blue-bar {
+  display: none; /* hide on small screens, optional */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .custom-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arrows-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .arrows-icon {
+    font-size: 1rem;
+  }
+}

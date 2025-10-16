@@ -1,9 +1,17 @@
 import React,{ useState } from 'react';
 import styles from './LeverageChat.module.css';
 import images from '../../assets/images';
-// import MapWithForm from '../mapwithform/MapwithForm';
+import { Link } from 'react-router-dom'
+import ReviewsSection from '../reviews/ReviewsSection';
+import SecondForm from '../secondForm/SecondForm'
+
+
+
+
 
 const MainContent = () => {
+
+  const [showForm, setShowForm] = useState(false);
 
    const faqs = [
       {
@@ -54,6 +62,35 @@ const MainContent = () => {
       <div className={styles["main-content"]}>
       <div className={styles["content-wrapper"]}>
         <div className={styles["text-section"]}>
+          <h1>Empowering Students with Future-Ready Skills</h1>
+<p>
+  At Ziion Technology, we go beyond traditional learning methods to provide 
+  industry-relevant training programs. Our courses are designed to help students 
+  gain hands-on experience in fields like Web Development, Data Science, Artificial 
+  Intelligence, Mobile App Development, and Graphic Designing. With expert mentors, 
+  practical projects, and career-focused guidance, we prepare learners to excel in 
+  today’s competitive world.
+</p>
+
+         <Link to="/placement">
+           <button className={styles.headerBtn}>Learn More</button>
+         </Link>
+        </div>
+        <div className={styles["code-section"]}>
+          <div className={styles["code-block"]}>
+            <div className={styles["code-circle"]}>
+              <span className={styles.circle}></span>
+              <span className={styles.circle}></span>
+              <span className={styles.circle}></span>
+              <hr className={styles.hello}></hr>
+            </div>
+            <pre>
+              <code>
+
+                {`
+                  <div className={styles["main-content"]}>
+      <div className={styles["content-wrapper"]}>
+        <div className={styles["text-section"]}>
           <h1>Leverage a chatbot API to build an AI Chatbot</h1>
           <p>
             Want to go deeper than the usual chatbot platform? Modern solutions like Mediator
@@ -74,30 +111,15 @@ const MainContent = () => {
             </div>
             <pre>
               <code>
-{`// Receive a message from a visitor
-crispClient.on("message:send", async (message) => {
-  const sessionId = message.session_id;
-  const userMessage = message.content;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o",
-    messages: [ { role: "user", content: userMessage } ]
-  });
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+                `}
 
-  const aiReply = response.choices[0].message.content;
-
-  crispClient.website.sendMessageInConversation(
-    message.website_id,
-    sessionId,
-    {
-      type: "text",
-      content: aiReply,
-      from: "operator",
-      origin: "chat"
-    }
-  );
-});
-`}
               </code>
             </pre>
           </div>
@@ -107,73 +129,55 @@ crispClient.on("message:send", async (message) => {
 
     <div>
 
-      {/* faq container */}
-        
-{/* <div className={styles.faqContainer}>
-      <header className={styles.faqHeader}>
-        <h1 className={styles.faqTitle}>How Can We Help You?</h1>
-        <p className={styles.faqSubtitle}>
-          We understand that you have questions, and we welcome them. Below is the collection of queries which comes frequently from our clients.
-        </p>
-      </header>
 
-      <main className={styles.faqMain}>
-        {faqs.map((faq) => (
-          <div key={faq.id} className={styles.faqItem}>
-            <div
-              className={styles.faqQuestion}
-              onClick={() => handleToggle(faq.id)}>
-              <span>{faq.id}. {faq.question}</span>
-              <span className={`${styles.arrow} ${expanded === faq.id ? styles.arrowUp : ''}`}>›</span>
-            </div>
 
-            {expanded === faq.id && (
-              <div className={styles.faqAnswer}>
-                <p>{faq.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </main>
-    </div> */}
+
+
 
     
     <section className={styles.faqNextContainer}>
-      <div className={styles.left}>
-        <h1 className={styles.title}>This is Where the World Hires</h1>
-        <p className={styles.subtitle}>
-          It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted.
-        </p>
-        <button className={styles.videoButton}>
-          <span className={styles.playIcon}>▶</span>
-          Watch Video
-        </button>
-      </div>
+     <div className={styles.left}>
+  <h1 className={styles.title}>Empowering Learners with Innovative Education</h1>
+  <p className={styles.subtitle}>
+    At Ziion EdTech, we specialize in providing next-generation online learning, 
+    skill development programs, and digital solutions that prepare students and professionals 
+    for the future of work. Our mission is to make learning accessible, engaging, and impactful 
+    through technology, creativity, and expertise.
+  </p>
+  <Link to='/placement'>
+                  <button className={styles.headerBtn} onClick={() => setShowForm(true)}>
+             Talk to us
+           </button>
+  </Link>
+</div>
+
+
 
       <div className={styles.right}>
         <div className={`${styles.card} ${styles.blue}`} style={{ backgroundImage: `url(${images.cornerImage})` }}>
-          <h2 className={styles.number}>20k</h2>
-          <p className={styles.label}>Companies</p>
+          <h2 className={styles.number}>200+</h2>
+          <p className={styles.label}>Partner Companies</p>
         </div>
         <div>
           <div className={`${styles.card} ${styles.green}`} style={{ backgroundImage: `url(${images.cornerImage})` }}>
-            <h2 className={styles.number}>10M</h2>
-            <p className={styles.label}>Hires</p>
+            <h2 className={styles.number}>5000+</h2>
+            <p className={styles.label}>Student Enroll</p>
           </div>
           <div className={`${styles.card} ${styles.red}`} style={{ backgroundImage: `url(${images.cornerImage})` }}>
-            <h2 className={styles.number}>100M</h2>
-            <p className={styles.label}>Candidates</p>
+            <h2 className={styles.number}>98%</h2>
+            <p className={styles.label}>Job Placement</p>
           </div>
         </div>
       </div>
     </section>
 
-    {/* <MapWithForm/> */}
     </div>
     
+    <ReviewsSection/>
+                <SecondForm/>
+
     </>
   );
 };
 
 export default MainContent;
-

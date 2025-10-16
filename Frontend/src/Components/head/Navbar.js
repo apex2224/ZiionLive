@@ -3,118 +3,178 @@ import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import FurtherNav from './FurtherNav';
 import images from '../../assets/images';
+import StudentSearch from '../admin/Studentform';
+import Refrencenumber from '../refrenceNumber/Rerencenumber';
+import Help from '../help/Help';
 
 const Navbar = () => {
   const [showFurtherNav, setShowFurtherNav] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [furtherNavLocked, setFurtherNavLocked] = useState(false); // track if menu is manually opened
+  const [refrenceForm, setRefrenceForm] = useState(false);
 
-  const navWrapperRef = useRef();
-  const coursesRef = useRef();
-  const furtherNavRef = useRef();
-  const justClickedCourses = useRef(false); // to delay outside click close
 
-  // Update screen size
+  // loading //
+    const [showDashboard, setShowDashboard] = useState(false);
+
+
+  const navWrapperRef = useRef(null);
+  const furtherNavRef = useRef(null);
+
+  // Update isMobile state on resize
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Click outside logic
-  const handleClickOutside = (e) => {
-    if (justClickedCourses.current) return;
-
-    if (
-      navWrapperRef.current &&
-      !navWrapperRef.current.contains(e.target) &&
-      (!furtherNavRef.current || !furtherNavRef.current.contains(e.target))
-    ) {
-      setShowFurtherNav(false);
-      setFurtherNavLocked(false);
-      setMenuOpen(false);
-    }
-  };
-
+  // Close submenu/menu on scroll
   useEffect(() => {
+    const handleScroll = () => {
+      setShowFurtherNav(false);
+      setMenuOpen(false);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close submenu/menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        navWrapperRef.current &&
+        !navWrapperRef.current.contains(e.target) &&
+        (!furtherNavRef.current || !furtherNavRef.current.contains(e.target))
+      ) {
+        setShowFurtherNav(false);
+        setMenuOpen(false);
+      }
+    };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const closeMobileMenu = () => {
-    if (isMobile) {
-      setMenuOpen(false);
-      setShowFurtherNav(false);
-      setFurtherNavLocked(false);
-    }
+  const closeAllMenus = () => {
+    setShowFurtherNav(false);
+    setMenuOpen(false);
   };
 
   const handleCoursesClick = () => {
-    setShowFurtherNav(true);
-    setFurtherNavLocked(true);
-    justClickedCourses.current = true;
-    setTimeout(() => {
-      justClickedCourses.current = false;
-    }, 100);
+    if (isMobile) {
+      setShowFurtherNav((prev) => !prev);
+    } else {
+      setShowFurtherNav(true);
+    }
+  };
+
+  const handleCloseForm = () => {
+    setRefrenceForm(false);
   };
 
   return (
     <>
-      <div ref={navWrapperRef}>
+      <div ref={navWrapperRef} className={styles['parent-navbar']}>
         <nav className={styles.navbar}>
           <div className={styles.left}>
-            <h1 className={styles.logo}>ZIION TECHNOLOGY</h1>
+            <Link to="/" onClick={closeAllMenus}>
+              <img src={images.ziionLogo} alt="Logo" />
+            </Link>
           </div>
 
+          {/* Hamburger for mobile */}
           {isMobile && (
             <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-              <img src={images.hamburger} alt="hamburger" />
+              {images?.hamburger ? (
+                <img src={images.hamburger} alt="hamburger" />
+              ) : (
+                <span className={styles.hamburgerFallback}>☰</span>
+              )}
             </div>
           )}
 
+          {/* Main menu */}
           <div className={`${styles.mainMenuContainer} ${menuOpen ? styles.showMenu : ''}`}>
             <ul className={styles.mainMenuList}>
-              <Link to="/" className={styles.link} onClick={closeMobileMenu}>
+              <Link to="/" className={styles.link} onClick={closeAllMenus}>
                 <li className={styles.mainMenuItem}>Home</li>
               </Link>
 
-              {/* Courses menu item */}
               <li
                 className={styles.mainMenuItem}
-                ref={coursesRef}
                 onClick={handleCoursesClick}
                 onMouseEnter={() => !isMobile && setShowFurtherNav(true)}
-                onMouseLeave={() => !isMobile && !furtherNavLocked && setShowFurtherNav(false)}
               >
                 Courses
+                {showFurtherNav && (
+                  <div
+                    ref={furtherNavRef}
+                    className={isMobile ? styles.mobileFurtherNav : styles.externalFurtherNav}
+                  >
+                    <FurtherNav />
+                  </div>
+                )}
               </li>
 
-              <Link to="/services" className={styles.link} onClick={closeMobileMenu}>
+              <Link to="/services" className={styles.link} onClick={closeAllMenus}>
                 <li className={styles.mainMenuItem}>Services</li>
               </Link>
-              <Link to="/placement" className={styles.link} onClick={closeMobileMenu}>
+
+              <Link to="/placement" className={styles.link} onClick={closeAllMenus}>
                 <li className={styles.mainMenuItem}>Placement</li>
               </Link>
-              <Link to="/aboutus" className={styles.link} onClick={closeMobileMenu}>
+
+              <Link to="/aboutus" className={styles.link} onClick={closeAllMenus}>
                 <li className={styles.mainMenuItem}>About Us</li>
               </Link>
-              <Link to="/contact-us" className={styles.link} onClick={closeMobileMenu}>
+
+              <Link to="/contact-us" className={styles.link} onClick={closeAllMenus}>
                 <li className={styles.mainMenuItem}>Contact Us</li>
+                {showDashboard && <Help /> }
               </Link>
-            </ul>
+
+              {/* Mobile-only Download button inside menu */}
+{isMobile && (
+  <li className={styles.mainMenuItem}>
+    <button
+      className={styles.headerBtn}
+      onClick={() => {
+        setRefrenceForm(true);
+        closeAllMenus();
+      }}
+    >
+      Download Certificate
+    </button>
+
+    {refrenceForm && <div className={styles.refrenceForm}>
+        <Refrencenumber onClose={handleCloseForm} />
+      </div>}
+  </li>
+)}            </ul>
+
+            {/* Desktop download button */}
+            {!isMobile && (
+              <button
+                className={styles.headerBtn}
+                onClick={() => {
+                  setRefrenceForm(true);
+                  closeAllMenus();
+                }}
+              >
+                Download Certificate
+              </button>
+            )}
           </div>
 
-          <div className={styles.right}>
-            <Link to="/signup">
-              <button className={styles.headerBtn}>Download Certificate</button>
-            </Link>
-          </div>
+          {refrenceForm && 
+            <div>
+              <Refrencenumber onClose={handleCloseForm} />
+            </div>
+          }
         </nav>
       </div>
 
-      {/* FurtherNav menu (dropdown content) */}
-      {showFurtherNav && (
+      {/* Desktop submenu outside navbar */}
+      {!isMobile && showFurtherNav && (
         <div ref={furtherNavRef} className={styles.externalFurtherNav}>
           <FurtherNav />
         </div>

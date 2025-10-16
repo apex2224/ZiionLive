@@ -1,0 +1,362 @@
+/* .carouselWrapper {
+    overflow: hidden;
+    background: #0d0d0d;
+    padding: 2rem 0;
+    position: relative;
+} */
+
+/* Top Carousel (Images) */
+.carousel {
+    display: flex;
+    white-space: nowrap;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.scrollLeft {
+    animation: scrollLeft 30s linear infinite;
+}
+
+.scrollRight {
+    animation: scrollRight 30s linear infinite;
+}
+
+.carouselWrapper:hover .carousel {
+    animation-play-state: paused;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    background: #111;
+    border-radius: 1rem;
+    width: 300px;
+    height: 300px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.8s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 3px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.1);
+}
+
+/* Heading */
+.storyHeading {
+    font-size: 7.5vw;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    background-color: #0d0d0d;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* Optional Pattern Overlay */
+.carouselWrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 15px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Scroll Animations */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive (Images) */
+@media (max-width: 1024px) {
+    .card {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 275px;
+        height: 275px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 300px;
+        height: 300px;
+        padding: 0.8rem;
+    }
+}
+
+/* ----------------- Bottom Carousel (Videos) ----------------- */
+.leftCarouselWrapper {
+    overflow: hidden;
+    background: #0d0d0d;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.leftCarousel {
+    display: flex;
+    white-space: nowrap;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.leftCarousel.scrollRight {
+    animation: scrollRight 35s linear infinite;
+}
+
+.leftCarousel.scrollLeft {
+    animation: scrollLeft 35s linear infinite;
+}
+
+.leftCarouselWrapper:hover .leftCarousel {
+    animation-play-state: paused;
+}
+
+.leftCardContainer {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.leftCard {
+    background: #1a1a1a;
+    border-radius: 1.5rem;
+    width: 280px;
+    height: 280px;
+    padding: 1rem;
+    margin: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+.leftCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.leftProfileSection {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.leftCompanySection {
+    color: #ccc;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+/* Responsive (Videos) */
+@media screen and (max-width: 1024px) {
+    .leftCard {
+        width: 240px;
+        height: 240px;
+        padding: 0.8rem;
+        margin: 0.8rem
+    }
+
+    .leftProfileSection {
+        font-size: 0.85rem;
+    }
+
+    .leftCompanySection {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .leftCard {
+        width: 210px;
+        height: 210px;
+        padding: 0.6rem;
+        margin: 0.6rem
+    }
+
+    .leftProfileSection {
+        font-size: 0.8rem;
+    }
+
+    .leftCompanySection {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Force one card per view on small devices */
+    @media (max-width: 600px) {
+
+        .cardContainer,
+        .leftCardContainer {
+            gap: 0;
+            /* remove gaps so only one card fits */
+        }
+
+        .card,
+        .leftCard {
+            flex: 0 0 100vw;
+            /* Each card takes full viewport width */
+            min-width: 100vw;
+            /* Prevents shrinking */
+            max-width: 100vw;
+            /* Prevents overflow */
+            aspect-ratio: 1 / 1;
+            height: auto;
+            /* Dynamic height */
+            margin: 0;
+            /* Remove extra margins */
+            padding: 1rem;
+            /* Keep inner padding */
+            box-sizing: border-box;
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .card,
+    .leftCard {
+        width: 100%;
+        /* Full width */
+        height: auto;
+        /* Adjust height dynamically */
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        /* Prevent overflow */
+        padding: 1rem;
+        margin: 0 auto;
+        /* Center the card */
+    }
+
+    .cardContainer {
+        gap: 0;
+        /* Remove gaps so only one card shows */
+    }
+}
+
+/* .carouselWrapper {
+    overflow: hidden;
+    background: #0d0d0d;
+    padding: 2rem 0;
+    position: relative;
+} */
+ .carouselWrapper {
+    overflow: hidden;
+    background: #0d0d0d;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* --- Position buttons on both sides --- */
+.carouselButtons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* align to left edge */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* one button left, one right */
+    z-index: 3;
+    pointer-events: none;
+    /* allow carousel content to be interacted with */
+}
+
+.carouselBtn {
+    pointer-events: auto;
+    /* buttons themselves clickable */
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.85;
+    transition: background 0.2s;
+    margin: 0 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* Responsive: Smaller buttons on small screens */
+@media (max-width: 480px) {
+    .carouselBtn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin: 0 4px;
+    }
+}
+
+/* .carouselWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    overflow-x: hidden;
+} */

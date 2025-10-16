@@ -1,35 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './enrollProcess.module.css';
+import images from '../../../assets/images';
+import Form from '../../form/Form'
 
 const processSteps = [
   {
     number: '1',
     title: 'Learn from experts',
     text: 'Gain real knowledge and insights from top industry professionals with years of experience.',
-    img: '/images/step1.png',
+    img: images.enroll1
   },
   {
     number: '2',
     title: 'Work on live projects',
     text: 'Build your skills by working on actual industry projects that boost your portfolio.',
-    img: '/images/step2.png',
+    img: images.enroll2
   },
   {
     number: '3',
     title: 'Interview & placement',
     text: 'Get guidance on interview preparation and job placement assistance for your career growth.',
-    img: '/images/step3.png',
+    img: images.enroll3
   },
   {
     number: '4',
     title: 'Get Hired',
     text: 'Kickstart your professional journey with the confidence and skills to get hired.',
-    img: '/images/step4.png',
+    img: images.enroll4
   },
 ];
 
 const EnrollProcess = () => {
+    const [showForm, setShowForm] = useState(false);
+  
   return (
+    <>
     <section className={styles.processSection}>
       <div className={styles.header}>
         <span className={styles.label}>ENROLL PROCESS</span>
@@ -48,7 +53,13 @@ const EnrollProcess = () => {
           </div>
         ))}
       </div>
+
+      <button className={styles.herobutton} onClick={() => setShowForm(true)}>
+                  Enroll Now
+                </button>
     </section>
+          {showForm && <Form closeForm={() => setShowForm(false)} />}
+    </>
   );
 };
 

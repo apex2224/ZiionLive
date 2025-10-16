@@ -1,0 +1,188 @@
+.reviewsContainer {
+  padding: 2rem;
+  background: #0e0e0e;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.reviewsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Base */
+.reviewCard {
+  position: relative;
+  border-radius: 12px;
+  background: #222121;
+  color: #fff;
+  text-align: left;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  overflow: hidden;
+  transform: rotate(var(--tilt, 0deg)) scale(0.9);
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.reviewCard:nth-child(odd) {
+  --tilt: 2deg;
+}
+.reviewCard:nth-child(even) {
+  --tilt: -2deg;
+}
+.reviewCard:nth-child(3n) {
+  --tilt: 1deg;
+}
+
+/* Moving single-line border on hover */
+.reviewCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,       /* Faded start */
+    rgba(0, 0, 0, 0.7) 20%,      /* Visible glowing start */
+    rgba(255, 255, 255, 0.7) 50%,      /* Mid transition */
+    rgba(255, 255, 255, 0.7) 80%,      /* Color shift */
+    rgba(255, 255, 255, 0.7) 100%      /* Faded end */
+  );
+  background-size: 300% 100%;
+  animation: moveBorderLine 2s linear infinite;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reviewCard:hover::before {
+  opacity: 1;
+}
+
+@keyframes moveBorderLine {
+  0% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px) rotate(var(--tilt, 0deg)) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(var(--tilt, 0deg)) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Star Bar */
+.reviewStarBar {
+  background: #1a1a1a;
+  padding: 4px 8px;
+  color: gold;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Card Body */
+.reviewBody {
+  padding: 1rem;
+}
+
+/* Review Header */
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.reviewTitle {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.reviewText {
+  font-size: 12px;
+  margin-bottom: 1rem;
+  color: #f0f0f0;
+}
+
+/* Writer */
+.writerContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userImg {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.writerName {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Button */
+.moreReviews {
+  margin-top: 2rem;
+}
+
+.readMoreBtn {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #0e0e0e;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+.readMoreBtn::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: translateX(-100%);  /* Start hidden on left */
+  transition: transform 0.5s ease;
+  z-index: -1;
+  border-radius: 0; /* remove rounding */
+}
+
+.readMoreBtn:hover {
+  background: #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reviewCard {
+    --tilt: 0deg;
+  }
+}

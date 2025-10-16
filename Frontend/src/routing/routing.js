@@ -11,8 +11,6 @@ import HelpTopicArticles from "../Components/help/HelpTopicArticles";
 import Widgets from '../Components/furtherMenu/widget/Widgets'
 import KnowledgeBase from "../Components/furtherMenu/Knowledge/KnowledgeBase";
 import AiChatbot from '../Components/furtherMenu/aichatbot/AiChatbot'
-import SignUpForm from "../Components/signUp_Login/signUpForm";
-import LoginForm from "../Components/signUp_Login/LoginForm";
 import MainDashboard from "../Components/Dashboard/MainDashboard";
 import AIPage from '../Components/furtherMenu/AI/AI'
 import SharedInbox from "../Components/furtherMenu/SharedInbox/SharedInbox";
@@ -41,7 +39,21 @@ import GraphicDesigning from "../Components/allCourses/graphic/Graphic";
 // form //
 import Form from '../Components/form/Form'
 
- 
+
+// IndustrialTraining //
+import IndustrialTraining from '../Components/industrial training/IndustrialTraining'
+
+
+import ThankYou from '../Components/thankyou/ThankYou'
+import Map from '../Components/map/Map'
+
+    // industrial training //
+    import Sixmonth from '../Components/industrial training/sixMonthTraining/Sixmonth'
+import Sixweek from "../Components/industrial training/sixWeekTraining/Sixweek";
+import StudentSearch from "../Components/admin/Studentform.js";
+import CardCarousel from "../Components/placementcarousel/CardCarousel.jsx";
+
+
 
 export const routes=[
     {path:'/',  element:<Main/> },
@@ -61,11 +73,6 @@ export const routes=[
     {path: '/aipage', element:<AIPage/>},
 
     {path:'/sharedInbox', element:<SharedInbox/>},
-
-
-
-    { path:'/signup',  element:<SignUpForm/> },
-    { path:'/login',  element:<LoginForm/> },
     { path:'/inbox',  element:<MainDashboard/> },
     { path:'/forgotpassword',  element:<ForgotPasswordForm/> },
     { path:'/resetpassword',  element:<ResetPassword/> },
@@ -91,13 +98,28 @@ export const routes=[
 
     // all cousres routing //
     {path:'/allcourses', element : <CoursesCard/>},
-<<<<<<<<< Temporary merge branch 1
-    {path: '/allcourses/:courseRoute', element: <CourseDetail/>}
-=========
+    {path: '/allcourses/:courseRoute', element: <CourseDetail/>},
+
     {path: '/allcourses/:courseTitle', element: <CourseDetail/>},
 
-    {path: '/form', element: <Form/>}
->>>>>>>>> Temporary merge branch 2
+    {path: '/form', element: <Form/>},
 
-    
-]
+    // industrial training //
+    {path: '/industrial-training', element : <IndustrialTraining/>},
+
+    {path: '/thank-you', element: <ThankYou/>},
+
+
+    {path: '/map', element: <Map/>},
+
+    {path : '/admin', elemen: <StudentSearch/>},
+
+
+    // industrial training //
+    // six month //
+    { path : '/six-month-training', element : <Sixmonth/>},
+    { path : '/six-weeks-training', element : <Sixweek/>},
+
+    {path: '/card', element : <CardCarousel/>},
+    { path : '/search', element : <StudentSearch/>}
+]   

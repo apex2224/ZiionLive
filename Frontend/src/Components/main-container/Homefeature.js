@@ -1,45 +1,112 @@
 import React from "react";
 import styles from './homeFeature.module.css';
-
-  const Dummy_feature = [
-    { id: 1, icon: 'fas fa-handshake', title: 'Real-Time Information Access', description: 'Stay updated with the latest insights, as our chatbot delivers current information instantly.' },
-    { id: 2, icon: 'fas fa-magnifying-glass', title: 'Content Analysis', description: 'Analyze text, images, or social media posts with in-depth insights tailored to your needs.' },
-    { id: 3, icon: 'fas fa-user-gear', title: 'Personalization', description: 'Enjoy responses customized to your preferences, making every interaction uniquely yours.' },
-    { id: 4, icon: 'fas fa-list-check', title: 'Task Assistance', description: 'Get help with writing, coding, or planning—your chatbot is here to boost productivity.' },
-    { id: 5, icon: 'fas fa-shield-halved', title: 'Privacy and Ethics Awareness', description: 'Trust in a chatbot that respects boundaries and prioritizes your privacy with care.' },
-    { id: 6, icon: 'fas fa-layer-group', title: 'Scalability and Integration', description: 'Seamlessly integrate with tools and scale effortlessly to meet growing demands.' },
-  ];
-
+import { useNavigate } from "react-router-dom";
  
   
 
 const Homefeature = () => {
+    const navigate = useNavigate();
+
 
   
     return (
         <section className={styles['features-section']}>
-            <div className={styles['feature-container']}>
-                {/* Section Header */}
-                <div className={styles['feature-header']}>
-                    <h2>Our Amazing Features</h2>
-                </div>
+      <div className={styles['feature-header']}>
+        <h2>Our Professional Courses</h2>
+      </div>
 
-                {/* Feature Boxes */}
-                {Dummy_feature.map((feature) => (
-                    <div
-                        key={feature.id}
-                        className={styles['feature-box']}
-                    >
-                      <div className={styles['feature-icon']}>
-                            <i className={feature.icon}></i>
-                        </div>
-                        <h3>{feature.title}</h3>
-                        <p>{feature.description}</p>
-                  
-                    </div>
-                ))}
-            </div>
-        </section>
+      <div className={styles['feature-container']}>
+        {/* Feature 1 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-laptop-code"></i>
+          </div>
+          <h3>Web Development Training</h3>
+          <p>Master front-end and back-end technologies to build dynamic and responsive websites.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/web-development")}
+          >
+            Talk to us
+          </button>
+        </div>
+
+        {/* Feature 2 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-database"></i>
+          </div>
+          <h3>Data Science & Analytics</h3>
+          <p>Learn data analysis, machine learning, and visualization to make data-driven decisions.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/data-science")}
+          >
+            Talk to us
+          </button>
+        </div>
+
+        {/* Feature 3 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-robot"></i>
+          </div>
+          <h3>Artificial Intelligence & ML</h3>
+          <p>Gain hands-on experience in AI, deep learning, and intelligent automation solutions.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/ai")}
+          >
+            Talk to us
+          </button>
+        </div>
+
+        {/* Feature 4 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-mobile-screen-button"></i>
+          </div>
+          <h3>Mobile App Development</h3>
+          <p>Learn to design and develop high-performing Android and iOS mobile applications.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/mobileapp")}
+          >
+            Talk to us
+          </button>
+        </div>
+
+        {/* Feature 5 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-paint-brush"></i>
+          </div>
+          <h3>Graphic Designing</h3>
+          <p>Master creative tools and techniques to design stunning visuals, logos, and branding materials.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/graphic")}
+          >
+            Talk to us
+          </button>
+        </div>
+
+        {/* Feature 6 */}
+        <div className={styles['feature-box']}>
+          <div className={styles['feature-icon']}>
+            <i className="fas fa-bullhorn"></i>
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Learn SEO, social media, and performance marketing to grow businesses online.</p>
+          <button 
+            className={styles.headerBtn}
+            onClick={() => navigate("/digital-marketing")}
+          >
+            Talk to us
+          </button>
+        </div>
+      </div>
+    </section>
     );
 };
 

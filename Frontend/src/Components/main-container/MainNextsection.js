@@ -1,236 +1,221 @@
 // src/components/Card.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import styles from './MainNextSection.module.css';
-import industry1 from '../../assets/home/industry-img1.png'
-import industry2 from '../../assets/home/industry-img2.png'
-import industry3 from '../../assets/home/industry-img3.png'
-import industry4 from '../../assets/home/industry-img4.png'
 import Homefeature from './Homefeature'
 import images from '../../assets/images';
+import Form from '../form/Form'
+
 
 
 
 const MainNextSection = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState('heavy');
 
-  // Object mapping categories to their images
-  const categoryImages = {
-    heavy: industry1,
-    transportation: industry2,
-    healthcare: industry3,
-    entertainment: industry4,
-  };
+  const [showForm, setShowForm] = useState(false);
 
-  // Handler for category click
+  const [selectedCategory, setSelectedCategory] = useState("software"); // default image
+ 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
-
-
 
   return (
     <div>
 
       <div className={styles.cardContainer}>
-        <div className={styles.card}>
-          <div className={styles.cardImage}>
-            <img src={images.heroRobot1} alt="Card visual" />
-          </div>
-          <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Courses</h2>
-            <p className={styles.description}>
-              Learn the set of high-demand digital skills, be it web, mobile, digital marketing, design or AI.
-            </p>
-            <button className={styles.button}>Learn More</button>
-          </div>
-        </div>
+       <div className={styles.card}>
+  <div className={styles.cardImage}>
+    <img src={images.trainingImg} alt="Courses" />
+  </div>
+  <div className={styles.cardContent}>
+    <h2 className={styles.cardTitle}>Courses</h2>
+    <p className={styles.description}>
+     Learn high-demand digital skills like web, mobile, AI, design, and marketing to boost your career, income, and future opportunities.
+    </p>
+    <Link to='/allcourses'>
+      <button className={styles.headerBtn}>Know More</button>
+    </Link>
+  </div>
+</div>
+
+<div className={styles.card}>
+  <div className={styles.cardImage}>
+    <img src={images.trainingImg2} alt="Trainings" />
+  </div>
+  <div className={styles.cardContent}>
+    <h2 className={styles.cardTitle}>Trainings</h2>
+    <p className={styles.description}>
+      Upgrade your career in the shortest time with training in web development, digital marketing, graphic designing, data analytics, AI, and others.
+    </p>
+    <Link to='/industrial-training'>
+      <button className={styles.headerBtn}>Know More</button>
+    </Link>
+  </div>
+</div>
+
+<div className={styles.card}>
+  <div className={styles.cardImage}>
+    <img src={images.trainingImg3} alt="IT Services" />
+  </div>
+  <div className={styles.cardContent}>
+    <h2 className={styles.cardTitle}>IT Services</h2>
+    <p className={styles.description}>
+      We deliver smart, scalable IT solutions—from cloud services and cybersecurity to software development, IT support, and infrastructure management.
 
 
-        <div className={styles.card}>
-          <div className={styles.cardImage}>
-            <img
-              src={images.heroRobot1}
-              alt="Card visual"
-            />
-          </div>
-          <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>Trainings</h2>
-            <p className={styles.description}>
-              Upgrade your career in the shortest time with training in web development, digital marketing, graphic designing, data analytics, AI, and others. 
-            </p>
-            <button className={styles.button}>Learn More</button>
-          </div>
-        </div>
+    </p>
+    <Link to='/services'>
+      <button className={styles.headerBtn}>Know More</button>
+    </Link>
+  </div>
+</div>
 
-
-        <div className={styles.card}>
-          <div className={styles.cardImage}>
-            <img
-              src={images.heroRobot1}
-              alt="Card visual"
-            />
-          </div>
-          <div className={styles.cardContent}>
-            <h2 className={styles.cardTitle}>IT Services</h2>
-            <p className={styles.description}>
-              We deliver smart, scalable IT solutions—from cloud services and cybersecurity to software development, IT support, and infrastructure management.
-
-            </p>
-            <button className={styles.button}>Learn More</button>
-          </div>
-        </div>
       </div>
 
 
-      <div className={styles.heroThirdSection}>
-        <div className={styles.industry}>
-          <div className={styles.sidebar}>
-            <div className={`${styles.category} ${selectedCategory === 'heavy' ? styles.active : ''}`}
-              onClick={() => handleCategoryClick('heavy')}>
-              <span className={styles.icon}>🤖</span>
-              <div>
-                <h3 className={styles.categoryTitle}>Heavy industry</h3>
-                <p className={styles.categorySubtitle}>All kind of industry</p>
-              </div>
-            </div>
-            <div
-              className={`${styles.category} ${selectedCategory === 'transportation' ? styles.active : ''}`}
-              onClick={() => handleCategoryClick('transportation')}
-            >
-              <span className={styles.icon}>🚗</span>
-              <div>
-                <h3 className={styles.categoryTitle}>Transportation</h3>
-                <p className={styles.categorySubtitle}>All kind of transport</p>
-              </div>
-            </div>
-            <div
-              className={`${styles.category} ${selectedCategory === 'healthcare' ? styles.active : ''}`}
-              onClick={() => handleCategoryClick('healthcare')}
-            >
-              <span className={styles.icon}>👩‍⚕️</span>
-              <div>
-                <h3 className={styles.categoryTitle}>Healthcare</h3>
-                <p className={styles.categorySubtitle}>Human health research</p>
-              </div>
-            </div>
-            <div
-              className={`${styles.category} ${selectedCategory === 'entertainment' ? styles.active : ''}`}
-              onClick={() => handleCategoryClick('entertainment')}
-            >
-              <span className={styles.icon}>🎬</span>
-              <div>
-                <h3 className={styles.categoryTitle}>Entertainment</h3>
-                <p className={styles.categorySubtitle}>Media and music</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>Artificial intelligence in industry</h1>
-            <p className={styles.description}>
-              Dummy text is also used to demonstrate the appearance of different
-              typefaces and layouts, and in general the content of dummy text is
-              nonsensical.
-            </p>
-            <div className={styles.illustration}>
-              <img
-                src={categoryImages[selectedCategory]}
-                alt={`${selectedCategory} illustration`}
-                className={styles.industryimage}
-              />
-            </div>
-          </div>
-          </div>
-        </div>
 
-        {/* <div className={styles.pageWrapper}>
-      <header className={styles.headerSection}>
-      <span className={styles.categoryLabel}>GenAI Use Cases</span>
-        <h1 className={styles.mainHeading}>Write Better Content Faster, The Future Of AI Writing Tools is Here</h1>
-        
-      </header>
-      <main className={styles.contentArea}>
-       <div className={styles.featurecontent}>
-       <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>📈</div>
-          <h2 className={styles.featureTitle}>Digital Ad Copy</h2>
-          <p className={styles.featureDescription}>A Magical Tool To Optimize your content for the first know who you're targeting, identify your target.</p>
-          <a href="#" className={styles.actionLink}>Try Digital Ad Copy </a>
+<div className={styles.heroThirdSection}>
+  <div className={styles.industry}>
+    {/* Sidebar */}
+    <div className={styles.sidebar}>
+      {/* Web Development */}
+      <div
+        className={`${styles.category} ${selectedCategory === "webdev" ? styles.active : ""}`}
+        onClick={() => handleCategoryClick("webdev")}
+      >
+        <span className={styles.icon}>💻</span>
+        <div>
+          <h3 className={styles.categoryTitle}>Web Development</h3>
+          <p className={styles.categorySubtitle}>
+            Learn to build responsive websites and web apps
+          </p>
         </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>🛒</div>
-          <h2 className={styles.featureTitle}>eCommerce Copy</h2>
-          <p className={styles.featureDescription}>Writing blog content with GenAI, make sure you have a clear understanding of who your audience is.</p>
-          <a href="#" className={styles.actionLink}>Try eCommerce Copy </a>
+      </div>
+
+      {/* Digital Marketing */}
+      <div
+        className={`${styles.category} ${selectedCategory === "digitalmarketing" ? styles.active : ""}`}
+        onClick={() => handleCategoryClick("digitalmarketing")}
+      >
+        <span className={styles.icon}>📈</span>
+        <div>
+          <h3 className={styles.categoryTitle}>Digital Marketing</h3>
+          <p className={styles.categorySubtitle}>
+            Master SEO, social media, and online advertising
+          </p>
         </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>📧</div>
-          <h2 className={styles.featureTitle}>Email Marketing</h2>
-          <p className={styles.featureDescription}>Writing blog content with GenAI, make sure you have a clear understanding of who your audience is.</p>
-          <a href="#" className={styles.actionLink}>Try Email Marketing </a>
+      </div>
+
+      {/* Data Science */}
+      <div
+        className={`${styles.category} ${selectedCategory === "datascience" ? styles.active : ""}`}
+        onClick={() => handleCategoryClick("datascience")}
+      >
+        <span className={styles.icon}>🧠</span>
+        <div>
+          <h3 className={styles.categoryTitle}>Data Science</h3>
+          <p className={styles.categorySubtitle}>
+            Analyze data and build predictive models
+          </p>
         </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>🌐</div>
-          <h2 className={styles.featureTitle}>Landing Page Copy</h2>
-          <p className={styles.featureDescription}>First know who you're targeting. Identify your target audience and understand their needs.</p>
-          <a href="#" className={styles.actionLink}>Try Landing Page Copy </a>
+      </div>
+
+      {/* Analytics */}
+      <div
+        className={`${styles.category} ${selectedCategory === "analytics" ? styles.active : ""}`}
+        onClick={() => handleCategoryClick("analytics")}
+      >
+        <span className={styles.icon}>📊</span>
+        <div>
+          <h3 className={styles.categoryTitle}>Analytics</h3>
+          <p className={styles.categorySubtitle}>
+            Turn data into actionable business insights
+          </p>
         </div>
-       </div>
+      </div>
+    </div>
+
+    {/* Main content */}
+    <div className={styles.mainContent}>
+      <h1 className={styles.title}>
+        {selectedCategory === "webdev" && "Web Development Course"}
+        {selectedCategory === "digitalmarketing" && "Digital Marketing Course"}
+        {selectedCategory === "datascience" && "Data Science Course"}
+        {selectedCategory === "analytics" && "Analytics Course"}
+      </h1>
+
+      <p className={styles.description}>
+        {selectedCategory === "webdev" &&
+          "Learn front-end and back-end web development, including HTML, CSS, JavaScript, and modern frameworks like React and Node.js."}
+        {selectedCategory === "digitalmarketing" &&
+          "Master the art of online marketing, including SEO, social media campaigns, email marketing, and Google Ads."}
+        {selectedCategory === "datascience" &&
+          "Gain skills in data analysis, machine learning, Python, R, and statistical modeling to make data-driven decisions."}
+        {selectedCategory === "analytics" &&
+          "Learn to analyze business data, create dashboards, and generate actionable insights using tools like Excel, Tableau, and Power BI."}
+      </p>
+
+      <div className={styles.illustration}>
+        <img
+          src={
+            selectedCategory === "webdev"
+              ? images.webdev
+              : selectedCategory === "digitalmarketing"
+              ? images.digital
+              : selectedCategory === "datascience"
+              ? images.datascience
+              : images.webdesigning
+          }
+          alt={`${selectedCategory} illustration`}
+          className={styles.industryimage}
+        />
+      </div>
+    </div>
+  </div>
+</div>
 
 
-        <div className={styles.featurecontent}>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>📈</div>
-          <h2 className={styles.featureTitle}>Digital Ad Copy</h2>
-          <p className={styles.featureDescription}>A Magical Tool To Optimize your content for the first know who you're targeting, identify your target.</p>
-          <a href="#" className={styles.actionLink}>Try Digital Ad Copy </a>
-        </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>🛒</div>
-          <h2 className={styles.featureTitle}>eCommerce Copy</h2>
-          <p className={styles.featureDescription}>Writing blog content with GenAI, make sure you have a clear understanding of who your audience is.</p>
-          <a href="#" className={styles.actionLink}>Try eCommerce Copy </a>
-        </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>📧</div>
-          <h2 className={styles.featureTitle}>Email Marketing</h2>
-          <p className={styles.featureDescription}>Writing blog content with GenAI, make sure you have a clear understanding of who your audience is.</p>
-          <a href="#" className={styles.actionLink}>Try Email Marketing </a>
-        </div>
-        <div className={styles.featureBox}>
-          <div className={styles.featureIcon}>🌐</div>
-          <h2 className={styles.featureTitle}>Landing Page Copy</h2>
-          <p className={styles.featureDescription}>First know who you're targeting. Identify your target audience and understand their needs.</p>
-          <a href="#" className={styles.actionLink}>Try Landing Page Copy </a>
-        </div>
-        </div>
-      </main>
-    </div> */}
 
-        <div className={styles.wpHeroSection}>
-          <div className={styles.overlay}>
-            <div className={styles.wpImageWrapper}>
+
+
+
+
+
+
+
+    {/* BACK-IMAGE */}
+      <div className={styles.wpHeroSection}>
+        <div className={styles.overlay}>
+          <div className={styles.wpImageWrapper}>
             <img src={images.wordpressApp} alt="Background" className={styles.wpHeroImage} />
           </div>
           <div className={styles.wpOverlayContent}>
-            <p className={styles.wpWelcomeText}>WELCOME TO NEXTMIND</p>
-            <h1 className={styles.wpTitle}>
-              AI-Driven solutions for a <br /> smarter tomorrow
-            </h1>
-            <p className={styles.wpDescription}>
-              We are a cutting-edge AI agency fueled by innovation and purpose.
-              Combining advanced technology with human insight.
-            </p>
+            <p className={styles.wpWelcomeText}>WELCOME TO ZIION TECHNOLOGY</p>
+<h1 className={styles.wpTitle}>
+  Learn, Build & Grow with <br /> Our Professional IT Courses
+</h1>
+<p className={styles.wpDescription}>
+  At Ziion Technology, we provide industry-focused training programs designed to
+  equip learners with practical skills and knowledge. From Web Development, Data
+  Science, and Artificial Intelligence to Cloud Computing, Cybersecurity, and
+  Digital Marketing — our courses empower students and professionals to succeed
+  in today’s competitive tech landscape.
+</p>
+
+
             <div className={styles.wpIconBox}>
-              <span className={styles.wpIcon}>↗</span>
+              <button className={styles.headerBtn} onClick={() => setShowForm(true)}>Talk to us</button>
             </div>
-          </div>
           </div>
         </div>
 
-        <div>
-        </div>
-     
+        {showForm && <Form closeForm={() => setShowForm(false)} />}
+      </div>
+
+      <div>
+      </div>
+
       <Homefeature />
 
     </div>

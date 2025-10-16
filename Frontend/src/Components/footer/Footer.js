@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="col-xl-4 col-lg-4 mb-50">
               <div className={styles.footerWidget}>
                 <div className={styles.footerLogo}>
-                  <img src={images.logoWhite} alt="logo" />
+                  <img src={images.ziionLogo} alt="logo" />
                 </div>
                 <div className={styles.footerText}>
                   <p>
@@ -62,8 +62,8 @@ const Footer = () => {
                 <div className={styles.footerSocialIcon}>
                   <span>Follow us</span>
                   <a href="#"><i className={`fab fa-facebook-f ${styles.facebookBg}`}></i></a>
-                  <a href="#"><i className={`fab fa-linkedin ${styles.linkedinBg}`}></i></a>
-                  <a href="#"><i className={`fab fa-instagram ${styles.instagramBg}`}></i></a>
+                  <a href="https://www.linkedin.com/company/verma-programming-minds/"><i className={`fab fa-linkedin ${styles.linkedinBg}`}></i></a>
+                  <a href="https://www.instagram.com/ziion_technology/?next=%2F&hl=en"><i className={`fab fa-instagram ${styles.instagramBg}`}></i></a>
                 </div>
               </div>
             </div>
@@ -75,16 +75,17 @@ const Footer = () => {
                   <h3>Quick Links</h3>
                 </div>
                 <ul>
-                  <li><a href="#">Web Development</a></li>
-                  <li><a href="#">Graphic Designing</a></li>
-                  <li><a href="#">Digital Marketing</a></li>
-                  <li><a href="#">Python</a></li>
-                  <li><a href="#">AI/ML</a></li>
-                  <li><a href="#">Data Science</a></li>
-                  <li><a href="#">Mobile App Development</a></li>
-                  <li><a href="#">PHP</a></li>
-                  <li><a href="#">Six Week Training</a></li>
-                  <li><a href="#">Six Month Training</a></li>
+                  <li><a href="web-development">Web Development</a></li>
+                  <li><a href="graphic">Graphic Designing</a></li>
+                  <li><a href="digital-marketing">Digital Marketing</a></li>
+                  <li><a href="python">Python</a></li>
+                  <li><a href="ai">AI</a></li>
+                  <li><a href="ml">ML</a></li>
+                  <li><a href="data-science">Data Science</a></li>
+                  <li><a href="mobileapp">Mobile App Development</a></li>
+                  <li><a href="php">PHP</a></li>
+                  <li><a href="six-week-training">Six Week Training</a></li>
+                  <li><a href="six-month-training">Six Month Training</a></li>
                 </ul>
               </div>
             </div>
@@ -96,12 +97,12 @@ const Footer = () => {
                   <h3>Useful Links</h3>
                 </div>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Placement</a></li>
-                  <li><a href="#">About Us</a></li>
+                  <li><a href="home">Home</a></li>
+                  <li><a href="services">Services</a></li>
+                  <li><a href="placement">Placement</a></li>
+                  <li><a href="about-us">About Us</a></li>
                   <li><a href="#">Expert Team</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="contact-us">Contact Us</a></li>
                   <li><a href="#">Latest News</a></li>
                 </ul>
               </div>

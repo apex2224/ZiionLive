@@ -1,0 +1,436 @@
+.sixweekHero {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 8rem 2rem;
+  background: #222121;
+  box-sizing: border-box;
+}
+
+.sixweekContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sixweekImageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.sixweekImage {
+  width: 100%;
+  max-width: 420px;
+  height: auto; /* maintain aspect ratio */
+  border-radius: 16px;
+  transform: rotate(-3deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.sixweekContent {
+    padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.sixweekHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.sixweekTextRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sixweekIcon {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.sixweekDescription {
+  font-size: 1rem;
+  color: white;
+  max-width: 450px;
+}
+
+.sixweekButton {
+  background: #3d73ff;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.sixweekButton:hover {
+  background: #2a56cc;
+}
+
+.sixweekBottomImages {
+  display: flex;
+  gap: 1rem;
+}
+
+.sixweekSmallImage {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 12px;
+  transform: rotate(2deg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sixweekContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sixweekContent {
+    align-items: center;
+  }
+
+  .sixweekHeading {
+    font-size: 2.5rem;
+  }
+
+  .sixweekDescription {
+    max-width: 100%;
+  }
+
+  .sixweekBottomImages {
+    justify-content: center;
+  }
+
+  .sixweekImage {
+    max-width: 350px;
+    transform: rotate(0deg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .sixweekHeading {
+    font-size: 2rem;
+  }
+
+  .sixweekBottomImages {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sixweekSmallImage {
+    max-width: 250px;
+  }
+
+  .sixweekImage {
+    max-width: 100%;
+    width: 90%;
+    transform: none;
+  }
+}
+
+
+
+/* second section // */
+.sixWeekSecondSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem 8%;
+  flex-wrap: wrap;
+  background-color: #222121; /* Dark Background */
+  color: #ffffff; /* White Text */
+}
+
+/* Left Side Images */
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.imageBox,
+.imageBoxSmall {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imageBox img,
+.imageBoxSmall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Stats Box */
+.statsBox {
+  background: #333333; /* Slightly lighter dark */
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.statsBox .icon {
+  font-size: 2rem;
+}
+
+.statsBox h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.statsBox p {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Right Side Content */
+.content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.subHeading {
+  color: #87a6ff; /* Blue accent */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1rem;
+  color: #dddddd;
+  margin-bottom: 1.5rem;
+}
+
+.points {
+  background: #333333;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.points p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #f1f1f1;
+}
+
+/* Help Section */
+.helpBox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.helpIcon {
+  font-size: 1.8rem;
+  color: #87a6ff;
+}
+
+.helpBox p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+.helpBox strong {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sixWeekSecondSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* six week third section */
+/* Six Week Third Section */
+
+/* Container */
+.coursesHeroContainer {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+}
+
+/* Content */
+.coursesHeroContent {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.coursesHeroHeading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.coursesHeroSub {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.coursesHeroBtn {
+  background: linear-gradient(90deg, #ff3c82, #ff9800);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+.coursesHeroBtn:hover { opacity: 0.85; }
+
+/* Floating Images (default >768px) */
+.coursesFloatingWrapper {
+  position: relative;
+}
+
+.coursesFloatingImage {
+  position: absolute;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: float 6s ease-in-out infinite;
+  object-fit: cover;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Floating positions */
+.coursesPos1 { top: 10%; left: 10%; }
+.coursesPos2 { top: 8%; right: 8%; }
+.coursesPos3 { top: 50%; left: 5%; }
+.coursesPos4 { top: 52%; right: 5%; }
+.coursesPos5 { bottom: 5%; left: 15%; }
+.coursesPos6 { bottom: 10%; left: 48%; }
+.coursesPos7 { top: 8%; left: 48%; }
+
+/* 📌 For screens ≤ 768px → switch to grid (4 per row, rest below) */
+@media (max-width: 768px) {
+  .coursesFloatingWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 per row */
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    position: static;
+    justify-items: center; /* center each block */
+    align-items: start;
+  }
+
+  .coursesFloatingImage {
+    position: relative;
+    width: 100%;
+    max-width: 160px;
+    animation: none; /* remove floating */
+    margin: 0 auto;
+    transform: none; /* no tilt */
+  }
+
+  .coursesHeroContainer {
+    padding-top: 4rem;
+  }
+
+  .coursesHeroHeading {
+    font-size: 2rem;
+  }
+  .coursesHeroSub {
+    font-size: 1rem;
+  }
+}
+
+/* 📌 For screens ≤ 400px → single column */
+@media (max-width: 400px) {
+  .coursesFloatingWrapper {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .coursesFloatingImage {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .coursesHeroHeading {
+    font-size: 1.6rem;
+  }
+}

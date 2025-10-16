@@ -1,0 +1,198 @@
+.section {
+  padding: 3vw 2vw;
+  background: #f4f7fa;
+}
+
+.inner {
+  max-width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top {
+  margin-bottom: 2vw;
+}
+
+.heading {
+  font-size: 2.5vw;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.8vw;
+}
+
+.top p {
+  font-size: 2vw;
+  color: #555;
+}
+
+/* Slider Item */
+.sliderItem {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 1.5vw;
+  padding: 1.5vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: #000;
+  width: 100%;
+  min-height: 28vw;
+}
+
+.card:hover {
+  transform: translateY(-0.3vw);
+  box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2);
+}
+
+/* Student Picture */
+.studentPicture img {
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.3vw solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5vw;
+}
+
+/* Company Logo below student image */
+.studentCompanyLogo {
+  text-align: center;
+  margin-bottom: 0.8vw;
+}
+
+.studentCompanyLogo img {
+  width: 4vw;
+  height: 4vw;
+  object-fit: contain;
+}
+
+/* Student Info */
+.studentName {
+  font-size: 1.6vw;
+  font-weight: 600;
+  line-height: 2.5vw;
+  margin: 0.5vw 0 0.3vw 0;
+}
+
+.fname { color: #fff; }
+.lname { color: #ccc; }
+
+.studentCompanyName {
+  font-size: 1.3vw;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* Salary Package */
+.package {
+  margin-top: auto;
+  text-align: center;
+}
+
+.package h4 {
+  font-size: 2vw;
+  color: #fff;
+  margin: 0.5vw 0;
+}
+
+.package sup { font-size: 0.8vw; top: -0.4vw; position: relative; }
+.package span { font-size: 1vw; color: #f0f0f0; }
+.package p { font-size: 0.9vw; color: #f0f0f0; margin: 0; }
+
+/* Slick Overrides */
+:global(.slick-slide > div) {
+  display: flex;
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .studentPicture img { width: 14vw; height: 14vw; }
+  .studentCompanyLogo img { width: 5vw; height: 5vw; }
+  .studentName { font-size: 2vw; line-height: 2.5vw; }
+  .studentCompanyName { font-size: 1.5vw; }
+  .package h4 { font-size: 2.2vw; }
+}
+
+@media (max-width: 767px) {
+  .studentPicture img { width: 20vw; height: 20vw; }
+  .studentCompanyLogo img { width: 8vw; height: 8vw; }
+  .studentName { font-size: 3vw; line-height: 3.5vw; }
+  .studentCompanyName { font-size: 1.8vw; }
+  .package h4 { font-size: 3vw; }
+}
+
+
+
+.heading {
+  font-size: 3vw;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5vw;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Highlight for a color pop effect */
+.heading .highlight {
+  color: #fbb03b;
+  position: relative;
+}
+
+/* Optional underline effect */
+.heading .highlight::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #fbb03b;
+  margin-top: 0.3vw;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.subheading {
+  font-size: 1.8vw;
+  color: #555;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.5vw;
+  line-height: 1.5;
+}
+
+.subheading .highlight {
+  color: #11649c;
+  font-weight: 600;
+  text-decoration: underline 2px #11649c;
+}
+  
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .heading {
+    font-size: 4vw;
+  }
+  .subheading {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 5.5vw;
+  }
+  .subheading {
+    font-size: 3.5vw;
+  }
+}

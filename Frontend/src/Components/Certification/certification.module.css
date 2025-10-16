@@ -124,3 +124,8 @@
     font-size: 15px;
   }
 }
+@media(max-width: 500px){
+  .certificateSection{
+    padding: 0rem;
+  }
+}

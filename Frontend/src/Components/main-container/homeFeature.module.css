@@ -35,7 +35,7 @@
 
 .feature-box {
   padding: 20px;
-  height: 16rem; 
+  height: 25rem; 
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -103,7 +103,7 @@
     font-size: 2.4rem;
   }
   .feature-box {
-    height: 15rem;
+    height: 20rem;
   }
 }
 
@@ -129,7 +129,7 @@
     font-size: 2rem;
   }
   .feature-box {
-    height: 14rem;
+    height: 20rem;
   }
 }
 
@@ -161,7 +161,7 @@
     font-size: 1.6rem;
   }
   .feature-box {
-    height: 13rem;
+    height: 20rem;
     padding: 15px; /* Reduced padding to fit content */
   }
   .feature-box h3 {
@@ -187,7 +187,7 @@
     font-size: 1.4rem;
   }
   .feature-box {
-    height: 12rem;
+    height: 20rem;
     padding: 12px;
   }
   .feature-box h3 {
@@ -214,7 +214,7 @@
     font-size: 1.3rem;
   }
   .feature-box {
-    height: 11rem;
+    height: 20rem;
     padding: 10px;
   }
   .feature-box h3 {
@@ -229,3 +229,42 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.headerBtn {
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 25px;
+  font-size: 1rem;
+  border-radius: 0; 
+  cursor: pointer;
+  border-radius: 20px;
+  transition: color 0.3s;
+}
+
+.headerBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; 
+  transform: translateX(-100%);
+  transition: transform 0.5s ease, border-radius 0.3s ease 0.5s; /* delay border-radius until slide finishes */
+  z-index: -1;
+  border-radius: 0; 
+}
+
+.headerBtn:hover::before {
+  transform: translateX(0);
+  border-radius: 20px; 
+}
+
+.headerBtn:hover {
+  color: black;
+}
+

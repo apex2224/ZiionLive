@@ -1,0 +1,208 @@
+/* Left vertical fixed button */
+.leftButtonContainer {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: linear-gradient(to bottom, #3b82f6, #9333ea);
+  color: white;
+  padding: 12px 8px;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftButtonIcon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+}
+
+.leftButtonText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+
+
+/* Left vertical fixed button */
+.leftButtonContainer {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: linear-gradient(to bottom, #3b82f6, #9333ea);
+  color: white;
+  padding: 12px 8px;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftButtonIcon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+}
+
+.leftButtonText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+
+
+
+
+/* Popup Overlay */
+.popupOverlay {
+  position: fixed;
+  top: 25%;
+  left: 0;          /* Start at left of screen */
+  width: auto;      /* Width determined by popupFormBox */
+  display: flex;
+  align-items: flex-start; /* Align at top of overlay */
+  justify-content: flex-start; /* Align left */
+  z-index: 10000;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Popup Form Box */
+.popupFormBox {
+  background: #242222;
+  padding: 40px 25px;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(233, 228, 228, 0.3);
+  width: 350px;         /* Fixed width for left panel */
+  max-width: 95%;       /* Responsive on small screens */
+  min-width: 300px;
+  position: fixed;      /* Fixed at left of screen */
+  left: 0;              /* Stick to left */
+  animation: slideInLeft 0.3s ease forwards;
+  box-sizing: border-box;
+}
+
+/* Slide-in animation from left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.popupCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: red;
+  transition: color 0.2s ease;
+}
+
+.popupCloseBtn:hover {
+  color: #4d0303;
+}
+
+/* Form styles */
+.popupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popupForm input,
+.popupForm select,
+.popupForm option {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  background-color: #2b2b2b;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Buttons side by side */
+.buttonRow {
+  display: flex;
+  gap: 10px;       /* Space between buttons */
+  flex-wrap: wrap;  /* Wrap on very small screens */
+}
+
+.popupSubmitBtn {
+  flex: 1;             /* Take equal space */
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.popupSubmitBtn:hover:enabled {
+  background-color: #0056b3;
+}
+
+.popupSubmitBtn:disabled {
+  background-color: #a0c4ff;
+  cursor: not-allowed;
+}
+
+.popupResetBtn {
+  flex: 1;
+  padding: 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-left: 2rem;
+}
+
+.popupResetBtn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  .popupFormBox {
+    width: 95%;      /* Almost full width on mobile */
+    padding: 20px 15px;
+  }
+  .buttonRow {
+    flex-direction: column; /* Stack buttons on small screens */
+  }
+}
